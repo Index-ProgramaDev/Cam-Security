@@ -14,20 +14,20 @@ def tempo_delta(t1, t2):
 # Timer
 class Timer:
     def __init__(self):
-        self.start = agora()
+        self.start = tempo_atual()
 
     def reset(self):
-        self.start = agora()
+        self.start = tempo_atual()
 
     def tempo_passado(self):
-        return agora() - self.start
+        return tempo_atual() - self.start
     
     # Expiração
     
 def expirou(inicio, limite_segundos):
-    return (agora() - inicio) > limite_segundos
+    return (tempo_atual() - inicio) > limite_segundos
 
 # AntiSpam
 
 def expirou(inicio, limite_segundos):
-    return (agora() - inicio) > limite_segundos
+    return (tempo_atual() - inicio) > limite_segundos
