@@ -1,0 +1,26 @@
+# Visão computacional
+opencv-python
+numpy
+
+# Detecção e IA
+ultralytics          # YOLOv8
+mediapipe
+
+# Reconhecimento facial
+face-recognition
+dlib
+
+# Banco de dados
+sqlalchemy
+psycopg2-binary     
+
+# Backend / API
+fastapi
+uvicorn
+
+# Utilidades
+pillow
+scipy
+
+# Logging
+loguru
