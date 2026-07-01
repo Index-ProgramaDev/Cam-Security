@@ -7,8 +7,8 @@ from loguru import logger
 
 
 class MediaPipeDetector:
-    def __init__(self, model_path="pose_landmarker_lite.task"):
-        self._init_tasks_api(model_path)
+    def __init__(self):
+        self._init_old_mediapipe()
         
         self.hand_open_frames = 0
         self.hand_closed_frames = 0
@@ -24,29 +24,20 @@ class MediaPipeDetector:
         self.hand_closed_frames = 0
         logger.info("Alerta resetado com sucesso!")
 
-    def _init_tasks_api(self, model_path):
+    def _init_old_mediapipe(self):
         try:
-            from mediapipe.tasks.python import vision
-
-            self.vision = vision
-
-            base_options = mp.tasks.BaseOptions(model_asset_path=model_path)
-            self.options = vision.PoseLandmarkerOptions(
-                base_options=base_options,
-                running_mode=vision.RunningMode.VIDEO,
-                num_poses=5,
-                min_pose_detection_confidence=0.7,
-                min_pose_presence_confidence=0.7,
+            self.mp_pose = mp.solutions.pose
+            self.pose = self.mp_pose.Pose(
+                static_image_mode=False,
+                model_complexity=1,
+                smooth_landmarks=True,
+                min_detection_confidence=0.7,
                 min_tracking_confidence=0.7
             )
-
-            self.detector = vision.PoseLandmarker.create_from_options(self.options)
             self.ready = True
-            self.last_timestamp_ms = 0
-            logger.info("MediaPipe PoseLandmarker inicializado com sucesso!")
-
+            logger.info("MediaPipe Pose (API antiga) inicializado com sucesso!")
         except Exception as e:
-            logger.error(f"Erro ao inicializar MediaPipe Tasks API: {e}")
+            logger.error(f"Erro ao inicializar MediaPipe Pose: {e}")
             import traceback
             traceback.print_exc()
             self.ready = False
@@ -125,27 +116,20 @@ class MediaPipeDetector:
 
         try:
             rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            mp_img = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
-
-            current_timestamp_ms = int(time.time() * 1000)
-            if self.last_timestamp_ms >= current_timestamp_ms:
-                current_timestamp_ms = self.last_timestamp_ms + 1
-            self.last_timestamp_ms = current_timestamp_ms
-
-            detection_result = self.detector.detect_for_video(mp_img, current_timestamp_ms)
+            results = self.pose.process(rgb_frame)
 
             hand_open_current = False
-            for idx, landmarks in enumerate(detection_result.pose_landmarks):
-                box = self.get_bounding_box(landmarks, frame.shape)
+            if results.pose_landmarks:
+                box = self.get_bounding_box(results.pose_landmarks.landmark, frame.shape)
                 if box:
                     person_data = {
-                        "track_id": idx + 1,
+                        "track_id": 1,
                         "box": box,
-                        "landmarks": landmarks
+                        "landmarks": results.pose_landmarks
                     }
                     result["people"].append(person_data)
 
-                    if self.check_hand_open(landmarks):
+                    if self.check_hand_open(results.pose_landmarks.landmark):
                         hand_open_current = True
 
             if not self.alert_triggered:
@@ -172,7 +156,5 @@ class MediaPipeDetector:
         return result
 
     def close(self):
-        if self.ready and hasattr(self, 'detector'):
-            self.detector.close()
-            self.ready = False
+        pass
 
