@@ -1,4 +1,3 @@
-
 import cv2
 import numpy as np
 import mediapipe as mp
@@ -8,13 +7,11 @@ from loguru import logger
 
 class MediaPipeDetector:
     def __init__(self):
-        self._init_old_mediapipe()
-        
+        self._init_tasks_api()
         self.hand_open_frames = 0
         self.hand_closed_frames = 0
         self.is_hand_open_state = False
-        self.frames_required_open = 8
-        
+        self.frames_required_open = 30
         self.alert_triggered = False
 
     def reset_alert(self):
@@ -24,20 +21,33 @@ class MediaPipeDetector:
         self.hand_closed_frames = 0
         logger.info("Alerta resetado com sucesso!")
 
-    def _init_old_mediapipe(self):
+    def _init_tasks_api(self):
         try:
-            self.mp_pose = mp.solutions.pose
-            self.pose = self.mp_pose.Pose(
-                static_image_mode=False,
-                model_complexity=1,
-                smooth_landmarks=True,
-                min_detection_confidence=0.7,
-                min_tracking_confidence=0.7
+            from mediapipe.tasks.python import vision
+            import os
+
+            self.vision = vision
+
+            model_path = "pose_landmarker_full.task" if os.path.exists("pose_landmarker_full.task") else "pose_landmarker_lite.task"
+            logger.info(f"Usando modelo: {model_path}")
+
+            base_options = mp.tasks.BaseOptions(model_asset_path=model_path)
+            self.options = vision.PoseLandmarkerOptions(
+                base_options=base_options,
+                running_mode=vision.RunningMode.VIDEO,
+                num_poses=1,
+                min_pose_detection_confidence=0.5,
+                min_pose_presence_confidence=0.5,
+                min_tracking_confidence=0.5
             )
+
+            self.detector = vision.PoseLandmarker.create_from_options(self.options)
             self.ready = True
-            logger.info("MediaPipe Pose (API antiga) inicializado com sucesso!")
+            self.last_timestamp_ms = 0
+            logger.info("MediaPipe PoseLandmarker inicializado com sucesso!")
+
         except Exception as e:
-            logger.error(f"Erro ao inicializar MediaPipe Pose: {e}")
+            logger.error(f"Erro ao inicializar MediaPipe Tasks API: {e}")
             import traceback
             traceback.print_exc()
             self.ready = False
@@ -47,12 +57,8 @@ class MediaPipeDetector:
             return None
 
         h, w, _ = image_shape
-        x_coords = []
-        y_coords = []
-
-        for lm in landmarks:
-            x_coords.append(lm.x * w)
-            y_coords.append(lm.y * h)
+        x_coords = [lm.x * w for lm in landmarks]
+        y_coords = [lm.y * h for lm in landmarks]
 
         if not x_coords or not y_coords:
             return None
@@ -64,45 +70,44 @@ class MediaPipeDetector:
 
         return [x_min, y_min, x_max, y_max]
 
-    def is_finger_extended(self, finger_tip, finger_pip, finger_mcp):
-        return finger_tip.y < finger_pip.y and finger_tip.y < finger_mcp.y
-
-    def is_thumb_extended_simple(self, thumb_tip, thumb_ip, thumb_mcp):
-        wrist = thumb_mcp
-        distance_tip = ((thumb_tip.x - wrist.x)**2 + (thumb_tip.y - wrist.y)**2)**0.5
-        distance_ip = ((thumb_ip.x - wrist.x)**2 + (thumb_ip.y - wrist.y)**2)**0.5
-        
-        return distance_tip > distance_ip * 1.3
-
-    def check_hand_open(self, landmarks):
-        if not landmarks or len(landmarks) < 21:
+    def check_arm_raised(self, landmarks):
+        if not landmarks or len(landmarks) < 17:
             return False
-        
-        open_count = 0
-        
-        thumb_tip = landmarks[4]
-        thumb_ip = landmarks[3]
-        thumb_mcp = landmarks[2]
-        
-        if self.is_thumb_extended_simple(thumb_tip, thumb_ip, thumb_mcp):
-            open_count += 1
-        
-        finger_pairs = [
-            (8,6,5),
-            (12,10,9),
-            (16,14,13),
-            (20,18,17)
-        ]
-        
-        for tip_idx, pip_idx, mcp_idx in finger_pairs:
-            tip = landmarks[tip_idx]
-            pip = landmarks[pip_idx]
-            mcp = landmarks[mcp_idx]
-            
-            if self.is_finger_extended(tip, pip, mcp):
-                open_count +=1
-        
-        return open_count >=5
+
+        try:
+            nose       = landmarks[0]
+            r_shoulder = landmarks[12]
+            r_elbow    = landmarks[14]
+            r_wrist    = landmarks[16]
+            l_shoulder = landmarks[11]
+            l_elbow    = landmarks[13]
+            l_wrist    = landmarks[15]
+
+            logger.debug(
+                f"[POSE] R_Wrist={r_wrist.y:.2f} R_Elbow={r_elbow.y:.2f} R_Shoulder={r_shoulder.y:.2f} | "
+                f"L_Wrist={l_wrist.y:.2f} L_Elbow={l_elbow.y:.2f} L_Shoulder={l_shoulder.y:.2f} | "
+                f"Nose={nose.y:.2f}"
+            )
+
+            def arm_is_raised(wrist, elbow, shoulder):
+                return (
+                    wrist.y < (shoulder.y - 0.10) and
+                    elbow.y < (shoulder.y + 0.05) and
+                    wrist.y < (nose.y + 0.10)
+                )
+
+            right_raised = arm_is_raised(r_wrist, r_elbow, r_shoulder)
+            left_raised  = arm_is_raised(l_wrist, l_elbow, l_shoulder)
+
+            if right_raised or left_raised:
+                side = "direito" if right_raised else "esquerdo"
+                logger.warning(f"Braço {side} levantado detectado!")
+                return True
+
+        except IndexError:
+            pass
+
+        return False
 
     def process(self, frame):
         result = {
@@ -116,35 +121,48 @@ class MediaPipeDetector:
 
         try:
             rgb_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-            results = self.pose.process(rgb_frame)
+            mp_img = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_frame)
+
+            current_timestamp_ms = int(time.time() * 1000)
+            if self.last_timestamp_ms >= current_timestamp_ms:
+                current_timestamp_ms = self.last_timestamp_ms + 1
+            self.last_timestamp_ms = current_timestamp_ms
+
+            detection_result = self.detector.detect_for_video(mp_img, current_timestamp_ms)
 
             hand_open_current = False
-            if results.pose_landmarks:
-                box = self.get_bounding_box(results.pose_landmarks.landmark, frame.shape)
-                if box:
-                    person_data = {
-                        "track_id": 1,
-                        "box": box,
-                        "landmarks": results.pose_landmarks
-                    }
-                    result["people"].append(person_data)
+            num_detected = len(detection_result.pose_landmarks) if detection_result.pose_landmarks else 0
+            if num_detected == 0:
+                logger.debug("Nenhum esqueleto detectado no frame atual.")
+            else:
+                logger.debug(f"{num_detected} esqueleto(s) detectado(s).")
 
-                    if self.check_hand_open(results.pose_landmarks.landmark):
-                        hand_open_current = True
+            if detection_result.pose_landmarks:
+                for idx, landmarks in enumerate(detection_result.pose_landmarks):
+                    box = self.get_bounding_box(landmarks, frame.shape)
+                    if box:
+                        result["people"].append({
+                            "track_id": idx + 1,
+                            "box": box,
+                            "landmarks": landmarks
+                        })
+                        if self.check_arm_raised(landmarks):
+                            hand_open_current = True
 
             if not self.alert_triggered:
                 if hand_open_current:
                     self.hand_open_frames += 1
                     self.hand_closed_frames = 0
+                    logger.info(f"Frames válidos: {self.hand_open_frames}/{self.frames_required_open}")
                     if self.hand_open_frames >= self.frames_required_open:
                         if not self.is_hand_open_state:
-                            logger.info("MÃO ABERTA DETECTADA! ALERTA PERMANENTE ATIVADO!")
+                            logger.info("ALERTA PERMANENTE ATIVADO!")
                             self.is_hand_open_state = True
                             self.alert_triggered = True
                 else:
-                    self.hand_closed_frames +=1
+                    self.hand_closed_frames += 1
                     self.hand_open_frames = 0
-            
+
             result["hand_open"] = self.is_hand_open_state or self.alert_triggered
             result["alert_triggered"] = self.alert_triggered
 
@@ -156,5 +174,6 @@ class MediaPipeDetector:
         return result
 
     def close(self):
-        pass
-
+        if self.ready and hasattr(self, 'detector'):
+            self.detector.close()
+            self.ready = False
