@@ -18,9 +18,16 @@ class MediaPipeDetector:
         self.hand_open_frames = 0
         self.hand_closed_frames = 0
         self.is_hand_open_state = False
-        self.frames_required_open = 3
+        self.frames_required_open = 8
         
         self.alert_triggered = False
+
+    def reset_alert(self):
+        self.alert_triggered = False
+        self.is_hand_open_state = False
+        self.hand_open_frames = 0
+        self.hand_closed_frames = 0
+        logger.info("Alerta resetado com sucesso!")
 
     def _init_tasks_api(self, model_path):
         try:
@@ -32,13 +39,13 @@ class MediaPipeDetector:
             self.options = vision.HolisticLandmarkerOptions(
                 base_options=base_options,
                 running_mode=vision.RunningMode.VIDEO,
-                min_face_detection_confidence=0.5,
-                min_face_suppression_threshold=0.5,
-                min_face_landmarks_confidence=0.5,
-                min_pose_detection_confidence=0.5,
-                min_pose_suppression_threshold=0.5,
-                min_pose_landmarks_confidence=0.5,
-                min_hand_landmarks_confidence=0.6,
+                min_face_detection_confidence=0.6,
+                min_face_suppression_threshold=0.6,
+                min_face_landmarks_confidence=0.6,
+                min_pose_detection_confidence=0.6,
+                min_pose_suppression_threshold=0.6,
+                min_pose_landmarks_confidence=0.6,
+                min_hand_landmarks_confidence=0.8,
                 output_face_blendshapes=False,
                 output_segmentation_mask=False
             )
@@ -84,7 +91,7 @@ class MediaPipeDetector:
         distance_tip = ((thumb_tip.x - wrist.x)**2 + (thumb_tip.y - wrist.y)**2)**0.5
         distance_ip = ((thumb_ip.x - wrist.x)**2 + (thumb_ip.y - wrist.y)**2)**0.5
         
-        return distance_tip > distance_ip * 1.1
+        return distance_tip > distance_ip * 1.3
 
     def check_hand_open(self, hand_landmarks):
         if not hand_landmarks or len(hand_landmarks) <21:
@@ -114,7 +121,7 @@ class MediaPipeDetector:
             if self.is_finger_extended(tip, pip, mcp):
                 open_count +=1
         
-        return open_count >=4
+        return open_count >=5
 
     def process(self, frame):
         result = {

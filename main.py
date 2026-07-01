@@ -25,6 +25,7 @@ def main():
     logger.info(f"Câmera iniciada no modo: {'SIMULADO (Sintético)' if is_synth else 'REAL (Física)'}")
     logger.info("Pressione a tecla 'ESC' na janela de vídeo para fechar o programa.")
     logger.info("Abra a mão completamente para disparar um alerta sonoro!")
+    logger.info("Pressione ENTER para resetar o alerta!")
 
     alert_sound_played = False
 
@@ -60,9 +61,14 @@ def main():
             if annotated_frame is not None:
                 cv2.imshow("Cam-Security | MediaPipe", annotated_frame)
 
-            if cv2.waitKey(1) & 0xFF == 27:
+            key = cv2.waitKey(1)
+            if key == 27:  # ESC
                 logger.info("Tecla ESC pressionada. Encerrando monitoramento...")
                 break
+            elif key == 13:  # ENTER
+                if detector.alert_triggered:
+                    detector.reset_alert()
+                    alert_sound_played = False
 
         except Exception as loop_e:
             logger.error(f"Erro inesperado no loop principal: {loop_e}")
