@@ -1,7 +1,7 @@
 
 import cv2
 import numpy as np
-from utils.math_utils import calcular_distancia
+from utils.math_utils import calcular_distancia, calcular_centro
 
 
 def desenhar_anotacoes_mediapipe(frame, detection_result):
@@ -47,9 +47,11 @@ def desenhar_anotacoes_mediapipe(frame, detection_result):
         p1 = people[i]
         for j in range(i+1, len(people)):
             p2 = people[j]
-            center1 = p1.get("center")
-            center2 = p2.get("center")
-            if center1 and center2:
+            box1 = p1.get("box")
+            box2 = p2.get("box")
+            if box1 and box2:
+                center1 = calcular_centro(box1)
+                center2 = calcular_centro(box2)
                 dist = calcular_distancia(center1, center2)
                 pt1 = (int(center1[0]), int(center1[1]))
                 pt2 = (int(center2[0]), int(center2[1]))

@@ -4,25 +4,11 @@ import numpy as np
 import mediapipe as mp
 import time
 from loguru import logger
-from utils.math_utils import calcular_distancia, calcular_centro
-
-
-class PersonData:
-    def __init__(self, track_id, landmarks, box):
-        self.track_id = track_id
-        self.landmarks = landmarks
-        self.box = box
-        self.center = calcular_centro(box)
-        self.lost_frames = 0
 
 
 class MediaPipeDetector:
     def __init__(self, model_path="pose_landmarker_lite.task"):
         self._init_tasks_api(model_path)
-
-        self.next_track_id = 1
-        self.tracked_people = {}
-        self.max_lost_frames = 30
         
         self.hand_open_frames = 0
         self.hand_closed_frames = 0
@@ -49,9 +35,9 @@ class MediaPipeDetector:
                 base_options=base_options,
                 running_mode=vision.RunningMode.VIDEO,
                 num_poses=5,
-                min_pose_detection_confidence=0.6,
-                min_pose_presence_confidence=0.6,
-                min_tracking_confidence=0.6
+                min_pose_detection_confidence=0.7,
+                min_pose_presence_confidence=0.7,
+                min_tracking_confidence=0.7
             )
 
             self.detector = vision.PoseLandmarker.create_from_options(self.options)
@@ -86,39 +72,6 @@ class MediaPipeDetector:
         y_max = int(min(h, max(y_coords) + 20))
 
         return [x_min, y_min, x_max, y_max]
-
-    def update_tracks(self, new_landmarks_list, image_shape):
-        new_tracked = {}
-        for landmarks in new_landmarks_list:
-            box = self.get_bounding_box(landmarks, image_shape)
-            if not box:
-                continue
-            center = calcular_centro(box)
-            matched_id = None
-
-            min_dist = float('inf')
-            for track_id, person in self.tracked_people.items():
-                dist = calcular_distancia(center, person.center)
-                if dist < 100 and dist < min_dist:
-                    min_dist = dist
-                    matched_id = track_id
-
-            if matched_id is not None:
-                new_tracked[matched_id] = PersonData(matched_id, landmarks, box)
-                self.tracked_people.pop(matched_id)
-            else:
-                new_track_id = self.next_track_id
-                self.next_track_id += 1
-                new_tracked[new_track_id] = PersonData(new_track_id, landmarks, box)
-                logger.info(f"Novo tracking ID: {new_track_id}")
-
-        for track_id, person in self.tracked_people.items():
-            person.lost_frames += 1
-            if person.lost_frames < self.max_lost_frames:
-                new_tracked[track_id] = person
-
-        self.tracked_people = new_tracked
-        return list(self.tracked_people.values())
 
     def is_finger_extended(self, finger_tip, finger_pip, finger_mcp):
         return finger_tip.y < finger_pip.y and finger_tip.y < finger_mcp.y
@@ -180,21 +133,20 @@ class MediaPipeDetector:
             self.last_timestamp_ms = current_timestamp_ms
 
             detection_result = self.detector.detect_for_video(mp_img, current_timestamp_ms)
-            people = self.update_tracks(detection_result.pose_landmarks, frame.shape)
 
             hand_open_current = False
-            for person in people:
-                person_data = {
-                    "track_id": person.track_id,
-                    "box": person.box,
-                    "center": person.center,
-                    "landmarks": person.landmarks
-                }
-                result["people"].append(person_data)
+            for idx, landmarks in enumerate(detection_result.pose_landmarks):
+                box = self.get_bounding_box(landmarks, frame.shape)
+                if box:
+                    person_data = {
+                        "track_id": idx + 1,
+                        "box": box,
+                        "landmarks": landmarks
+                    }
+                    result["people"].append(person_data)
 
-                # Check hand open for any tracked person
-                if self.check_hand_open(person.landmarks):
-                    hand_open_current = True
+                    if self.check_hand_open(landmarks):
+                        hand_open_current = True
 
             if not self.alert_triggered:
                 if hand_open_current:
