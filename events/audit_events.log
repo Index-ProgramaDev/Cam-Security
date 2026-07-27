@@ -1,0 +1,14 @@
+{"timestamp": "2026-07-27 00:01:26", "event_type": "ARM_RAISED", "track_id": 1, "risk_score": 100, "description": "Pose proibida detectada: ARM_RAISED", "evidence_path": ""}
+{"timestamp": "2026-07-27 00:01:31", "event_type": "ARM_RAISED", "track_id": 1, "risk_score": 100, "description": "Pose proibida detectada: ARM_RAISED", "evidence_path": ""}
+{"timestamp": "2026-07-27 00:01:36", "event_type": "FALLEN", "track_id": 1, "risk_score": 100, "description": "Pose proibida detectada: FALLEN", "evidence_path": ""}
+{"timestamp": "2026-07-27 00:01:37", "event_type": "ARM_RAISED", "track_id": 1, "risk_score": 100, "description": "Pose proibida detectada: ARM_RAISED", "evidence_path": ""}
+{"timestamp": "2026-07-27 00:01:42", "event_type": "FALLEN", "track_id": 1, "risk_score": 100, "description": "Pose proibida detectada: FALLEN", "evidence_path": ""}
+{"timestamp": "2026-07-27 00:01:42", "event_type": "ARM_RAISED", "track_id": 1, "risk_score": 100, "description": "Pose proibida detectada: ARM_RAISED", "evidence_path": ""}
+{"timestamp": "2026-07-27 00:01:47", "event_type": "FALLEN", "track_id": 1, "risk_score": 100, "description": "Pose proibida detectada: FALLEN", "evidence_path": ""}
+{"timestamp": "2026-07-27 00:01:47", "event_type": "ARM_RAISED", "track_id": 1, "risk_score": 100, "description": "Pose proibida detectada: ARM_RAISED", "evidence_path": ""}
+{"timestamp": "2026-07-27 00:02:05", "event_type": "FALLEN", "track_id": 1, "risk_score": 100, "description": "Pose proibida detectada: FALLEN", "evidence_path": ""}
+{"timestamp": "2026-07-27 00:02:09", "event_type": "ARM_RAISED", "track_id": 1, "risk_score": 100, "description": "Pose proibida detectada: ARM_RAISED", "evidence_path": ""}
+{"timestamp": "2026-07-27 00:02:12", "event_type": "FALLEN", "track_id": 1, "risk_score": 100, "description": "Pose proibida detectada: FALLEN", "evidence_path": ""}
+{"timestamp": "2026-07-27 00:02:14", "event_type": "ARM_RAISED", "track_id": 1, "risk_score": 100, "description": "Pose proibida detectada: ARM_RAISED", "evidence_path": ""}
+{"timestamp": "2026-07-27 00:02:18", "event_type": "FALLEN", "track_id": 1, "risk_score": 100, "description": "Pose proibida detectada: FALLEN", "evidence_path": ""}
+{"timestamp": "2026-07-27 00:02:20", "event_type": "ARM_RAISED", "track_id": 1, "risk_score": 100, "description": "Pose proibida detectada: ARM_RAISED", "evidence_path": ""}

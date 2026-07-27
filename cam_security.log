@@ -1,0 +1,910 @@
+2026-07-26 23:55:14.970 | INFO     | utils.logger:info:10 - === Iniciando Backend Cam-Security ===
+2026-07-26 23:55:14.971 | INFO     | utils.logger:info:10 - Inicializando câmera física (ID: 0)...
+2026-07-26 23:55:15.255 | INFO     | utils.logger:info:10 - Câmera inicializada com sucesso.
+2026-07-26 23:55:16.832 | INFO     | utils.logger:info:10 - YOLOv8n inicializado para detecção de pessoas.
+2026-07-26 23:55:16.833 | WARNING  | utils.logger:warning:13 - Modelo pose_landmarker_lite.task não encontrado. pose detection em standby.
+2026-07-26 23:55:16.833 | INFO     | utils.logger:info:10 - Sistema ativo. Pressione ESC para encerrar.
+2026-07-26 23:55:17.522 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-07-26 23:55:18.018 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=106.8, nitidez=31.3
+2026-07-26 23:55:18.018 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-26 23:55:21.720 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=99.1, nitidez=16.6
+2026-07-26 23:55:21.721 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-26 23:55:31.430 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-07-26 23:55:31.450 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=134.0, nitidez=137.3
+2026-07-26 23:55:31.450 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-26 23:55:37.010 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #3
+2026-07-26 23:55:37.085 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=180.1, nitidez=522.4
+2026-07-26 23:55:37.085 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-07-26 23:55:38.256 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #4
+2026-07-26 23:55:39.238 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #5
+2026-07-26 23:55:45.354 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #6
+2026-07-26 23:55:56.503 | INFO     | utils.logger:info:10 - Interrompido via KeyboardInterrupt.
+2026-07-26 23:55:56.569 | INFO     | utils.logger:info:10 - Câmera encerrada.
+2026-07-26 23:55:56.577 | INFO     | utils.logger:info:10 - === Cam-Security Encerrado ===
+2026-07-26 23:58:32.547 | INFO     | utils.logger:info:10 - === Iniciando Backend Cam-Security ===
+2026-07-26 23:58:32.549 | INFO     | utils.logger:info:10 - Inicializando câmera física (ID: 0)...
+2026-07-26 23:58:32.806 | INFO     | utils.logger:info:10 - Câmera inicializada com sucesso.
+2026-07-26 23:58:34.345 | INFO     | utils.logger:info:10 - YOLOv8n inicializado para detecção de pessoas.
+2026-07-26 23:58:34.345 | WARNING  | utils.logger:warning:13 - Modelo pose_landmarker_lite.task não encontrado. pose detection em standby.
+2026-07-26 23:58:34.346 | INFO     | utils.logger:info:10 - Sistema ativo. Pressione ESC para encerrar.
+2026-07-26 23:58:34.896 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-07-26 23:58:35.672 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=107.0, nitidez=81.8
+2026-07-26 23:58:35.672 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-26 23:58:35.789 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=100.9, nitidez=55.7
+2026-07-26 23:58:35.789 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-26 23:58:35.903 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=100.4, nitidez=50.2
+2026-07-26 23:58:35.904 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-26 23:58:45.930 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-07-26 23:58:54.774 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=143.2, nitidez=746.5
+2026-07-26 23:58:54.774 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-26 23:58:54.950 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=114.3, nitidez=11.3
+2026-07-26 23:58:54.950 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-07-26 23:58:55.955 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=129.4, nitidez=14.0
+2026-07-26 23:58:55.955 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-07-26 23:58:56.084 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=163.8, nitidez=653.7
+2026-07-26 23:58:56.084 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-26 23:58:56.922 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=172.4, nitidez=945.3
+2026-07-26 23:58:56.923 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-26 23:58:59.018 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=181.5, nitidez=340.1
+2026-07-26 23:58:59.019 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-26 23:58:59.474 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=171.9, nitidez=129.0
+2026-07-26 23:58:59.474 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-26 23:59:02.543 | INFO     | utils.logger:info:10 - Encerrando por comando do usuário.
+2026-07-26 23:59:02.562 | INFO     | utils.logger:info:10 - Câmera encerrada.
+2026-07-26 23:59:02.576 | INFO     | utils.logger:info:10 - === Cam-Security Encerrado ===
+2026-07-27 00:01:24.630 | INFO     | utils.logger:info:10 - === Iniciando Backend Cam-Security ===
+2026-07-27 00:01:24.631 | INFO     | utils.logger:info:10 - Inicializando câmera física (ID: 0)...
+2026-07-27 00:01:24.891 | INFO     | utils.logger:info:10 - Câmera inicializada com sucesso.
+2026-07-27 00:01:25.044 | INFO     | utils.logger:info:10 - MediaPipe FaceLandmarker (468 landmarks Mesh) ativado com sucesso!
+2026-07-27 00:01:25.087 | INFO     | utils.logger:info:10 - MediaPipe FaceLandmarker (468 landmarks Mesh) ativado com sucesso!
+2026-07-27 00:01:26.471 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-07-27 00:01:26.597 | INFO     | utils.logger:info:10 - MediaPipe PoseLandmarker otimizado inicializado com pose_landmarker_lite.task.
+2026-07-27 00:01:26.598 | INFO     | utils.logger:info:10 - Sistema ativo com PoseLandmarker e Face Mesh. Pressione ESC para encerrar.
+2026-07-27 00:01:26.802 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=110.5, nitidez=37.6
+2026-07-27 00:01:26.802 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-07-27 00:01:26.831 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=110.5, nitidez=37.6
+2026-07-27 00:01:26.832 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:26.832 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:26.833 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'ARM_RAISED' registrado para Track #1 (Risco: 100)
+2026-07-27 00:01:26.834 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-07-27 00:01:27.402 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=107.0, nitidez=33.2
+2026-07-27 00:01:27.402 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:27.402 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:27.877 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:28.011 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=131.7, nitidez=23.4
+2026-07-27 00:01:28.014 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:28.014 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:28.182 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:28.307 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.0, nitidez=17.8
+2026-07-27 00:01:28.307 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:28.308 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:28.428 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=123.0, nitidez=1000.9
+2026-07-27 00:01:28.428 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:28.428 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:28.549 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=128.1, nitidez=26.0
+2026-07-27 00:01:28.549 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:28.549 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:28.668 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=133.9, nitidez=53.0
+2026-07-27 00:01:28.668 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:28.668 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:28.790 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=141.0, nitidez=36.7
+2026-07-27 00:01:28.790 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:28.790 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:28.913 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=139.4, nitidez=45.5
+2026-07-27 00:01:28.913 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:28.913 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:29.034 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=132.8, nitidez=82.5
+2026-07-27 00:01:29.034 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:29.034 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:29.143 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=131.1, nitidez=109.8
+2026-07-27 00:01:29.143 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:29.143 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:29.252 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=129.8, nitidez=178.8
+2026-07-27 00:01:29.252 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:29.252 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:29.373 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=128.6, nitidez=177.4
+2026-07-27 00:01:29.374 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:29.374 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:29.486 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.0, nitidez=173.4
+2026-07-27 00:01:29.486 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:29.487 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:29.608 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=123.9, nitidez=176.6
+2026-07-27 00:01:29.608 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:29.609 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:29.730 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=125.8, nitidez=160.7
+2026-07-27 00:01:29.731 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:29.731 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:29.852 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=125.5, nitidez=145.1
+2026-07-27 00:01:29.852 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:29.853 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:29.974 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=125.8, nitidez=136.1
+2026-07-27 00:01:29.974 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:29.974 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:30.097 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=123.7, nitidez=173.1
+2026-07-27 00:01:30.097 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:30.098 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:30.222 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=125.0, nitidez=159.0
+2026-07-27 00:01:30.222 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:30.223 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:30.342 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=125.6, nitidez=160.5
+2026-07-27 00:01:30.343 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:30.343 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:30.450 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=126.7, nitidez=159.1
+2026-07-27 00:01:30.450 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:30.450 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:30.564 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=126.2, nitidez=172.7
+2026-07-27 00:01:30.564 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:30.564 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:30.676 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.1, nitidez=167.4
+2026-07-27 00:01:30.677 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:30.677 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:30.794 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.7, nitidez=152.9
+2026-07-27 00:01:30.794 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:30.794 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:30.905 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=128.2, nitidez=157.1
+2026-07-27 00:01:30.905 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:30.905 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:31.029 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=128.2, nitidez=166.7
+2026-07-27 00:01:31.029 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:31.030 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:31.135 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=128.0, nitidez=172.8
+2026-07-27 00:01:31.136 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:31.136 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:31.257 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.3, nitidez=168.8
+2026-07-27 00:01:31.257 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:31.257 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:31.380 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.1, nitidez=160.3
+2026-07-27 00:01:31.381 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:31.381 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:31.489 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.6, nitidez=172.1
+2026-07-27 00:01:31.490 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:31.490 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:31.612 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=128.1, nitidez=161.2
+2026-07-27 00:01:31.613 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:31.613 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:31.733 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.7, nitidez=162.8
+2026-07-27 00:01:31.733 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:31.733 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:31.846 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=128.3, nitidez=164.8
+2026-07-27 00:01:31.847 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:31.847 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:31.847 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'ARM_RAISED' registrado para Track #1 (Risco: 100)
+2026-07-27 00:01:31.848 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-07-27 00:01:32.376 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=129.1, nitidez=146.4
+2026-07-27 00:01:32.376 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:32.376 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:32.490 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=128.1, nitidez=132.8
+2026-07-27 00:01:32.490 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:32.490 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:32.603 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=126.5, nitidez=158.9
+2026-07-27 00:01:32.603 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:32.603 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:32.723 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=125.9, nitidez=132.1
+2026-07-27 00:01:32.723 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:32.723 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:32.844 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.1, nitidez=105.0
+2026-07-27 00:01:32.845 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:32.845 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:32.951 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=125.1, nitidez=90.3
+2026-07-27 00:01:32.951 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:32.951 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:33.063 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.1, nitidez=101.4
+2026-07-27 00:01:33.063 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:33.063 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:33.179 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.3, nitidez=138.7
+2026-07-27 00:01:33.180 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:33.180 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:33.313 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.1, nitidez=160.6
+2026-07-27 00:01:33.314 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:33.314 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:33.442 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.1, nitidez=169.4
+2026-07-27 00:01:33.443 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:33.443 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:33.561 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.6, nitidez=185.1
+2026-07-27 00:01:33.561 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:33.561 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:33.673 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=129.1, nitidez=162.1
+2026-07-27 00:01:33.674 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:33.674 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:33.821 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.3, nitidez=187.4
+2026-07-27 00:01:33.822 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:33.822 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:33.942 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.5, nitidez=188.7
+2026-07-27 00:01:33.943 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:33.943 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:34.063 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.3, nitidez=192.4
+2026-07-27 00:01:34.063 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:34.064 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:34.190 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.1, nitidez=203.1
+2026-07-27 00:01:34.190 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:34.191 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:34.311 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=126.9, nitidez=223.1
+2026-07-27 00:01:34.312 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:34.312 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:34.436 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=126.7, nitidez=202.5
+2026-07-27 00:01:34.436 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:34.436 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:34.562 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.4, nitidez=235.0
+2026-07-27 00:01:34.563 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:34.563 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:34.684 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=123.2, nitidez=212.0
+2026-07-27 00:01:34.684 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:34.684 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:34.797 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=124.3, nitidez=243.0
+2026-07-27 00:01:34.797 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:34.797 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:34.917 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=124.2, nitidez=209.0
+2026-07-27 00:01:34.917 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:34.918 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:35.032 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=125.2, nitidez=167.7
+2026-07-27 00:01:35.033 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:35.033 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:35.151 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=124.2, nitidez=149.4
+2026-07-27 00:01:35.151 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:35.151 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:35.262 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=124.9, nitidez=149.9
+2026-07-27 00:01:35.262 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:35.262 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:35.380 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=125.4, nitidez=152.6
+2026-07-27 00:01:35.380 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:35.381 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:35.501 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=125.4, nitidez=157.5
+2026-07-27 00:01:35.502 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:35.502 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:35.614 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=126.1, nitidez=174.7
+2026-07-27 00:01:35.614 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:35.615 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:35.733 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=124.7, nitidez=107.6
+2026-07-27 00:01:35.734 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:35.734 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:35.843 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=124.4, nitidez=76.1
+2026-07-27 00:01:35.843 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:35.844 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:35.958 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.8, nitidez=78.4
+2026-07-27 00:01:35.959 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:35.959 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:36.080 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.6, nitidez=95.5
+2026-07-27 00:01:36.080 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:36.200 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.0, nitidez=113.4
+2026-07-27 00:01:36.200 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:36.200 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:36.201 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'FALLEN' registrado para Track #1 (Risco: 100)
+2026-07-27 00:01:36.201 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-07-27 00:01:36.714 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.4, nitidez=134.1
+2026-07-27 00:01:36.714 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:36.714 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:36.830 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=120.6, nitidez=117.9
+2026-07-27 00:01:36.830 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:36.830 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:36.941 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=120.5, nitidez=103.8
+2026-07-27 00:01:36.942 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:36.942 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:37.058 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.4, nitidez=99.6
+2026-07-27 00:01:37.059 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:37.059 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:37.172 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.0, nitidez=86.9
+2026-07-27 00:01:37.172 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:37.172 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:37.295 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.6, nitidez=85.6
+2026-07-27 00:01:37.296 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:37.296 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:37.417 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=120.0, nitidez=86.8
+2026-07-27 00:01:37.417 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:37.418 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:37.538 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=120.0, nitidez=109.7
+2026-07-27 00:01:37.539 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:37.539 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:37.539 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'ARM_RAISED' registrado para Track #1 (Risco: 100)
+2026-07-27 00:01:37.540 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-07-27 00:01:38.055 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.5, nitidez=114.7
+2026-07-27 00:01:38.055 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:38.055 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:38.174 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.1, nitidez=103.0
+2026-07-27 00:01:38.174 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:38.295 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.6, nitidez=88.0
+2026-07-27 00:01:38.295 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:38.295 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:38.408 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.2, nitidez=92.5
+2026-07-27 00:01:38.408 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:38.408 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:38.538 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=122.3, nitidez=91.4
+2026-07-27 00:01:38.538 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:38.538 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:38.663 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=122.8, nitidez=91.7
+2026-07-27 00:01:38.664 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:38.664 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:38.791 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=123.5, nitidez=105.0
+2026-07-27 00:01:38.791 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:38.792 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:38.912 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=123.3, nitidez=89.7
+2026-07-27 00:01:38.912 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:38.913 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:39.030 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.7, nitidez=65.0
+2026-07-27 00:01:39.031 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:39.031 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:39.147 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=120.8, nitidez=78.3
+2026-07-27 00:01:39.148 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:39.148 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:39.264 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.1, nitidez=96.0
+2026-07-27 00:01:39.265 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:39.265 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:39.377 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.2, nitidez=102.0
+2026-07-27 00:01:39.377 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:39.378 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:39.496 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=112.4, nitidez=155.4
+2026-07-27 00:01:39.496 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:39.496 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:39.609 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=111.1, nitidez=136.8
+2026-07-27 00:01:39.609 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:39.609 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:39.727 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=112.8, nitidez=123.5
+2026-07-27 00:01:39.728 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:39.728 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:39.850 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.3, nitidez=136.5
+2026-07-27 00:01:39.850 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:39.850 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:39.973 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.4, nitidez=116.0
+2026-07-27 00:01:39.973 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:39.974 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:40.096 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=114.7, nitidez=110.3
+2026-07-27 00:01:40.097 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:40.097 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:40.222 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=132.1, nitidez=132.9
+2026-07-27 00:01:40.222 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:40.223 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:40.344 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=131.1, nitidez=129.5
+2026-07-27 00:01:40.344 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:40.344 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:40.466 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.0, nitidez=125.6
+2026-07-27 00:01:40.466 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:40.466 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:40.590 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.4, nitidez=110.0
+2026-07-27 00:01:40.591 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:40.591 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:40.712 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.4, nitidez=118.1
+2026-07-27 00:01:40.712 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:40.712 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:40.835 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=117.4, nitidez=89.5
+2026-07-27 00:01:40.835 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:40.835 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:40.958 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.6, nitidez=81.8
+2026-07-27 00:01:40.958 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:40.958 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:41.077 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.7, nitidez=85.9
+2026-07-27 00:01:41.078 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:41.078 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:41.189 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=117.0, nitidez=106.5
+2026-07-27 00:01:41.189 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:41.189 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:41.333 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:41.453 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.7, nitidez=135.0
+2026-07-27 00:01:41.453 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:41.453 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:41.573 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=124.1, nitidez=146.7
+2026-07-27 00:01:41.573 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:41.573 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:41.683 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.2, nitidez=144.4
+2026-07-27 00:01:41.683 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:41.683 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:41.798 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.4, nitidez=134.2
+2026-07-27 00:01:41.798 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:41.799 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:41.911 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.9, nitidez=101.2
+2026-07-27 00:01:41.912 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:41.912 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:42.023 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.2, nitidez=120.4
+2026-07-27 00:01:42.023 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:42.023 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:42.024 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'FALLEN' registrado para Track #1 (Risco: 100)
+2026-07-27 00:01:42.025 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-07-27 00:01:42.545 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=122.3, nitidez=152.4
+2026-07-27 00:01:42.545 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:42.545 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:42.660 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=122.0, nitidez=143.1
+2026-07-27 00:01:42.661 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:42.661 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:42.783 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=120.9, nitidez=117.9
+2026-07-27 00:01:42.783 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:42.783 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:42.784 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'ARM_RAISED' registrado para Track #1 (Risco: 100)
+2026-07-27 00:01:42.785 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-07-27 00:01:43.303 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=120.3, nitidez=88.3
+2026-07-27 00:01:43.303 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:43.303 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:43.415 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=120.4, nitidez=83.4
+2026-07-27 00:01:43.415 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:43.415 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:43.538 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.0, nitidez=80.1
+2026-07-27 00:01:43.538 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:43.538 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:43.662 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=130.8, nitidez=69.9
+2026-07-27 00:01:43.663 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:43.663 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:43.775 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=134.2, nitidez=62.1
+2026-07-27 00:01:43.776 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:43.776 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:43.897 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=133.4, nitidez=61.1
+2026-07-27 00:01:43.897 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:43.897 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:44.023 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=129.9, nitidez=89.3
+2026-07-27 00:01:44.023 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:44.023 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:44.141 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=129.3, nitidez=98.2
+2026-07-27 00:01:44.142 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:44.142 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:44.261 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=126.7, nitidez=119.4
+2026-07-27 00:01:44.262 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:44.262 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:44.375 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=124.6, nitidez=138.5
+2026-07-27 00:01:44.375 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:44.375 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:44.493 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=124.8, nitidez=127.4
+2026-07-27 00:01:44.494 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:44.494 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:44.634 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=123.1, nitidez=113.3
+2026-07-27 00:01:44.635 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:44.635 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:44.754 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=114.5, nitidez=116.2
+2026-07-27 00:01:44.755 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:44.755 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:44.872 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=109.2, nitidez=120.4
+2026-07-27 00:01:44.872 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:44.872 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:44.995 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=105.8, nitidez=107.7
+2026-07-27 00:01:44.995 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:44.995 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:45.105 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=104.8, nitidez=129.9
+2026-07-27 00:01:45.105 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:45.106 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:45.228 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=108.6, nitidez=94.2
+2026-07-27 00:01:45.229 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:45.229 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:45.339 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=109.4, nitidez=86.4
+2026-07-27 00:01:45.339 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:45.339 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:45.464 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=112.9, nitidez=89.8
+2026-07-27 00:01:45.464 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:45.464 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:45.572 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.0, nitidez=72.7
+2026-07-27 00:01:45.572 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:45.573 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:45.694 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.0, nitidez=64.2
+2026-07-27 00:01:45.694 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:45.695 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:45.818 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=129.4, nitidez=75.3
+2026-07-27 00:01:45.819 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:45.819 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:45.939 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=137.8, nitidez=70.9
+2026-07-27 00:01:45.940 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:45.940 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:46.054 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=145.9, nitidez=59.8
+2026-07-27 00:01:46.054 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:46.054 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:46.171 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=146.7, nitidez=48.4
+2026-07-27 00:01:46.171 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:46.171 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:46.298 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=138.8, nitidez=89.7
+2026-07-27 00:01:46.298 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:46.298 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:46.467 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=136.5, nitidez=107.8
+2026-07-27 00:01:46.467 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:46.468 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:46.589 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=131.6, nitidez=253.0
+2026-07-27 00:01:46.590 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:46.590 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:46.710 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.1, nitidez=206.3
+2026-07-27 00:01:46.711 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:46.711 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:46.835 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=123.0, nitidez=124.1
+2026-07-27 00:01:46.836 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:46.836 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:46.958 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.6, nitidez=108.1
+2026-07-27 00:01:46.958 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:46.959 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:47.080 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.9, nitidez=91.4
+2026-07-27 00:01:47.080 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:47.080 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:47.200 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.0, nitidez=91.6
+2026-07-27 00:01:47.200 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:47.200 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:47.310 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=110.7, nitidez=107.3
+2026-07-27 00:01:47.311 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:47.311 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:47.311 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'FALLEN' registrado para Track #1 (Risco: 100)
+2026-07-27 00:01:47.312 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-07-27 00:01:47.830 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=120.4, nitidez=601.0
+2026-07-27 00:01:47.831 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:47.831 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:47.831 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'ARM_RAISED' registrado para Track #1 (Risco: 100)
+2026-07-27 00:01:47.832 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-07-27 00:01:48.346 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.8, nitidez=49.4
+2026-07-27 00:01:48.346 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:48.464 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.3, nitidez=42.1
+2026-07-27 00:01:48.465 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:48.580 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.9, nitidez=47.3
+2026-07-27 00:01:48.580 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:48.580 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:48.698 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.5, nitidez=52.7
+2026-07-27 00:01:48.698 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:48.810 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=117.1, nitidez=70.2
+2026-07-27 00:01:48.810 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:48.810 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:48.931 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=117.5, nitidez=72.2
+2026-07-27 00:01:48.931 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:49.054 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=117.9, nitidez=82.0
+2026-07-27 00:01:49.055 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:49.188 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.4, nitidez=80.8
+2026-07-27 00:01:49.188 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:49.311 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=117.4, nitidez=76.0
+2026-07-27 00:01:49.311 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:49.432 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=117.3, nitidez=72.6
+2026-07-27 00:01:49.432 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:49.556 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=117.4, nitidez=68.6
+2026-07-27 00:01:49.557 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:49.691 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.3, nitidez=65.6
+2026-07-27 00:01:49.691 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:49.691 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:49.814 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=120.5, nitidez=65.0
+2026-07-27 00:01:49.814 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:49.946 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.2, nitidez=71.5
+2026-07-27 00:01:49.947 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:50.071 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.9, nitidez=70.4
+2026-07-27 00:01:50.071 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:50.188 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.3, nitidez=74.7
+2026-07-27 00:01:50.189 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:50.308 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.7, nitidez=70.2
+2026-07-27 00:01:50.309 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:50.438 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=114.1, nitidez=69.9
+2026-07-27 00:01:50.438 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:50.568 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=114.2, nitidez=62.8
+2026-07-27 00:01:50.568 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:50.569 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:50.681 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=112.8, nitidez=65.6
+2026-07-27 00:01:50.681 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:50.789 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=112.3, nitidez=49.4
+2026-07-27 00:01:50.790 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:50.909 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=114.8, nitidez=39.1
+2026-07-27 00:01:50.910 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:51.030 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.7, nitidez=57.5
+2026-07-27 00:01:51.030 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:51.154 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.4, nitidez=62.1
+2026-07-27 00:01:51.154 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:51.155 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:51.265 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=117.4, nitidez=55.8
+2026-07-27 00:01:51.265 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:51.383 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.1, nitidez=52.4
+2026-07-27 00:01:51.383 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:51.493 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=128.1, nitidez=54.2
+2026-07-27 00:01:51.494 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:01:51.494 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:01:51.495 | INFO     | utils.logger:info:10 - Encerrando a pedido do usuário.
+2026-07-27 00:01:52.472 | INFO     | utils.logger:info:10 - Câmera encerrada.
+2026-07-27 00:01:52.495 | INFO     | utils.logger:info:10 - === Cam-Security Finalizado ===
+2026-07-27 00:02:03.957 | INFO     | utils.logger:info:10 - === Iniciando Backend Cam-Security ===
+2026-07-27 00:02:03.958 | INFO     | utils.logger:info:10 - Inicializando câmera física (ID: 0)...
+2026-07-27 00:02:04.137 | INFO     | utils.logger:info:10 - Câmera inicializada com sucesso.
+2026-07-27 00:02:04.202 | INFO     | utils.logger:info:10 - MediaPipe FaceLandmarker (468 landmarks Mesh) ativado com sucesso!
+2026-07-27 00:02:04.251 | INFO     | utils.logger:info:10 - MediaPipe FaceLandmarker (468 landmarks Mesh) ativado com sucesso!
+2026-07-27 00:02:05.584 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-07-27 00:02:05.672 | INFO     | utils.logger:info:10 - MediaPipe PoseLandmarker otimizado inicializado com pose_landmarker_lite.task.
+2026-07-27 00:02:05.673 | INFO     | utils.logger:info:10 - Sistema ativo com PoseLandmarker e Face Mesh. Pressione ESC para encerrar.
+2026-07-27 00:02:05.861 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.3, nitidez=125.7
+2026-07-27 00:02:05.862 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-07-27 00:02:05.889 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.3, nitidez=125.7
+2026-07-27 00:02:05.890 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:05.890 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:05.890 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'FALLEN' registrado para Track #1 (Risco: 100)
+2026-07-27 00:02:05.891 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-07-27 00:02:06.448 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.5, nitidez=109.3
+2026-07-27 00:02:06.448 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:06.448 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:06.557 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.2, nitidez=112.0
+2026-07-27 00:02:06.557 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:06.557 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:06.675 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.5, nitidez=112.7
+2026-07-27 00:02:06.675 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:06.675 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:06.789 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=124.0, nitidez=134.3
+2026-07-27 00:02:06.790 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:06.790 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:06.907 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=126.7, nitidez=145.1
+2026-07-27 00:02:06.908 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:06.908 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:07.029 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=122.8, nitidez=135.4
+2026-07-27 00:02:07.030 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:07.030 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:07.166 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.3, nitidez=122.0
+2026-07-27 00:02:07.166 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:07.166 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:07.294 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.9, nitidez=125.4
+2026-07-27 00:02:07.294 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:07.294 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:07.421 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=122.8, nitidez=131.9
+2026-07-27 00:02:07.421 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:07.421 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:07.539 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.6, nitidez=144.4
+2026-07-27 00:02:07.540 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:07.540 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:07.686 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.9, nitidez=114.3
+2026-07-27 00:02:07.686 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:07.686 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:07.823 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.7, nitidez=97.6
+2026-07-27 00:02:07.824 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:07.824 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:07.949 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.7, nitidez=104.2
+2026-07-27 00:02:07.950 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:07.950 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:08.065 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.1, nitidez=124.2
+2026-07-27 00:02:08.066 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:08.066 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:08.187 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=128.4, nitidez=171.8
+2026-07-27 00:02:08.188 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:08.188 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:08.302 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.3, nitidez=177.9
+2026-07-27 00:02:08.302 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:08.302 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:08.424 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.4, nitidez=173.7
+2026-07-27 00:02:08.425 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:08.425 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:08.537 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=125.3, nitidez=86.7
+2026-07-27 00:02:08.537 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:08.537 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:08.652 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=122.4, nitidez=73.7
+2026-07-27 00:02:08.652 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:08.652 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:08.772 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.0, nitidez=71.2
+2026-07-27 00:02:08.773 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:08.773 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:08.885 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.4, nitidez=103.3
+2026-07-27 00:02:08.886 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:09.300 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:09.301 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'ARM_RAISED' registrado para Track #1 (Risco: 100)
+2026-07-27 00:02:09.301 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-07-27 00:02:09.819 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.6, nitidez=102.0
+2026-07-27 00:02:09.820 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:09.820 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:09.935 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.3, nitidez=113.0
+2026-07-27 00:02:09.935 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:09.935 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:10.049 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.2, nitidez=122.0
+2026-07-27 00:02:10.050 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:10.050 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:10.167 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.0, nitidez=117.5
+2026-07-27 00:02:10.168 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:10.168 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:10.279 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.5, nitidez=120.3
+2026-07-27 00:02:10.279 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:10.280 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:10.391 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.4, nitidez=116.1
+2026-07-27 00:02:10.392 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:10.392 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:10.510 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.5, nitidez=117.8
+2026-07-27 00:02:10.510 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:10.510 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:10.621 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.6, nitidez=106.2
+2026-07-27 00:02:10.621 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:10.621 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:10.738 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=117.6, nitidez=99.9
+2026-07-27 00:02:10.739 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:10.739 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:10.861 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.0, nitidez=85.2
+2026-07-27 00:02:10.862 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:10.862 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:10.986 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.2, nitidez=112.8
+2026-07-27 00:02:10.986 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:10.986 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:11.105 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.6, nitidez=121.3
+2026-07-27 00:02:11.105 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:11.217 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.4, nitidez=118.4
+2026-07-27 00:02:11.217 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:11.340 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.0, nitidez=133.0
+2026-07-27 00:02:11.340 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:11.598 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.5, nitidez=132.9
+2026-07-27 00:02:11.599 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:11.709 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.5, nitidez=132.9
+2026-07-27 00:02:11.710 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:11.818 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.7, nitidez=133.9
+2026-07-27 00:02:11.818 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:11.931 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.5, nitidez=114.0
+2026-07-27 00:02:11.931 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:12.048 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.5, nitidez=130.2
+2026-07-27 00:02:12.048 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:12.166 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.7, nitidez=127.5
+2026-07-27 00:02:12.166 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:12.286 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.7, nitidez=131.7
+2026-07-27 00:02:12.287 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:12.287 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:12.412 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=117.1, nitidez=142.7
+2026-07-27 00:02:12.412 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:12.412 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:12.541 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.5, nitidez=129.1
+2026-07-27 00:02:12.541 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:12.542 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:12.654 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.3, nitidez=96.1
+2026-07-27 00:02:12.655 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:12.655 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:12.656 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'FALLEN' registrado para Track #1 (Risco: 100)
+2026-07-27 00:02:12.656 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-07-27 00:02:13.177 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=125.9, nitidez=167.7
+2026-07-27 00:02:13.177 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:13.177 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:13.296 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=124.8, nitidez=166.6
+2026-07-27 00:02:13.296 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:13.296 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:13.404 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=124.9, nitidez=161.4
+2026-07-27 00:02:13.404 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:13.405 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:13.517 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=125.7, nitidez=167.9
+2026-07-27 00:02:13.518 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:13.518 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:13.641 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=126.7, nitidez=171.9
+2026-07-27 00:02:13.641 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:13.641 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:13.760 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=126.5, nitidez=170.2
+2026-07-27 00:02:13.760 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:13.760 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:13.887 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.0, nitidez=171.5
+2026-07-27 00:02:13.888 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:13.888 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:14.000 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.2, nitidez=174.5
+2026-07-27 00:02:14.001 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:14.001 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:14.120 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.2, nitidez=176.6
+2026-07-27 00:02:14.120 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:14.121 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:14.240 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.7, nitidez=179.0
+2026-07-27 00:02:14.241 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:14.241 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:14.360 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=128.0, nitidez=108.8
+2026-07-27 00:02:14.360 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:14.360 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:14.472 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=127.5, nitidez=92.0
+2026-07-27 00:02:14.472 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:14.472 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:14.473 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'ARM_RAISED' registrado para Track #1 (Risco: 100)
+2026-07-27 00:02:14.474 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-07-27 00:02:14.984 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.8, nitidez=246.8
+2026-07-27 00:02:14.984 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:14.984 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:15.103 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=122.4, nitidez=277.5
+2026-07-27 00:02:15.103 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:15.103 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:15.210 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=120.2, nitidez=335.3
+2026-07-27 00:02:15.210 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:15.211 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:15.324 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.2, nitidez=209.1
+2026-07-27 00:02:15.324 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:15.324 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:15.431 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.9, nitidez=256.0
+2026-07-27 00:02:15.431 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:15.432 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:15.559 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=113.4, nitidez=265.1
+2026-07-27 00:02:15.560 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:15.560 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:15.680 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.7, nitidez=305.0
+2026-07-27 00:02:15.681 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=0.96)
+2026-07-27 00:02:15.681 | INFO     | utils.logger:info:10 - [Tracker] Pessoa reidentificada! ID #1
+2026-07-27 00:02:15.711 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.7, nitidez=305.0
+2026-07-27 00:02:15.712 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:15.712 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:15.822 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.6, nitidez=282.1
+2026-07-27 00:02:15.822 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-07-27 00:02:15.823 | INFO     | utils.logger:info:10 - [Tracker] Pessoa reidentificada! ID #1
+2026-07-27 00:02:15.849 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.6, nitidez=282.1
+2026-07-27 00:02:15.850 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:15.850 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:15.960 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.9, nitidez=307.0
+2026-07-27 00:02:15.960 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-07-27 00:02:15.960 | INFO     | utils.logger:info:10 - [Tracker] Pessoa reidentificada! ID #1
+2026-07-27 00:02:15.984 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.9, nitidez=307.0
+2026-07-27 00:02:15.985 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:15.985 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:16.097 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.8, nitidez=419.4
+2026-07-27 00:02:16.098 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-07-27 00:02:16.098 | INFO     | utils.logger:info:10 - [Tracker] Pessoa reidentificada! ID #1
+2026-07-27 00:02:16.122 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.8, nitidez=419.4
+2026-07-27 00:02:16.122 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:16.122 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:16.224 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=117.2, nitidez=280.9
+2026-07-27 00:02:16.224 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-07-27 00:02:16.225 | INFO     | utils.logger:info:10 - [Tracker] Pessoa reidentificada! ID #1
+2026-07-27 00:02:16.250 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=117.2, nitidez=280.9
+2026-07-27 00:02:16.251 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:16.251 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:16.358 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.3, nitidez=313.4
+2026-07-27 00:02:16.359 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:16.359 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:16.481 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=116.5, nitidez=332.0
+2026-07-27 00:02:16.481 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:16.481 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:16.590 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.2, nitidez=287.5
+2026-07-27 00:02:16.591 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:16.591 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:16.714 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=120.3, nitidez=388.5
+2026-07-27 00:02:16.714 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:16.714 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:16.837 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.7, nitidez=331.0
+2026-07-27 00:02:16.838 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:16.838 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:16.964 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.0, nitidez=291.1
+2026-07-27 00:02:16.964 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:16.964 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:17.095 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=117.7, nitidez=294.1
+2026-07-27 00:02:17.095 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:17.096 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:17.228 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.3, nitidez=333.3
+2026-07-27 00:02:17.228 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:17.228 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:17.347 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=117.0, nitidez=277.1
+2026-07-27 00:02:17.348 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:17.348 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:17.461 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=120.8, nitidez=267.2
+2026-07-27 00:02:17.461 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:17.461 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:17.595 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=121.5, nitidez=263.5
+2026-07-27 00:02:17.596 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:17.596 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:17.746 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=123.2, nitidez=207.6
+2026-07-27 00:02:17.746 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:17.747 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:17.890 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=125.2, nitidez=177.9
+2026-07-27 00:02:17.891 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:17.891 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:18.022 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=123.7, nitidez=105.6
+2026-07-27 00:02:18.023 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:18.023 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:18.148 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=124.1, nitidez=82.7
+2026-07-27 00:02:18.148 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:18.148 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:18.149 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'FALLEN' registrado para Track #1 (Risco: 100)
+2026-07-27 00:02:18.150 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-07-27 00:02:18.674 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.5, nitidez=76.4
+2026-07-27 00:02:18.675 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:18.675 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:18.791 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.1, nitidez=68.1
+2026-07-27 00:02:18.792 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:18.792 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:18.907 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.5, nitidez=89.3
+2026-07-27 00:02:18.907 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:18.907 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:19.023 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.4, nitidez=81.8
+2026-07-27 00:02:19.023 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:19.023 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:19.144 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.6, nitidez=84.1
+2026-07-27 00:02:19.145 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:19.145 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:19.265 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.0, nitidez=113.4
+2026-07-27 00:02:19.265 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:19.266 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:19.384 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.3, nitidez=121.3
+2026-07-27 00:02:19.384 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:19.384 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:19.498 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.1, nitidez=108.7
+2026-07-27 00:02:19.498 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:19.498 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:19.612 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.9, nitidez=133.7
+2026-07-27 00:02:19.612 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:19.612 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:19.729 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.2, nitidez=120.6
+2026-07-27 00:02:19.729 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:19.729 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:19.840 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=118.8, nitidez=126.1
+2026-07-27 00:02:19.841 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:19.841 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:19.960 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.6, nitidez=132.2
+2026-07-27 00:02:19.960 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:19.960 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:20.072 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=119.2, nitidez=133.9
+2026-07-27 00:02:20.073 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:20.073 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:20.073 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'ARM_RAISED' registrado para Track #1 (Risco: 100)
+2026-07-27 00:02:20.074 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-07-27 00:02:20.601 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=115.8, nitidez=70.2
+2026-07-27 00:02:20.601 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:20.601 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:20.716 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=120.0, nitidez=91.8
+2026-07-27 00:02:20.716 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-07-27 00:02:20.716 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-07-27 00:02:20.735 | INFO     | utils.logger:info:10 - Encerrando a pedido do usuário.
+2026-07-27 00:02:21.236 | INFO     | utils.logger:info:10 - Câmera encerrada.
+2026-07-27 00:02:21.255 | INFO     | utils.logger:info:10 - === Cam-Security Finalizado ===
