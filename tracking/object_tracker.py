@@ -1,4 +1,5 @@
 import time
+import math
 from utils.logger import sys_logger
 
 def compute_iou(boxA, boxB):
@@ -19,55 +20,69 @@ def compute_iou(boxA, boxB):
     return iou
 
 class ObjectTracker:
-    def __init__(self, id_manager, ttl_seconds=300.0, iou_threshold=0.3):
+    def __init__(self, id_manager, ttl_seconds=300.0, iou_threshold=0.15):
         self.id_manager = id_manager
         self.ttl_seconds = ttl_seconds
         self.iou_threshold = iou_threshold
-        self.tracks = {}  # track_id -> {"box": [x1, y1, x2, y2], "last_seen": timestamp, "triggered": bool}
+        # tracks: track_id -> {"box": [...], "last_seen": timestamp, "triggered": bool, "age": int}
+        self.tracks = {}
 
     def update(self, detected_boxes, face_reid_callback=None, frame=None):
-        """
-        Associa detecções do frame atual aos tracks ativos via IoU.
-        Retorna apenas os tracks ATIVOS (vistos no frame atual ou há no máximo 1 segundo).
-        Retém tracks na memória por 5 minutos (300s) para reidentificação.
-        """
         now = time.time()
         updated_tracks = {}
-        unmatched_boxes = []
+        unmatched_box_indices = list(range(len(detected_boxes)))
 
-        # Tentar IoU matching com tracks recentemente vistos (< 2 segundos)
-        active_candidate_ids = [
+        # Tentar IoU + Center Distance matching com candidate tracks recentemente vistos (< 2.0s)
+        candidate_ids = [
             tid for tid, info in self.tracks.items()
             if (now - info["last_seen"]) <= 2.0
         ]
-        used_track_ids = set()
 
-        for box_info in detected_boxes:
-            box = box_info["box"] if isinstance(box_info, dict) else box_info
-            best_iou = 0.0
-            best_id = None
+        # Monta matriz de correspondência com pares (score, tid, box_idx)
+        match_candidates = []
+        for box_idx in unmatched_box_indices:
+            box = detected_boxes[box_idx]["box"] if isinstance(detected_boxes[box_idx], dict) else detected_boxes[box_idx]
+            cx1, cy1 = (box[0] + box[2]) / 2.0, (box[1] + box[3]) / 2.0
+            h1 = abs(box[3] - box[1])
 
-            for tid in active_candidate_ids:
-                if tid in used_track_ids:
-                    continue
+            for tid in candidate_ids:
                 prev_box = self.tracks[tid]["box"]
                 iou = compute_iou(box, prev_box)
-                if iou > best_iou and iou >= self.iou_threshold:
-                    best_iou = iou
-                    best_id = tid
+                cx2, cy2 = (prev_box[0] + prev_box[2]) / 2.0, (prev_box[1] + prev_box[3]) / 2.0
+                dist = math.sqrt((cx2 - cx1)**2 + (cy2 - cy1)**2)
 
-            if best_id is not None:
-                used_track_ids.add(best_id)
-                updated_tracks[best_id] = {
-                    "box": box,
-                    "last_seen": now,
-                    "triggered": self.tracks[best_id].get("triggered", False)
-                }
-            else:
-                unmatched_boxes.append(box)
+                # Se houver sobreposição IoU >= 0.15 OU distância do centro for pequena (< 40% da altura)
+                if iou >= self.iou_threshold or (h1 > 0 and (dist / h1) < 0.40):
+                    # Score ponderado: prioriza IoU alto, com bônus de proximidade de centro
+                    score = iou + max(0, 1.0 - (dist / (h1 + 1e-5)))
+                    match_candidates.append((score, tid, box_idx))
 
-        # Para caixas não associadas via IoU, tenta FaceReID contra a memória
-        for box in unmatched_boxes:
+        # Atribuição gulosa pela maior pontuação
+        match_candidates.sort(key=lambda x: x[0], reverse=True)
+        used_track_ids = set()
+        matched_box_indices = set()
+
+        for score, tid, box_idx in match_candidates:
+            if tid in used_track_ids or box_idx in matched_box_indices:
+                continue
+
+            used_track_ids.add(tid)
+            matched_box_indices.add(box_idx)
+            box = detected_boxes[box_idx]["box"] if isinstance(detected_boxes[box_idx], dict) else detected_boxes[box_idx]
+            prev_age = self.tracks[tid].get("age", 0)
+
+            updated_tracks[tid] = {
+                "box": box,
+                "last_seen": now,
+                "triggered": self.tracks[tid].get("triggered", False),
+                "age": prev_age + 1
+            }
+
+        # Para caixas não associadas via IoU/Centro, tenta FaceReID contra a memória
+        unmatched_box_indices = [i for i in unmatched_box_indices if i not in matched_box_indices]
+
+        for box_idx in unmatched_box_indices:
+            box = detected_boxes[box_idx]["box"] if isinstance(detected_boxes[box_idx], dict) else detected_boxes[box_idx]
             assigned_id = None
 
             if face_reid_callback and frame is not None:
@@ -77,21 +92,23 @@ class ObjectTracker:
                     matched_reid = face_reid_callback(person_crop)
                     if matched_reid is not None:
                         assigned_id = matched_reid
-                        sys_logger.info(f"[Tracker] Pessoa reidentificada! ID #{assigned_id}")
+                        sys_logger.info(f"[Tracker] Pessoa reidentificada via FaceReID! ID #{assigned_id}")
 
             if assigned_id is None:
                 assigned_id = self.id_manager.get_next_id()
 
+            prev_age = self.tracks.get(assigned_id, {}).get("age", 0)
             updated_tracks[assigned_id] = {
                 "box": box,
                 "last_seen": now,
-                "triggered": False
+                "triggered": False,
+                "age": prev_age + 1
             }
 
-        # Atualiza a memória de longo prazo do tracker
+        # Atualiza a memória do tracker
         self.tracks.update(updated_tracks)
 
-        # Remove da memória de longo prazo tracks mais antigos que 5 minutos (300s)
+        # Expira tracks na memória após TTL de 5 min (300s)
         expired_ids = [
             tid for tid, tinfo in self.tracks.items()
             if not tinfo.get("triggered", False) and (now - tinfo["last_seen"]) > self.ttl_seconds
@@ -100,7 +117,7 @@ class ObjectTracker:
             sys_logger.info(f"[Tracker] Track #{tid} expirou após 5 minutos.")
             self.tracks.pop(tid, None)
 
-        # Retorna apenas tracks ATIVOS no momento (vistos há menos de 1.0s) para renderização na tela
+        # Retorna apenas tracks visíveis atualmente (< 1.0s de latência)
         currently_visible_tracks = {
             tid: info for tid, info in self.tracks.items()
             if (now - info["last_seen"]) <= 1.0

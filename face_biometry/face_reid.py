@@ -12,9 +12,6 @@ class FaceReID:
         self.threshold = threshold
 
     def match_embedding(self, query_embedding: np.ndarray):
-        """
-        Retorna o track_id correspondente caso a similaridade seja superior ao threshold.
-        """
         if query_embedding is None or len(query_embedding) == 0:
             return None
 
@@ -30,6 +27,9 @@ class FaceReID:
             return None
 
         for track_id, stored_vec in stored_embeddings.items():
+            if stored_vec is None or len(query_embedding) != len(stored_vec):
+                continue
+
             s_norm = np.linalg.norm(stored_vec)
             if s_norm == 0:
                 continue

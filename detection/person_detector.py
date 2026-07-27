@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from utils.logger import sys_logger
+from tracking.object_tracker import compute_iou
 
 POSE_CONNECTIONS = [
     (11, 12), (11, 13), (13, 15),
@@ -9,6 +10,30 @@ POSE_CONNECTIONS = [
     (23, 25), (25, 27),
     (24, 26), (26, 28)
 ]
+
+def apply_nms(boxes, iou_threshold=0.45):
+    """
+    Aplica Non-Maximum Suppression (NMS) para eliminar caixas duplicadas da mesma pessoa no mesmo frame.
+    """
+    if not boxes:
+        return []
+
+    sorted_boxes = sorted(boxes, key=lambda b: b.get("confidence", 0.0), reverse=True)
+    selected_boxes = []
+
+    for item in sorted_boxes:
+        boxA = item["box"]
+        keep = True
+        for sel in selected_boxes:
+            boxB = sel["box"]
+            iou = compute_iou(boxA, boxB)
+            if iou > iou_threshold:
+                keep = False
+                break
+        if keep:
+            selected_boxes.append(item)
+
+    return selected_boxes
 
 class PersonDetector:
     def __init__(self):
@@ -24,41 +49,35 @@ class PersonDetector:
         if frame is None:
             return []
 
-        boxes = []
+        raw_boxes = []
         h, w = frame.shape[:2]
 
         if self.yolo_model:
             try:
-                # Confiança aumentada para 0.55 para filtrar falsos positivos
                 results = self.yolo_model(frame, verbose=False, conf=0.55)[0]
                 for det in results.boxes:
                     cls_id = int(det.cls[0])
-                    if cls_id == 0:  # Classe 0 = Pessoa
+                    if cls_id == 0:  # Classe 0 = Pessoa em COCO
                         x1, y1, x2, y2 = det.xyxy[0].cpu().numpy().astype(int)
                         conf = float(det.conf[0])
-                        boxes.append({"box": [int(x1), int(y1), int(x2), int(y2)], "confidence": conf})
-                if boxes:
-                    return boxes
+                        raw_boxes.append({"box": [int(x1), int(y1), int(x2), int(y2)], "confidence": conf})
             except Exception as e:
                 sys_logger.error(f"Erro na detecção YOLO: {e}")
 
-        if pose_landmarks_list:
+        # Se YOLO não detectou, usa fallback de pose
+        if not raw_boxes and pose_landmarks_list:
             for landmarks in pose_landmarks_list:
                 xs = [lm.x * w for lm in landmarks]
                 ys = [lm.y * h for lm in landmarks]
                 x1, y1 = max(0, int(min(xs)) - 20), max(0, int(min(ys)) - 20)
                 x2, y2 = min(w, int(max(xs)) + 20), min(h, int(max(ys)) + 20)
-                boxes.append({"box": [x1, y1, x2, y2], "confidence": 0.9})
+                raw_boxes.append({"box": [x1, y1, x2, y2], "confidence": 0.9})
 
-        return boxes
+        # Aplica NMS estrito para garantir que 1 pessoa NUNCA vire 2 caixas no mesmo frame
+        filtered_boxes = apply_nms(raw_boxes, iou_threshold=0.45)
+        return filtered_boxes
 
     def draw_annotations(self, frame, tracks, pose_landmarks_list=None, faces_data=None, alert_track_ids=None):
-        """
-        Desenha no frame:
-        1. Bounding Box da pessoa e rótulo de ID/Alerta.
-        2. Esqueleto corporal de Pose (linhas azuis/ciano).
-        3. Face Mesh e caixa do rosto (pontos amarelos).
-        """
         if frame is None:
             return None
 
@@ -66,10 +85,9 @@ class PersonDetector:
         h, w, _ = frame.shape
         alert_track_ids = alert_track_ids or []
 
-        # 1. Desenha o esqueleto corporal de Pose
+        # 1. Esqueleto corporal de Pose
         if pose_landmarks_list:
             for landmarks in pose_landmarks_list:
-                # Desenha conexões dos membros
                 for (start_idx, end_idx) in POSE_CONNECTIONS:
                     if start_idx < len(landmarks) and end_idx < len(landmarks):
                         x1 = int(landmarks[start_idx].x * w)
@@ -77,12 +95,11 @@ class PersonDetector:
                         x2 = int(landmarks[end_idx].x * w)
                         y2 = int(landmarks[end_idx].y * h)
                         cv2.line(canvas, (x1, y1), (x2, y2), (255, 255, 0), 2)
-                # Desenha articulações
                 for lm in landmarks:
                     cx, cy = int(lm.x * w), int(lm.y * h)
                     cv2.circle(canvas, (cx, cy), 3, (0, 255, 255), -1)
 
-        # 2. Desenha o Face Mesh e Bounding Box do Rosto
+        # 2. Face Mesh e caixa do rosto
         if faces_data:
             for face in faces_data:
                 box = face.get("box")
@@ -95,7 +112,7 @@ class PersonDetector:
                         lx, ly = int(lm.x * w), int(lm.y * h)
                         cv2.circle(canvas, (lx, ly), 1, (0, 255, 0), -1)
 
-        # 3. Desenha a caixa delimitadora da pessoa e o ID/Alerta
+        # 3. Bounding Box da pessoa e ID/Alerta
         for track_id, info in tracks.items():
             box = info.get("box")
             if not box or len(box) < 4:
