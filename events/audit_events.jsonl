@@ -68,3 +68,26 @@
 {"timestamp": "2026-07-27 00:31:11", "event_type": "ARM_RAISED", "track_id": 1, "risk_score": 30, "description": "Pose proibida: ARM_RAISED"}
 {"timestamp": "2026-07-27 00:31:18", "event_type": "ARM_RAISED", "track_id": 1, "risk_score": 30, "description": "Pose proibida: ARM_RAISED"}
 {"timestamp": "2026-07-27 00:31:23", "event_type": "ARM_RAISED", "track_id": 1, "risk_score": 30, "description": "Pose proibida: ARM_RAISED"}
+{"timestamp": "2026-08-27 00:40:32", "event_type": "COLISAO", "track_id": 13, "risk_score": 75, "description": "Colisão entre #13 e #17"}
+{"timestamp": "2026-08-27 00:40:35", "event_type": "COLISAO", "track_id": 13, "risk_score": 75, "description": "Colisão entre #13 e #17"}
+{"timestamp": "2026-08-27 00:40:52", "event_type": "COLISAO", "track_id": 39, "risk_score": 75, "description": "Colisão entre #39 e #44"}
+{"timestamp": "2026-08-27 00:49:51", "event_type": "COLISAO", "track_id": 221, "risk_score": 75, "description": "Colisão entre #221 e #224"}
+{"timestamp": "2026-08-27 01:10:33", "event_type": "COLISAO", "track_id": 100, "risk_score": 75, "description": "Colisão entre #100 e #1815"}
+{"timestamp": "2026-08-27 01:18:42", "event_type": "COLISAO", "track_id": 359, "risk_score": 75, "description": "Colisão entre #359 e #2435"}
+{"timestamp": "2026-08-27 01:28:38", "event_type": "COLISAO", "track_id": 133, "risk_score": 75, "description": "Colisão entre #133 e #3198"}
+{"timestamp": "2026-08-27 01:29:08", "event_type": "COLISAO", "track_id": 3239, "risk_score": 75, "description": "Colisão entre #3239 e #3243"}
+{"timestamp": "2026-08-27 01:33:13", "event_type": "COLISAO", "track_id": 359, "risk_score": 75, "description": "Colisão entre #359 e #3556"}
+{"timestamp": "2026-08-27 01:33:43", "event_type": "COLISAO", "track_id": 133, "risk_score": 75, "description": "Colisão entre #133 e #3593"}
+{"timestamp": "2026-08-27 01:39:16", "event_type": "COLISAO", "track_id": 142, "risk_score": 75, "description": "Colisão entre #142 e #4013"}
+{"timestamp": "2026-08-27 01:40:14", "event_type": "COLISAO", "track_id": 563, "risk_score": 75, "description": "Colisão entre #563 e #4089"}
+{"timestamp": "2026-08-27 01:40:54", "event_type": "COLISAO", "track_id": 3756, "risk_score": 75, "description": "Colisão entre #3756 e #3926"}
+{"timestamp": "2026-08-27 11:49:48", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #2"}
+{"timestamp": "2026-08-27 11:52:45", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #2"}
+{"timestamp": "2026-08-27 11:52:48", "event_type": "SOCO", "track_id": 1, "risk_score": 100, "description": "Ataque/Soco rápido detectado!"}
+{"timestamp": "2026-08-27 11:52:48", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #2"}
+{"timestamp": "2026-08-27 11:52:51", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #2"}
+{"timestamp": "2026-08-27 11:52:54", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #2"}
+{"timestamp": "2026-08-27 11:52:57", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #2"}
+{"timestamp": "2026-08-27 11:53:01", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #2"}
+{"timestamp": "2026-08-27 11:53:04", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #2"}
+{"timestamp": "2026-08-27 11:53:51", "event_type": "COLISAO", "track_id": 2, "risk_score": 75, "description": "Colisão entre #2 e #3"}

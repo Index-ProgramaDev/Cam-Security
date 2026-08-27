@@ -1,6 +1,9 @@
 # Camera settings
+# Para usar um vídeo em vez de webcam, deixe video_path apontando para um arquivo .mp4/.avi
+video_path: "./config/luta.mp4"
 camera_id: 0
-width: 640
-height: 480
+width: 320
+height: 240
+# Fallback se o arquivo não reportar FPS válido; o playback usa o FPS real do vídeo.
 fps: 30
 use_synthetic: false
