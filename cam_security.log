@@ -26266,3 +26266,250 @@ nutos.
 2026-08-27 11:53:58.925 | INFO     | utils.logger:info:10 - Encerrando a pedido do usuário.
 2026-08-27 11:53:58.957 | INFO     | utils.logger:info:10 - Câmera encerrada.
 2026-08-27 11:53:58.970 | INFO     | utils.logger:info:10 - === Cam-Security Finalizado ===
+2026-08-27 12:26:08.073 | INFO     | utils.logger:info:10 - === Iniciando Backend Cam-Security (v2.3 - NMS & Estabilidade Estrita) ===
+2026-08-27 12:26:08.074 | INFO     | utils.logger:info:10 - Inicializando vídeo (./config/luta.mp4)...
+2026-08-27 12:26:08.084 | INFO     | utils.logger:info:10 - Playback do vídeo em 25.00 FPS.
+2026-08-27 12:26:08.085 | INFO     | utils.logger:info:10 - Fonte de vídeo inicializada com sucesso.
+2026-08-27 12:26:08.128 | INFO     | utils.logger:info:10 - MediaPipe FaceLandmarker (468 landmarks Mesh) ativado com sucesso!
+2026-08-27 12:26:08.169 | INFO     | utils.logger:info:10 - MediaPipe FaceLandmarker (468 landmarks Mesh) ativado com sucesso!
+2026-08-27 12:26:09.815 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:26:09.911 | INFO     | utils.logger:info:10 - MediaPipe PoseLandmarker otimizado inicializado com pose_landmarker_lite.task.
+2026-08-27 12:26:11.718 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:26:12.740 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:26:17.699 | DEBUG    | utils.logger:debug:19 - [FaceCapture] Rosto capturado com brilho=100.3, nitidez=1731.1
+2026-08-27 12:26:17.699 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:26:22.801 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 65)
+2026-08-27 12:26:22.802 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:26:25.842 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 65)
+2026-08-27 12:26:25.843 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:26:26.826 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #3
+2026-08-27 12:26:30.389 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #4
+2026-08-27 12:26:31.726 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #3 (Risco: 75)
+2026-08-27 12:26:31.727 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #3
+2026-08-27 12:26:34.792 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #3 (Risco: 75)
+2026-08-27 12:26:34.792 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #3
+2026-08-27 12:26:38.189 | INFO     | utils.logger:info:10 - Encerrando a pedido do usuário.
+2026-08-27 12:26:38.323 | INFO     | utils.logger:info:10 - Câmera encerrada.
+2026-08-27 12:26:38.334 | INFO     | utils.logger:info:10 - === Cam-Security Finalizado ===
+2026-08-27 12:28:27.926 | INFO     | utils.logger:info:10 - === Iniciando Backend Cam-Security (v2.3 - NMS & Estabilidade Estrita) ===
+2026-08-27 12:28:27.927 | INFO     | utils.logger:info:10 - Inicializando vídeo (./config/luta.mp4)...
+2026-08-27 12:28:27.936 | INFO     | utils.logger:info:10 - Playback do vídeo em 25.00 FPS.
+2026-08-27 12:28:27.936 | INFO     | utils.logger:info:10 - Fonte de vídeo inicializada com sucesso.
+2026-08-27 12:28:27.961 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:28:27.982 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:28:29.673 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:28:29.773 | INFO     | utils.logger:info:10 - MediaPipe PoseLandmarker (1 pose/crop, IMAGE) com pose_landmarker_lite.task.
+2026-08-27 12:28:31.633 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:28:34.134 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:28:35.904 | INFO     | utils.logger:info:10 - Encerrando a pedido do usuário.
+2026-08-27 12:28:36.040 | INFO     | utils.logger:info:10 - Câmera encerrada.
+2026-08-27 12:28:36.052 | INFO     | utils.logger:info:10 - === Cam-Security Finalizado ===
+2026-08-27 12:30:36.027 | INFO     | utils.logger:info:10 - === Iniciando Cam-Security (v3.0 — pipeline pose por crop) ===
+2026-08-27 12:30:36.028 | INFO     | utils.logger:info:10 - Inicializando vídeo (./config/luta.mp4)...
+2026-08-27 12:30:36.037 | INFO     | utils.logger:info:10 - Playback do vídeo em 25.00 FPS.
+2026-08-27 12:30:36.037 | INFO     | utils.logger:info:10 - Fonte de vídeo inicializada com sucesso.
+2026-08-27 12:30:37.768 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:30:37.868 | INFO     | utils.logger:info:10 - [MediaPipe] PoseLandmarker (1 pose/crop, IMAGE) carregado: pose_landmarker_lite.task
+2026-08-27 12:30:37.889 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:30:39.695 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:30:40.868 | INFO     | utils.logger:info:10 - Encerrando a pedido do usuário (ESC).
+2026-08-27 12:30:40.884 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:30:41.021 | INFO     | utils.logger:info:10 - Câmera encerrada.
+2026-08-27 12:30:41.035 | INFO     | utils.logger:info:10 - === Cam-Security Finalizado ===
+2026-08-27 12:31:41.783 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:31:41.888 | INFO     | utils.logger:info:10 - [MediaPipe] PoseLandmarker (1 pose/crop, IMAGE) carregado: pose_landmarker_lite.task
+2026-08-27 12:31:41.908 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:31:43.625 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:31:45.032 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:31:51.999 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:31:52.138 | INFO     | utils.logger:info:10 - [MediaPipe] PoseLandmarker (1 pose/crop, IMAGE) carregado: pose_landmarker_lite.task
+2026-08-27 12:31:52.172 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:31:52.313 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:31:52.313 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:31:52.446 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=120 nitidez=502
+2026-08-27 12:31:52.447 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:31:52.448 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:31:52.579 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=824
+2026-08-27 12:31:52.580 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:31:52.580 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:31:52.871 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=120 nitidez=480
+2026-08-27 12:31:52.871 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:31:52.872 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:31:52.996 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=103 nitidez=764
+2026-08-27 12:31:52.996 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:31:52.996 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:31:53.462 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=122 nitidez=485
+2026-08-27 12:31:53.462 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:31:53.463 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:31:53.595 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=105 nitidez=767
+2026-08-27 12:31:53.595 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:31:53.595 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:31:54.062 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=123 nitidez=487
+2026-08-27 12:31:54.062 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:31:54.062 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:31:54.191 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=105 nitidez=809
+2026-08-27 12:31:54.192 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:31:54.192 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:31:54.669 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=122 nitidez=482
+2026-08-27 12:31:54.670 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:31:54.670 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:31:54.796 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=745
+2026-08-27 12:31:54.796 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:31:54.797 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:31:55.298 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=124 nitidez=487
+2026-08-27 12:31:55.298 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:31:55.298 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:31:55.422 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=795
+2026-08-27 12:31:55.423 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:31:55.423 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:31:55.891 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=507
+2026-08-27 12:31:55.891 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:31:55.891 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:31:56.009 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=748
+2026-08-27 12:31:56.010 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:31:56.010 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:31:56.446 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=124 nitidez=478
+2026-08-27 12:31:56.446 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:31:56.447 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:31:56.564 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=813
+2026-08-27 12:31:56.564 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:31:56.564 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:31:57.013 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=121 nitidez=470
+2026-08-27 12:31:57.013 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:31:57.014 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:31:57.128 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=758
+2026-08-27 12:31:57.128 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:31:57.128 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:31:57.594 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=122 nitidez=466
+2026-08-27 12:31:57.594 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:31:57.595 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:31:57.721 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=796
+2026-08-27 12:31:57.721 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:31:57.722 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:31:58.214 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=124 nitidez=452
+2026-08-27 12:31:58.214 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:31:58.215 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:31:58.324 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=777
+2026-08-27 12:31:58.325 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:31:58.325 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:31:58.791 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=127 nitidez=398
+2026-08-27 12:31:58.791 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:31:58.792 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:31:58.902 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=102 nitidez=808
+2026-08-27 12:31:58.903 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:31:58.903 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:31:59.364 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=438
+2026-08-27 12:31:59.364 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:31:59.364 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:31:59.474 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=720
+2026-08-27 12:31:59.475 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:31:59.475 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:31:59.946 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=122 nitidez=478
+2026-08-27 12:31:59.947 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:31:59.947 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:32:00.060 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=721
+2026-08-27 12:32:00.060 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:32:00.061 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:32:00.501 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=456
+2026-08-27 12:32:00.502 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:32:00.502 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:32:00.608 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=101 nitidez=669
+2026-08-27 12:32:00.609 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:32:00.609 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:32:01.064 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=127 nitidez=450
+2026-08-27 12:32:01.064 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:32:01.064 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:32:01.175 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=103 nitidez=757
+2026-08-27 12:32:01.176 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:32:01.176 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:32:01.639 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=124 nitidez=501
+2026-08-27 12:32:01.640 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:32:01.640 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:32:01.750 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=103 nitidez=695
+2026-08-27 12:32:01.750 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:32:01.750 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:32:02.226 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=124 nitidez=477
+2026-08-27 12:32:02.226 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:32:02.227 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:32:02.345 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=706
+2026-08-27 12:32:02.346 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:32:02.346 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:32:02.836 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=128 nitidez=407
+2026-08-27 12:32:02.837 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:32:02.837 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:32:02.955 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=105 nitidez=715
+2026-08-27 12:32:02.956 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:32:02.956 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:32:03.427 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=491
+2026-08-27 12:32:03.428 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:32:03.428 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:32:03.547 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=790
+2026-08-27 12:32:03.548 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:32:03.548 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:32:04.005 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=127 nitidez=425
+2026-08-27 12:32:04.005 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:32:04.006 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:32:04.119 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=105 nitidez=776
+2026-08-27 12:32:04.119 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:32:04.120 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:32:04.193 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:32:04.328 | INFO     | utils.logger:info:10 - [MediaPipe] PoseLandmarker (1 pose/crop, IMAGE) carregado: pose_landmarker_lite.task
+2026-08-27 12:32:04.355 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:32:04.504 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:32:06.780 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=154 nitidez=1666
+2026-08-27 12:32:06.781 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:32:06.781 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:32:10.230 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:32:10.500 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #3
+2026-08-27 12:33:37.783 | INFO     | utils.logger:info:10 - === Iniciando Cam-Security (v3.0 — pipeline pose por crop) ===
+2026-08-27 12:33:37.784 | INFO     | utils.logger:info:10 - Inicializando vídeo (./config/luta.mp4)...
+2026-08-27 12:33:37.793 | INFO     | utils.logger:info:10 - Playback do vídeo em 25.00 FPS.
+2026-08-27 12:33:37.794 | INFO     | utils.logger:info:10 - Fonte de vídeo inicializada com sucesso.
+2026-08-27 12:33:39.427 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:33:39.528 | INFO     | utils.logger:info:10 - [MediaPipe] PoseLandmarker (1 pose/crop, IMAGE) carregado: pose_landmarker_lite.task
+2026-08-27 12:33:39.547 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:33:41.363 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:33:42.562 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:33:44.875 | INFO     | utils.logger:info:10 - Câmera encerrada.
+2026-08-27 12:33:44.885 | INFO     | utils.logger:info:10 - === Cam-Security Finalizado ===
+2026-08-27 12:34:01.758 | INFO     | utils.logger:info:10 - === Iniciando Cam-Security (v3.0 — pipeline pose por crop) ===
+2026-08-27 12:34:01.759 | INFO     | utils.logger:info:10 - Inicializando vídeo (./config/luta.mp4)...
+2026-08-27 12:34:01.768 | INFO     | utils.logger:info:10 - Playback do vídeo em 25.00 FPS.
+2026-08-27 12:34:01.769 | INFO     | utils.logger:info:10 - Fonte de vídeo inicializada com sucesso.
+2026-08-27 12:34:03.418 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:34:03.518 | INFO     | utils.logger:info:10 - [MediaPipe] PoseLandmarker (1 pose/crop, IMAGE) carregado: pose_landmarker_lite.task
+2026-08-27 12:34:03.538 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:34:05.348 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:34:06.615 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:34:12.059 | INFO     | utils.logger:info:10 - Câmera encerrada.
+2026-08-27 12:34:12.070 | INFO     | utils.logger:info:10 - === Cam-Security Finalizado ===
+2026-08-27 12:34:17.156 | INFO     | utils.logger:info:10 - === Iniciando Cam-Security (v3.0 — pipeline pose por crop) ===
+2026-08-27 12:34:17.157 | INFO     | utils.logger:info:10 - Inicializando vídeo (./config/luta.mp4)...
+2026-08-27 12:34:17.165 | INFO     | utils.logger:info:10 - Playback do vídeo em 25.00 FPS.
+2026-08-27 12:34:17.166 | INFO     | utils.logger:info:10 - Fonte de vídeo inicializada com sucesso.
+2026-08-27 12:34:18.795 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:34:18.898 | INFO     | utils.logger:info:10 - [MediaPipe] PoseLandmarker (1 pose/crop, IMAGE) carregado: pose_landmarker_lite.task
+2026-08-27 12:34:18.919 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:34:20.695 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:34:21.906 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:34:31.125 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 65)
+2026-08-27 12:34:31.126 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:34:31.670 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=122 nitidez=1215
+2026-08-27 12:34:31.671 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:34:31.780 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:34:31.888 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:34:32.015 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:34:35.026 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 65)
+2026-08-27 12:34:35.026 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:34:38.301 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=128 nitidez=935
+2026-08-27 12:34:38.302 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:34:38.431 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:34:38.558 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:34:38.684 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:34:39.425 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #3
+2026-08-27 12:34:40.971 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #2 (Risco: 75)
+2026-08-27 12:34:40.972 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #2
+2026-08-27 12:34:43.997 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #2 (Risco: 75)
+2026-08-27 12:34:43.998 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #2
+2026-08-27 12:34:49.776 | INFO     | utils.logger:info:10 - Câmera encerrada.
+2026-08-27 12:34:49.789 | INFO     | utils.logger:info:10 - === Cam-Security Finalizado ===

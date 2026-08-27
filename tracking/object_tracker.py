@@ -69,13 +69,17 @@ class ObjectTracker:
             used_track_ids.add(tid)
             matched_box_indices.add(box_idx)
             box = detected_boxes[box_idx]["box"] if isinstance(detected_boxes[box_idx], dict) else detected_boxes[box_idx]
-            prev_age = self.tracks[tid].get("age", 0)
-
+            prev = self.tracks[tid]
             updated_tracks[tid] = {
                 "box": box,
                 "last_seen": now,
-                "triggered": self.tracks[tid].get("triggered", False),
-                "age": prev_age + 1
+                "triggered": prev.get("triggered", False),
+                "age": prev.get("age", 0) + 1,
+                "identity": prev.get("identity"),
+                "face_box": prev.get("face_box"),
+                "face_status": prev.get("face_status"),
+                "face_confidence": prev.get("face_confidence"),
+                "last_face_check": prev.get("last_face_check", 0.0),
             }
 
         # Para caixas não associadas via IoU/Centro, tenta FaceReID contra a memória
@@ -84,25 +88,34 @@ class ObjectTracker:
         for box_idx in unmatched_box_indices:
             box = detected_boxes[box_idx]["box"] if isinstance(detected_boxes[box_idx], dict) else detected_boxes[box_idx]
             assigned_id = None
+            reidentified = False
 
             if face_reid_callback and frame is not None:
                 x1, y1, x2, y2 = box
                 person_crop = frame[max(0, y1):min(frame.shape[0], y2), max(0, x1):min(frame.shape[1], x2)]
                 if person_crop.size > 0:
                     matched_reid = face_reid_callback(person_crop)
-                    if matched_reid is not None:
+                    # Não reutilizar ID já visível neste frame (evita misturar pessoas).
+                    if matched_reid is not None and matched_reid not in updated_tracks:
                         assigned_id = matched_reid
+                        reidentified = True
                         sys_logger.info(f"[Tracker] Pessoa reidentificada via FaceReID! ID #{assigned_id}")
 
             if assigned_id is None:
                 assigned_id = self.id_manager.get_next_id()
 
-            prev_age = self.tracks.get(assigned_id, {}).get("age", 0)
+            prev = self.tracks.get(assigned_id, {})
+            identity = assigned_id if reidentified else prev.get("identity")
             updated_tracks[assigned_id] = {
                 "box": box,
                 "last_seen": now,
                 "triggered": False,
-                "age": prev_age + 1
+                "age": prev.get("age", 0) + 1,
+                "identity": identity,
+                "face_box": None,
+                "face_status": "identificado" if identity is not None else "novo",
+                "face_confidence": prev.get("face_confidence"),
+                "last_face_check": 0.0,
             }
 
         # Atualiza a memória do tracker
