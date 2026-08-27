@@ -191,6 +191,7 @@ def main():
 
                 # ── 3. Pose + Face por pessoa (crop individual) ───────────
                 active_ids = set(tracks.keys())
+                pose_detector.prune_pool(active_ids)   # fecha detectores VIDEO de tracks extintos
                 pose_detector.pose_hold.prune(active_ids)
                 face_capture.prune_cache(active_ids)
 

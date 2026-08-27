@@ -52,6 +52,7 @@ def run(video_path, max_frames=90, width=640, height=480):
         h, w = frame.shape[:2]
         dets = person_detector.detect_persons(frame)
         tracks = tracker.update(dets, frame=frame)
+        pose_detector.prune_pool(set(tracks.keys()))   # fecha detectores VIDEO de tracks extintos
         pose_detector.pose_hold.prune(set(tracks.keys()))
         people_hist.append(len(tracks))
         for tid, info in tracks.items():

@@ -26513,3 +26513,891 @@ nutos.
 2026-08-27 12:34:43.998 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #2
 2026-08-27 12:34:49.776 | INFO     | utils.logger:info:10 - Câmera encerrada.
 2026-08-27 12:34:49.789 | INFO     | utils.logger:info:10 - === Cam-Security Finalizado ===
+2026-08-27 12:37:40.127 | INFO     | utils.logger:info:10 - === Iniciando Cam-Security (v3.0 — pipeline pose por crop) ===
+2026-08-27 12:37:40.129 | INFO     | utils.logger:info:10 - Inicializando vídeo (./config/video2.mp4)...
+2026-08-27 12:37:40.139 | INFO     | utils.logger:info:10 - Playback do vídeo em 25.00 FPS.
+2026-08-27 12:37:40.140 | INFO     | utils.logger:info:10 - Fonte de vídeo inicializada com sucesso.
+2026-08-27 12:37:41.832 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:37:41.944 | INFO     | utils.logger:info:10 - [MediaPipe] PoseLandmarker (1 pose/crop, IMAGE) carregado: pose_landmarker_lite.task
+2026-08-27 12:37:41.965 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:37:43.897 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=457
+2026-08-27 12:37:43.898 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:37:43.949 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=103 nitidez=712
+2026-08-27 12:37:43.949 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:37:44.061 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=125 nitidez=488
+2026-08-27 12:37:44.062 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:44.159 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=102 nitidez=686
+2026-08-27 12:37:44.160 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:44.259 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:44.305 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:44.404 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:44.447 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:44.612 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=126 nitidez=453
+2026-08-27 12:37:44.613 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:44.766 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=105 nitidez=698
+2026-08-27 12:37:44.766 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:44.868 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:44.911 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:45.007 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:45.051 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:45.204 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=131 nitidez=453
+2026-08-27 12:37:45.205 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:45.341 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=104 nitidez=765
+2026-08-27 12:37:45.341 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:45.442 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:45.486 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:45.581 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:45.628 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:45.782 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=127 nitidez=485
+2026-08-27 12:37:45.782 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:45.908 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=106 nitidez=751
+2026-08-27 12:37:45.908 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:45.961 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 75)
+2026-08-27 12:37:45.962 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:37:46.467 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=126 nitidez=470
+2026-08-27 12:37:46.468 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:46.584 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=105 nitidez=729
+2026-08-27 12:37:46.585 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:46.685 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:46.728 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:46.829 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:46.870 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:47.028 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=136 nitidez=603
+2026-08-27 12:37:47.028 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:47.176 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=137 nitidez=595
+2026-08-27 12:37:47.176 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:47.271 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:47.314 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:47.412 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:47.459 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:47.611 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=132 nitidez=458
+2026-08-27 12:37:47.612 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:47.756 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=105 nitidez=718
+2026-08-27 12:37:47.756 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:47.863 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:47.909 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:48.005 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:48.103 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:48.296 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=107 nitidez=669
+2026-08-27 12:37:48.296 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:48.394 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:48.541 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=127 nitidez=464
+2026-08-27 12:37:48.542 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:48.586 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:48.707 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:48.831 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=106 nitidez=673
+2026-08-27 12:37:48.831 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:48.928 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:48.970 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:49.023 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 75)
+2026-08-27 12:37:49.024 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:37:49.520 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=129 nitidez=511
+2026-08-27 12:37:49.520 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:49.622 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=104 nitidez=683
+2026-08-27 12:37:49.622 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:49.719 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:49.905 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=130 nitidez=501
+2026-08-27 12:37:49.906 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:49.949 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:50.041 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:50.173 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=103 nitidez=667
+2026-08-27 12:37:50.174 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:50.271 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:50.321 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:50.470 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=124 nitidez=502
+2026-08-27 12:37:50.471 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:50.514 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:50.613 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:50.614 | INFO     | utils.logger:info:10 - [Tracker] Gatilho mantido para Track #1.
+2026-08-27 12:37:50.614 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'SOCO' registrado para Track #1 (Risco: 100)
+2026-08-27 12:37:50.615 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:37:51.131 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=101 nitidez=679
+2026-08-27 12:37:51.132 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:51.292 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=122 nitidez=482
+2026-08-27 12:37:51.293 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:51.337 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:51.434 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:51.475 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:51.577 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:51.702 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=104 nitidez=813
+2026-08-27 12:37:51.702 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:51.869 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=125 nitidez=486
+2026-08-27 12:37:51.870 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:51.914 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:52.038 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:52.080 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:52.136 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 75)
+2026-08-27 12:37:52.137 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:37:52.643 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=125 nitidez=438
+2026-08-27 12:37:52.643 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:52.737 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=104 nitidez=720
+2026-08-27 12:37:52.737 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:52.833 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:52.874 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:52.969 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:53.011 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:53.169 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=128 nitidez=407
+2026-08-27 12:37:53.170 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:53.284 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=104 nitidez=763
+2026-08-27 12:37:53.285 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:53.375 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:53.417 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:53.510 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:53.552 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:53.706 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=124 nitidez=447
+2026-08-27 12:37:53.707 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:53.833 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=105 nitidez=749
+2026-08-27 12:37:53.833 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:53.927 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:53.968 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:54.059 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:54.102 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:54.253 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=124 nitidez=457
+2026-08-27 12:37:54.253 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:54.397 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=106 nitidez=710
+2026-08-27 12:37:54.398 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:54.493 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:54.533 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:54.625 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:54.666 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:54.836 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=130 nitidez=482
+2026-08-27 12:37:54.836 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:37:54.973 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=104 nitidez=760
+2026-08-27 12:37:54.973 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:37:54.985 | INFO     | utils.logger:info:10 - Câmera encerrada.
+2026-08-27 12:37:54.998 | INFO     | utils.logger:info:10 - === Cam-Security Finalizado ===
+2026-08-27 12:41:57.392 | INFO     | utils.logger:info:10 - === Iniciando Cam-Security (v3.0 — pipeline pose por crop) ===
+2026-08-27 12:41:57.393 | INFO     | utils.logger:info:10 - Inicializando vídeo (./config/video2.mp4)...
+2026-08-27 12:41:57.403 | INFO     | utils.logger:info:10 - Playback do vídeo em 25.00 FPS.
+2026-08-27 12:41:57.404 | INFO     | utils.logger:info:10 - Fonte de vídeo inicializada com sucesso.
+2026-08-27 12:41:59.124 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:41:59.124 | INFO     | utils.logger:info:10 - [MediaPipe] Modelo encontrado: pose_landmarker_lite.task (RunningMode.VIDEO, 1 pose/crop)
+2026-08-27 12:41:59.145 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:42:01.008 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=457
+2026-08-27 12:42:01.009 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:42:01.058 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=103 nitidez=712
+2026-08-27 12:42:01.058 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:42:01.158 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #1
+2026-08-27 12:42:01.210 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.380,0.537) lm11=(0.530,0.657) lm12=(0.145,0.729) lm23=(0.559,1.290)
+2026-08-27 12:42:01.267 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=125 nitidez=488
+2026-08-27 12:42:01.268 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:01.365 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #2
+2026-08-27 12:42:01.417 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.644,0.353) lm11=(0.884,0.665) lm12=(0.329,0.647) lm23=(0.761,1.351)
+2026-08-27 12:42:01.473 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=102 nitidez=686
+2026-08-27 12:42:01.474 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:01.545 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:01.566 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:01.638 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:01.658 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:01.795 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=126 nitidez=469
+2026-08-27 12:42:01.796 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:01.818 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:01.890 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:01.913 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:01.990 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:02.107 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=104 nitidez=734
+2026-08-27 12:42:02.108 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:02.179 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:02.199 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:02.335 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=128 nitidez=498
+2026-08-27 12:42:02.336 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:02.355 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:02.425 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:02.445 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:02.523 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:02.645 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=127 nitidez=441
+2026-08-27 12:42:02.646 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:02.699 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 75)
+2026-08-27 12:42:02.700 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:42:03.166 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=126 nitidez=532
+2026-08-27 12:42:03.166 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:03.272 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=104 nitidez=777
+2026-08-27 12:42:03.273 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:03.342 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:03.361 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:03.445 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:03.470 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:03.541 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:03.562 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:03.689 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=127 nitidez=499
+2026-08-27 12:42:03.690 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:03.815 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=105 nitidez=771
+2026-08-27 12:42:03.816 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:03.888 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:03.907 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:03.979 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:03.999 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:04.070 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:04.092 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:04.226 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=132 nitidez=531
+2026-08-27 12:42:04.227 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:04.352 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=105 nitidez=752
+2026-08-27 12:42:04.352 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:04.425 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:04.445 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:04.519 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:04.539 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:04.608 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:04.630 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:04.757 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=133 nitidez=520
+2026-08-27 12:42:04.758 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:04.881 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=105 nitidez=764
+2026-08-27 12:42:04.881 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:04.954 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:04.975 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:05.045 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:05.066 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:05.140 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:05.159 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:05.284 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=126 nitidez=468
+2026-08-27 12:42:05.284 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:05.408 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=104 nitidez=708
+2026-08-27 12:42:05.409 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:05.471 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #1
+2026-08-27 12:42:05.492 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:05.571 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:05.642 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:05.826 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #1
+2026-08-27 12:42:05.881 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.366,0.604) lm11=(0.555,0.774) lm12=(0.126,0.890) lm23=(0.601,1.619)
+2026-08-27 12:42:05.928 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=123 nitidez=469
+2026-08-27 12:42:05.929 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:06.011 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=105 nitidez=708
+2026-08-27 12:42:06.011 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:06.064 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 75)
+2026-08-27 12:42:06.065 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:42:06.530 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=127 nitidez=496
+2026-08-27 12:42:06.531 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:06.613 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=105 nitidez=695
+2026-08-27 12:42:06.614 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:06.686 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:06.707 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:06.793 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:06.812 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:06.884 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:06.904 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:06.979 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:06.998 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:07.163 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=103 nitidez=728
+2026-08-27 12:42:07.163 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:07.266 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=103 nitidez=709
+2026-08-27 12:42:07.266 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:07.341 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:07.362 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:07.436 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:07.456 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:07.530 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:07.548 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:07.682 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=125 nitidez=512
+2026-08-27 12:42:07.683 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:07.792 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=103 nitidez=668
+2026-08-27 12:42:07.793 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:07.868 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:07.891 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:07.962 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:07.983 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:08.073 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:08.093 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:08.230 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=120 nitidez=480
+2026-08-27 12:42:08.230 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:08.338 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=103 nitidez=764
+2026-08-27 12:42:08.338 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:08.413 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:08.433 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:08.506 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:08.526 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:08.600 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:08.621 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:08.760 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=125 nitidez=449
+2026-08-27 12:42:08.760 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:08.857 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=102 nitidez=770
+2026-08-27 12:42:08.858 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:08.934 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:08.953 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:09.058 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:09.079 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:09.133 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 75)
+2026-08-27 12:42:09.134 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:42:09.380 | INFO     | utils.logger:info:10 - Encerrando a pedido do usuário (ESC).
+2026-08-27 12:42:09.620 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=122 nitidez=466
+2026-08-27 12:42:09.620 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:09.695 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=104 nitidez=796
+2026-08-27 12:42:09.695 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:09.716 | INFO     | utils.logger:info:10 - Câmera encerrada.
+2026-08-27 12:42:09.729 | INFO     | utils.logger:info:10 - === Cam-Security Finalizado ===
+2026-08-27 12:42:15.644 | INFO     | utils.logger:info:10 - === Iniciando Cam-Security (v3.0 — pipeline pose por crop) ===
+2026-08-27 12:42:15.645 | INFO     | utils.logger:info:10 - Inicializando vídeo (./config/video.mp4)...
+2026-08-27 12:42:15.677 | INFO     | utils.logger:info:10 - Playback do vídeo em 30.00 FPS.
+2026-08-27 12:42:15.678 | INFO     | utils.logger:info:10 - Fonte de vídeo inicializada com sucesso.
+2026-08-27 12:42:17.480 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:42:17.481 | INFO     | utils.logger:info:10 - [MediaPipe] Modelo encontrado: pose_landmarker_lite.task (RunningMode.VIDEO, 1 pose/crop)
+2026-08-27 12:42:17.504 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:42:19.600 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:42:19.603 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:42:19.705 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #1
+2026-08-27 12:42:19.872 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #2
+2026-08-27 12:42:19.924 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.593,0.295) lm11=(0.682,0.361) lm12=(0.443,0.330) lm23=(0.636,0.530)
+2026-08-27 12:42:20.006 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #3
+2026-08-27 12:42:20.174 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #3
+2026-08-27 12:42:20.284 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #4
+2026-08-27 12:42:20.519 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #4
+2026-08-27 12:42:20.888 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #5
+2026-08-27 12:42:21.562 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=59 nitidez=2417
+2026-08-27 12:42:21.562 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:21.673 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:21.790 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:21.914 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:22.094 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #2
+2026-08-27 12:42:22.101 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #4
+2026-08-27 12:42:22.592 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #1
+2026-08-27 12:42:23.370 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #6
+2026-08-27 12:42:23.601 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #6
+2026-08-27 12:42:23.685 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #7
+2026-08-27 12:42:23.921 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #7
+2026-08-27 12:42:24.032 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #8
+2026-08-27 12:42:24.040 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #3
+2026-08-27 12:42:24.236 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #8
+2026-08-27 12:42:24.323 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #9
+2026-08-27 12:42:24.541 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #9
+2026-08-27 12:42:24.629 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #10
+2026-08-27 12:42:24.903 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #10
+2026-08-27 12:42:24.991 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #11
+2026-08-27 12:42:25.286 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #11
+2026-08-27 12:42:25.379 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #8
+2026-08-27 12:42:25.667 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #6
+2026-08-27 12:42:25.982 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #8
+2026-08-27 12:42:26.176 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #12
+2026-08-27 12:42:26.185 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #7
+2026-08-27 12:42:26.196 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #10
+2026-08-27 12:42:26.724 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #12
+2026-08-27 12:42:26.813 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #9
+2026-08-27 12:42:27.149 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=8 brilho=58 nitidez=2340
+2026-08-27 12:42:27.149 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #8
+2026-08-27 12:42:27.190 | INFO     | utils.logger:info:10 - Encerrando a pedido do usuário (ESC).
+2026-08-27 12:42:27.234 | INFO     | utils.logger:info:10 - Câmera encerrada.
+2026-08-27 12:42:27.244 | INFO     | utils.logger:info:10 - === Cam-Security Finalizado ===
+2026-08-27 12:42:38.427 | INFO     | utils.logger:info:10 - === Iniciando Cam-Security (v3.0 — pipeline pose por crop) ===
+2026-08-27 12:42:38.428 | INFO     | utils.logger:info:10 - Inicializando vídeo (./config/luta.mp4)...
+2026-08-27 12:42:38.437 | INFO     | utils.logger:info:10 - Playback do vídeo em 25.00 FPS.
+2026-08-27 12:42:38.438 | INFO     | utils.logger:info:10 - Fonte de vídeo inicializada com sucesso.
+2026-08-27 12:42:40.268 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:42:40.268 | INFO     | utils.logger:info:10 - [MediaPipe] Modelo encontrado: pose_landmarker_lite.task (RunningMode.VIDEO, 1 pose/crop)
+2026-08-27 12:42:40.288 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:42:42.260 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:42:42.366 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #1
+2026-08-27 12:42:42.421 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.416,0.515) lm11=(0.446,0.444) lm12=(0.438,0.549) lm23=(0.592,0.410)
+2026-08-27 12:42:42.922 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:42:43.133 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #2
+2026-08-27 12:42:43.185 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.483,0.314) lm11=(0.475,0.366) lm12=(0.452,0.375) lm23=(0.635,0.547)
+2026-08-27 12:42:52.347 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=3003ms landmarks=33 lm0=(0.452,0.340) lm11=(0.462,0.381) lm12=(0.614,0.385) lm23=(0.488,0.612)
+2026-08-27 12:42:52.494 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=98 nitidez=201
+2026-08-27 12:42:52.495 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:52.599 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:42:52.705 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 65)
+2026-08-27 12:42:52.706 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:42:53.101 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:42:53.101 | INFO     | utils.logger:info:10 - [MediaPipe] Modelo encontrado: pose_landmarker_lite.task (RunningMode.VIDEO, 1 pose/crop)
+2026-08-27 12:42:53.123 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:42:53.206 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=122 nitidez=1215
+2026-08-27 12:42:53.207 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:53.343 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:53.462 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:53.592 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:53.613 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=3003ms landmarks=33 lm0=(0.593,0.410) lm11=(0.635,0.391) lm12=(0.450,0.379) lm23=(0.538,0.611)
+2026-08-27 12:42:55.462 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:42:55.687 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #1
+2026-08-27 12:42:55.778 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.271,0.653) lm11=(0.299,0.587) lm12=(0.322,0.684) lm23=(0.414,0.474)
+2026-08-27 12:42:56.587 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 65)
+2026-08-27 12:42:56.588 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:42:57.554 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:42:57.824 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #2
+2026-08-27 12:42:59.723 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=125 nitidez=916
+2026-08-27 12:42:59.723 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:42:59.872 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:00.024 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:00.146 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:00.923 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #3
+2026-08-27 12:43:00.988 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=78 nitidez=634
+2026-08-27 12:43:00.988 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:00.989 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:01.140 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #3
+2026-08-27 12:43:01.207 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.271,0.653) lm11=(0.299,0.587) lm12=(0.322,0.684) lm23=(0.414,0.474)
+2026-08-27 12:43:01.861 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #2
+2026-08-27 12:43:03.003 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #2
+2026-08-27 12:43:03.026 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #1
+2026-08-27 12:43:03.621 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 75)
+2026-08-27 12:43:03.623 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:43:04.175 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #1
+2026-08-27 12:43:04.299 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=3 brilho=184 nitidez=419
+2026-08-27 12:43:04.299 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #3
+2026-08-27 12:43:04.460 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #3
+2026-08-27 12:43:04.581 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #3
+2026-08-27 12:43:04.655 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #3
+2026-08-27 12:43:05.667 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #3
+2026-08-27 12:43:05.734 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.557,0.331) lm11=(0.471,0.328) lm12=(0.366,0.310) lm23=(0.369,0.551)
+2026-08-27 12:43:06.638 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 75)
+2026-08-27 12:43:06.639 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:43:07.249 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:43:07.250 | INFO     | utils.logger:info:10 - [MediaPipe] Modelo encontrado: pose_landmarker_lite.task (RunningMode.VIDEO, 1 pose/crop)
+2026-08-27 12:43:07.286 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:43:07.540 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:43:07.541 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:43:07.727 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #1
+2026-08-27 12:43:07.804 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.362,0.564) lm11=(0.527,0.692) lm12=(0.151,0.799) lm23=(0.552,1.341)
+2026-08-27 12:43:07.882 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=120 nitidez=502
+2026-08-27 12:43:07.882 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:07.883 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:08.044 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #2
+2026-08-27 12:43:08.130 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.706,0.368) lm11=(0.909,0.661) lm12=(0.433,0.670) lm23=(0.798,1.394)
+2026-08-27 12:43:08.241 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=824
+2026-08-27 12:43:08.241 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:08.242 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:08.463 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=119 nitidez=458
+2026-08-27 12:43:08.464 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:08.464 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:08.590 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=103 nitidez=774
+2026-08-27 12:43:08.590 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:08.591 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:09.064 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=121 nitidez=462
+2026-08-27 12:43:09.065 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:09.066 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:09.305 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=105 nitidez=743
+2026-08-27 12:43:09.306 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:09.306 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:09.561 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=121 nitidez=486
+2026-08-27 12:43:09.561 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:09.561 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:09.711 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=105 nitidez=808
+2026-08-27 12:43:09.712 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:09.712 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:10.135 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=121 nitidez=480
+2026-08-27 12:43:10.136 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:10.136 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:10.280 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=772
+2026-08-27 12:43:10.280 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:10.281 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:10.732 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=123 nitidez=487
+2026-08-27 12:43:10.733 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:10.734 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:10.865 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=105 nitidez=809
+2026-08-27 12:43:10.865 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:10.865 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:11.302 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=122 nitidez=494
+2026-08-27 12:43:11.302 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:11.303 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:11.436 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=105 nitidez=784
+2026-08-27 12:43:11.436 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:11.436 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:11.913 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=120 nitidez=492
+2026-08-27 12:43:11.913 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:11.913 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:12.043 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=103 nitidez=823
+2026-08-27 12:43:12.043 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:12.044 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:12.555 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=124 nitidez=487
+2026-08-27 12:43:12.555 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:12.556 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:12.688 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=795
+2026-08-27 12:43:12.688 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:12.688 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:13.112 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=121 nitidez=490
+2026-08-27 12:43:13.113 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:13.113 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:13.238 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=803
+2026-08-27 12:43:13.239 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:13.239 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:13.654 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=124 nitidez=465
+2026-08-27 12:43:13.655 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:13.655 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:13.788 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=103 nitidez=762
+2026-08-27 12:43:13.789 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:13.789 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:14.198 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=124 nitidez=478
+2026-08-27 12:43:14.198 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:14.199 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:14.321 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=813
+2026-08-27 12:43:14.322 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:14.322 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:14.720 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 65)
+2026-08-27 12:43:14.721 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:43:14.727 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=496
+2026-08-27 12:43:14.727 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:14.727 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:14.848 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=781
+2026-08-27 12:43:14.848 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:14.848 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:15.221 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=486
+2026-08-27 12:43:15.221 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:15.221 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:15.323 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=105 nitidez=777
+2026-08-27 12:43:15.323 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:15.323 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:15.968 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=482
+2026-08-27 12:43:15.968 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:15.968 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:16.084 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=103 nitidez=847
+2026-08-27 12:43:16.085 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:16.085 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:16.549 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=412
+2026-08-27 12:43:16.549 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:16.549 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:16.661 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=758
+2026-08-27 12:43:16.661 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:16.662 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:17.076 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=127 nitidez=398
+2026-08-27 12:43:17.077 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:17.077 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:17.183 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=3003ms landmarks=33 lm0=(0.257,0.380) lm11=(0.348,0.362) lm12=(0.346,0.408) lm23=(0.532,0.538)
+2026-08-27 12:43:17.193 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=102 nitidez=808
+2026-08-27 12:43:17.194 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:17.194 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:17.342 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=129 nitidez=519
+2026-08-27 12:43:17.343 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:17.488 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:17.600 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:17.649 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=124 nitidez=413
+2026-08-27 12:43:17.650 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:17.650 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:17.706 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:17.766 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=101 nitidez=712
+2026-08-27 12:43:17.767 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:17.767 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:18.181 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=123 nitidez=470
+2026-08-27 12:43:18.182 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:18.182 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:18.286 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=103 nitidez=782
+2026-08-27 12:43:18.286 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:18.286 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:18.452 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=126 nitidez=447
+2026-08-27 12:43:18.453 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:18.481 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=3003ms landmarks=33 lm0=(0.520,0.388) lm11=(0.492,0.383) lm12=(0.442,0.368) lm23=(0.446,0.618)
+2026-08-27 12:43:18.601 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:18.692 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 65)
+2026-08-27 12:43:18.693 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:43:18.749 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=122 nitidez=478
+2026-08-27 12:43:18.749 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:18.749 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:18.848 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=721
+2026-08-27 12:43:18.849 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:18.849 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:19.197 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=456
+2026-08-27 12:43:19.198 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:19.198 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:19.316 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=101 nitidez=669
+2026-08-27 12:43:19.317 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:19.317 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:19.897 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=127 nitidez=450
+2026-08-27 12:43:19.897 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:19.898 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:20.010 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=103 nitidez=757
+2026-08-27 12:43:20.010 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:20.011 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:20.413 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=126 nitidez=427
+2026-08-27 12:43:20.414 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:20.414 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:20.540 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=103 nitidez=707
+2026-08-27 12:43:20.541 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:20.541 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:21.141 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=124 nitidez=490
+2026-08-27 12:43:21.142 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:21.142 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:21.277 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=749
+2026-08-27 12:43:21.277 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:21.278 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:21.683 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=124 nitidez=477
+2026-08-27 12:43:21.683 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:21.683 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:21.796 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=706
+2026-08-27 12:43:21.796 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:21.797 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:21.836 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=125 nitidez=916
+2026-08-27 12:43:21.837 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:21.953 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:22.107 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:22.213 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:22.215 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=123 nitidez=520
+2026-08-27 12:43:22.215 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:22.215 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:22.371 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=781
+2026-08-27 12:43:22.372 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:22.372 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:22.792 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=124 nitidez=447
+2026-08-27 12:43:22.793 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:22.793 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:22.921 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=105 nitidez=725
+2026-08-27 12:43:22.921 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:22.921 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:23.060 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #4
+2026-08-27 12:43:23.285 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #4
+2026-08-27 12:43:23.300 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=491
+2026-08-27 12:43:23.300 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:23.301 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:23.356 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.271,0.653) lm11=(0.299,0.587) lm12=(0.322,0.684) lm23=(0.414,0.474)
+2026-08-27 12:43:23.408 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=790
+2026-08-27 12:43:23.408 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:23.408 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:23.991 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=127 nitidez=425
+2026-08-27 12:43:23.992 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:23.993 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:23.997 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #3
+2026-08-27 12:43:24.110 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=105 nitidez=776
+2026-08-27 12:43:24.111 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:43:24.111 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:43:24.230 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:43:24.231 | INFO     | utils.logger:info:10 - [MediaPipe] Modelo encontrado: pose_landmarker_lite.task (RunningMode.VIDEO, 1 pose/crop)
+2026-08-27 12:43:24.272 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:43:24.531 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:43:24.536 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=4 brilho=194 nitidez=360
+2026-08-27 12:43:24.537 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #4
+2026-08-27 12:43:24.654 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #4
+2026-08-27 12:43:24.728 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #1
+2026-08-27 12:43:24.788 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #4
+2026-08-27 12:43:24.896 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #4
+2026-08-27 12:43:25.176 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #1
+2026-08-27 12:43:25.883 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #1
+2026-08-27 12:43:26.047 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 75)
+2026-08-27 12:43:26.047 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:43:27.253 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #4
+2026-08-27 12:43:27.854 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #4
+2026-08-27 12:43:27.855 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=154 nitidez=1666
+2026-08-27 12:43:27.856 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:27.856 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:27.930 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.557,0.331) lm11=(0.471,0.328) lm12=(0.366,0.310) lm23=(0.369,0.551)
+2026-08-27 12:43:28.385 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=175 nitidez=1090
+2026-08-27 12:43:28.385 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:28.386 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:43:28.682 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #4
+2026-08-27 12:43:29.142 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #4
+2026-08-27 12:43:29.213 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.662,0.348) lm11=(0.608,0.361) lm12=(0.585,0.376) lm23=(0.627,0.586)
+2026-08-27 12:43:32.345 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #1
+2026-08-27 12:43:33.740 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:43:34.177 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #2
+2026-08-27 12:43:34.497 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #3
+2026-08-27 12:43:35.415 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=133 nitidez=167
+2026-08-27 12:43:35.416 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:35.518 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:35.613 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:35.708 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:35.808 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:36.979 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 65)
+2026-08-27 12:43:36.988 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:43:37.482 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=125 nitidez=1245
+2026-08-27 12:43:37.483 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:37.591 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:37.681 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:37.774 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:37.889 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:38.559 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=3003ms landmarks=33 lm0=(0.051,0.431) lm11=(0.175,0.323) lm12=(0.135,0.482) lm23=(0.399,0.516)
+2026-08-27 12:43:40.446 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=3003ms landmarks=33 lm0=(0.498,0.386) lm11=(0.506,0.388) lm12=(0.388,0.359) lm23=(0.442,0.595)
+2026-08-27 12:43:40.929 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 65)
+2026-08-27 12:43:40.929 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:43:44.504 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=1 brilho=127 nitidez=833
+2026-08-27 12:43:44.504 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:44.632 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:44.773 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:44.887 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:44.976 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:43:45.297 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #5
+2026-08-27 12:43:45.476 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #5
+2026-08-27 12:43:45.526 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.367,0.376) lm11=(0.351,0.426) lm12=(0.390,0.368) lm23=(0.420,0.452)
+2026-08-27 12:43:46.296 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #4
+2026-08-27 12:43:46.709 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 75)
+2026-08-27 12:43:46.710 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:43:47.475 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #1
+2026-08-27 12:43:48.015 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #1
+2026-08-27 12:43:48.272 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=5 brilho=119 nitidez=312
+2026-08-27 12:43:48.272 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #5
+2026-08-27 12:43:48.426 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #5
+2026-08-27 12:43:48.540 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #5
+2026-08-27 12:43:48.719 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #5
+2026-08-27 12:43:49.695 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #5
+2026-08-27 12:43:49.978 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #5
+2026-08-27 12:43:50.032 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.557,0.331) lm11=(0.471,0.328) lm12=(0.366,0.310) lm23=(0.369,0.551)
+2026-08-27 12:43:50.199 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 75)
+2026-08-27 12:43:50.201 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:43:51.900 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:43:51.901 | INFO     | utils.logger:info:10 - [MediaPipe] Modelo encontrado: pose_landmarker_lite.task (RunningMode.VIDEO, 1 pose/crop)
+2026-08-27 12:43:51.930 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:43:54.372 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:43:54.558 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #1
+2026-08-27 12:43:54.618 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.271,0.653) lm11=(0.299,0.587) lm12=(0.322,0.684) lm23=(0.414,0.474)
+2026-08-27 12:43:55.737 | INFO     | utils.logger:info:10 - Encerrando a pedido do usuário (ESC).
+2026-08-27 12:43:55.782 | INFO     | utils.logger:info:10 - Câmera encerrada.
+2026-08-27 12:43:55.793 | INFO     | utils.logger:info:10 - === Cam-Security Finalizado ===
+2026-08-27 12:43:56.459 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:43:56.639 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #2
+2026-08-27 12:43:59.936 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #2
+2026-08-27 12:44:02.068 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:44:02.068 | INFO     | utils.logger:info:10 - [MediaPipe] Modelo encontrado: pose_landmarker_lite.task (RunningMode.VIDEO, 1 pose/crop)
+2026-08-27 12:44:02.091 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:44:02.199 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:44:02.200 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:44:02.334 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #1
+2026-08-27 12:44:02.387 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.362,0.564) lm11=(0.527,0.692) lm12=(0.151,0.799) lm23=(0.552,1.341)
+2026-08-27 12:44:02.448 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=120 nitidez=502
+2026-08-27 12:44:02.448 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:02.449 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:02.549 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #2
+2026-08-27 12:44:02.596 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.706,0.368) lm11=(0.909,0.661) lm12=(0.433,0.670) lm23=(0.798,1.394)
+2026-08-27 12:44:02.680 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=824
+2026-08-27 12:44:02.680 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:44:02.680 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:44:02.816 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=119 nitidez=458
+2026-08-27 12:44:02.816 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:02.816 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:02.917 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=103 nitidez=774
+2026-08-27 12:44:02.918 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:44:02.918 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:44:03.322 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=122 nitidez=485
+2026-08-27 12:44:03.322 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:03.322 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:03.436 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=105 nitidez=767
+2026-08-27 12:44:03.437 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:44:03.437 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:44:03.842 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=504
+2026-08-27 12:44:03.842 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:03.842 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:03.947 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=105 nitidez=798
+2026-08-27 12:44:03.947 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:44:03.947 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:44:04.365 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=121 nitidez=448
+2026-08-27 12:44:04.365 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:04.366 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:04.471 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=788
+2026-08-27 12:44:04.472 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:44:04.472 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:44:04.900 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=507
+2026-08-27 12:44:04.901 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:04.901 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:05.002 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=748
+2026-08-27 12:44:05.002 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:44:05.002 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:44:05.416 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=487
+2026-08-27 12:44:05.416 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:05.416 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:05.522 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=746
+2026-08-27 12:44:05.522 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:44:05.523 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:44:05.953 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=486
+2026-08-27 12:44:05.954 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:05.954 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:06.039 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=105 nitidez=777
+2026-08-27 12:44:06.039 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:44:06.039 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:44:06.448 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=124 nitidez=452
+2026-08-27 12:44:06.448 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:06.449 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:06.538 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=777
+2026-08-27 12:44:06.539 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:44:06.539 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:44:06.951 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=126 nitidez=382
+2026-08-27 12:44:06.951 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:06.952 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:07.037 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=103 nitidez=726
+2026-08-27 12:44:07.038 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:44:07.038 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:44:07.459 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=490
+2026-08-27 12:44:07.459 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:07.459 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:07.543 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=105 nitidez=721
+2026-08-27 12:44:07.543 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:44:07.544 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:44:08.042 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=125 nitidez=488
+2026-08-27 12:44:08.042 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:08.043 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:08.127 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=102 nitidez=686
+2026-08-27 12:44:08.128 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:44:08.128 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:44:08.628 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=124 nitidez=501
+2026-08-27 12:44:08.628 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:08.628 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:08.715 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=103 nitidez=695
+2026-08-27 12:44:08.715 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:44:08.716 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:44:09.218 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=123 nitidez=520
+2026-08-27 12:44:09.219 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:09.219 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:09.308 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=781
+2026-08-27 12:44:09.309 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:44:09.309 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:44:09.811 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=127 nitidez=467
+2026-08-27 12:44:09.811 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:09.811 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:09.907 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=104 nitidez=738
+2026-08-27 12:44:09.907 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:44:09.908 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #2 (Similaridade=1.00)
+2026-08-27 12:44:10.183 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:44:10.184 | INFO     | utils.logger:info:10 - [MediaPipe] Modelo encontrado: pose_landmarker_lite.task (RunningMode.VIDEO, 1 pose/crop)
+2026-08-27 12:44:10.209 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:44:10.352 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:44:10.488 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #1
+2026-08-27 12:44:12.592 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=-1 brilho=184 nitidez=990
+2026-08-27 12:44:12.592 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #1
+2026-08-27 12:44:12.592 | INFO     | utils.logger:info:10 - [FaceReID] Match encontrado! ID #1 (Similaridade=1.00)
+2026-08-27 12:44:14.879 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #1
+2026-08-27 12:44:15.157 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:44:15.400 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #2
+2026-08-27 12:44:15.557 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #3
+2026-08-27 12:45:14.439 | INFO     | utils.logger:info:10 - === Iniciando Cam-Security (v3.0 — pipeline pose por crop) ===
+2026-08-27 12:45:14.441 | INFO     | utils.logger:info:10 - Inicializando vídeo (./config/luta.mp4)...
+2026-08-27 12:45:14.450 | INFO     | utils.logger:info:10 - Playback do vídeo em 25.00 FPS.
+2026-08-27 12:45:14.450 | INFO     | utils.logger:info:10 - Fonte de vídeo inicializada com sucesso.
+2026-08-27 12:45:16.046 | INFO     | utils.logger:info:10 - YOLOv8n inicializado com sucesso.
+2026-08-27 12:45:16.047 | INFO     | utils.logger:info:10 - [MediaPipe] Modelo encontrado: pose_landmarker_lite.task (RunningMode.VIDEO, 1 pose/crop)
+2026-08-27 12:45:16.066 | INFO     | utils.logger:info:10 - [FaceDetector] Haar Cascade (frontal) inicializado — modo leve.
+2026-08-27 12:45:17.838 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #1
+2026-08-27 12:45:17.937 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #1
+2026-08-27 12:45:17.984 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.644,0.421) lm11=(0.615,0.366) lm12=(0.615,0.344) lm23=(0.435,0.484)
+2026-08-27 12:45:18.090 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #2
+2026-08-27 12:45:18.249 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #2
+2026-08-27 12:45:19.123 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #1
+2026-08-27 12:45:19.330 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #1
+2026-08-27 12:45:19.383 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.578,0.383) lm11=(0.489,0.360) lm12=(0.379,0.321) lm23=(0.402,0.574)
+2026-08-27 12:45:26.101 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=121 nitidez=607
+2026-08-27 12:45:26.102 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:26.191 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:26.276 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:26.363 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:26.447 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:26.531 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:26.937 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=3003ms landmarks=33 lm0=(0.525,0.319) lm11=(0.471,0.368) lm12=(0.657,0.378) lm23=(0.511,0.594)
+2026-08-27 12:45:27.868 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=3003ms landmarks=33 lm0=(0.552,0.341) lm11=(0.578,0.383) lm12=(0.319,0.348) lm23=(0.455,0.585)
+2026-08-27 12:45:28.508 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 65)
+2026-08-27 12:45:28.508 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:45:31.165 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=129 nitidez=519
+2026-08-27 12:45:31.165 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:31.248 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:31.331 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:31.413 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:31.495 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:31.576 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:32.435 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #1 (Risco: 65)
+2026-08-27 12:45:32.436 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #1
+2026-08-27 12:45:35.811 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=5973ms landmarks=33 lm0=(0.757,0.334) lm11=(0.929,0.384) lm12=(0.731,0.423) lm23=(1.001,0.627)
+2026-08-27 12:45:36.021 | DEBUG    | utils.logger:debug:19 - [FaceCapture] track=2 brilho=126 nitidez=865
+2026-08-27 12:45:36.021 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:36.104 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:36.184 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:36.263 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:36.341 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:36.422 | DEBUG    | utils.logger:debug:19 - [FaceStorage] Embedding facial armazenado para ID #2
+2026-08-27 12:45:36.684 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=5973ms landmarks=33 lm0=(0.706,0.352) lm11=(0.561,0.379) lm12=(0.512,0.365) lm23=(0.360,0.583)
+2026-08-27 12:45:36.853 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #3
+2026-08-27 12:45:37.019 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #3
+2026-08-27 12:45:37.069 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.271,0.653) lm11=(0.299,0.587) lm12=(0.322,0.684) lm23=(0.414,0.474)
+2026-08-27 12:45:37.786 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #1
+2026-08-27 12:45:38.213 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #2 (Risco: 75)
+2026-08-27 12:45:38.214 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #2
+2026-08-27 12:45:39.014 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #2
+2026-08-27 12:45:39.549 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #2
+2026-08-27 12:45:41.153 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #3
+2026-08-27 12:45:41.507 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #3
+2026-08-27 12:45:41.560 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.567,0.324) lm11=(0.510,0.342) lm12=(0.382,0.303) lm23=(0.392,0.551)
+2026-08-27 12:45:41.783 | INFO     | utils.logger:info:10 - [AUDITORIA] Evento 'COLISAO' registrado para Track #2 (Risco: 75)
+2026-08-27 12:45:41.784 | INFO     | utils.logger:info:10 - [NOTIFICAÇÃO] Alerta despachado para events/audit_events.jsonl: Track #2
+2026-08-27 12:45:42.421 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector removido para track #2
+2026-08-27 12:45:42.586 | DEBUG    | utils.logger:debug:19 - [IDManager] Novo ID atribuído: #4
+2026-08-27 12:45:42.744 | DEBUG    | utils.logger:debug:19 - [MediaPipe] Detector criado para track #4
+2026-08-27 12:45:42.793 | DEBUG    | utils.logger:debug:19 - [MediaPipe|diag] ts=33ms landmarks=33 lm0=(0.600,0.358) lm11=(0.558,0.378) lm12=(0.554,0.409) lm23=(0.431,0.546)
+2026-08-27 12:45:43.336 | INFO     | utils.logger:info:10 - Encerrando a pedido do usuário (ESC).
+2026-08-27 12:45:43.404 | INFO     | utils.logger:info:10 - Câmera encerrada.
+2026-08-27 12:45:43.417 | INFO     | utils.logger:info:10 - === Cam-Security Finalizado ===
