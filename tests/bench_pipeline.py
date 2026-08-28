@@ -39,6 +39,8 @@ def run(video_path, max_frames=90, width=640, height=480):
     people_hist = []
     t0 = time.perf_counter()
     n = 0
+    # Origem do clock para timestamps do MediaPipe (ms monotônicos desde o início do teste)
+    clock_origin = time.perf_counter()
 
     while n < max_frames:
         ok, frame = cap.read()
@@ -49,6 +51,7 @@ def run(video_path, max_frames=90, width=640, height=480):
                 break
         frame = cv2.resize(frame, (width, height))
         now = time.time()
+        frame_ts_ms = int((time.perf_counter() - clock_origin) * 1000)
         h, w = frame.shape[:2]
         dets = person_detector.detect_persons(frame)
         tracks = tracker.update(dets, frame=frame)
@@ -57,7 +60,9 @@ def run(video_path, max_frames=90, width=640, height=480):
         people_hist.append(len(tracks))
         for tid, info in tracks.items():
             crop, crop_box = crop_person(frame, info["box"], pad=True)
-            pose = pose_detector.process_for_track(tid, crop, crop_box, w, h) if crop.size else None
+            pose = pose_detector.process_for_track(
+                tid, crop, crop_box, w, h, frame_ts_ms=frame_ts_ms
+            ) if crop.size else None
             if pose:
                 pose_ok += 1
             if should_check_face(info, now) and crop.size:

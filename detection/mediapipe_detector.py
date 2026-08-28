@@ -172,23 +172,30 @@ class _TrackLandmarker:
     def __init__(self, model_path: str):
         options = _build_landmarker_options(model_path)
         self.landmarker = mp.tasks.vision.PoseLandmarker.create_from_options(options)
-        # Timestamp em ms enviado ao modelo; deve ser monotônico por instância.
-        self._ts_ms: int = 0
+        # Último timestamp em ms enviado ao modelo (deve ser estritamente crescente).
+        self._last_ts_ms: int = 0
         self._frame_counter: int = 0
 
-    def detect(self, rgb_crop) -> list:
+    def detect(self, rgb_crop, frame_ts_ms: int) -> list:
         """
-        Executa detect_for_video com timestamp monotônico.
+        Executa detect_for_video com o timestamp real do frame.
+
+        Parameters
+        ----------
+        rgb_crop    : imagem RGB já preparada para o MediaPipe
+        frame_ts_ms : timestamp em milissegundos derivado do clock de captura do frame.
+                      Deve ser monotônico entre chamadas para este track.
+
         Retorna lista de Landmark em coordenadas normalizadas do crop, ou [].
         """
-        # Incrementa o timestamp em ~33 ms por chamada (≈ 30 FPS virtual)
-        # Garante que o MediaPipe receba uma sequência temporal crescente,
-        # mesmo que o pipeline real rode em frequências variáveis.
-        self._ts_ms += 33
+        # Garante monotonicidade: se o timestamp real não avançou (frames duplicados,
+        # ou imprecisão de clock), incrementa pelo mínimo necessário (1ms).
+        ts_ms = max(frame_ts_ms, self._last_ts_ms + 1)
+        self._last_ts_ms = ts_ms
         self._frame_counter += 1
 
         mp_img = mp.Image(image_format=mp.ImageFormat.SRGB, data=rgb_crop)
-        result = self.landmarker.detect_for_video(mp_img, self._ts_ms)
+        result = self.landmarker.detect_for_video(mp_img, ts_ms)
 
         if not result.pose_landmarks:
             return []
@@ -203,13 +210,13 @@ class _TrackLandmarker:
             lm12 = landmarks[12] if n > 11 else None
             lm23 = landmarks[23] if n > 22 else None
             sys_logger.debug(
-                f"[MediaPipe|diag] ts={self._ts_ms}ms landmarks={n} "
+                f"[MediaPipe|diag] ts={ts_ms}ms landmarks={n} "
                 f"lm0=({lm0.x:.3f},{lm0.y:.3f}) "
                 f"lm11=({lm11.x:.3f},{lm11.y:.3f}) "
                 f"lm12=({lm12.x:.3f},{lm12.y:.3f}) "
                 f"lm23=({lm23.x:.3f},{lm23.y:.3f})"
                 if lm0 and lm11 and lm12 and lm23 else
-                f"[MediaPipe|diag] ts={self._ts_ms}ms landmarks={n}"
+                f"[MediaPipe|diag] ts={ts_ms}ms landmarks={n}"
             )
 
         return landmarks
@@ -267,14 +274,14 @@ class MediaPipeDetector:
     # API principal — usar no pipeline YOLO→crop
     # ------------------------------------------------------------------
 
-    def process_crop(self, track_id: int, crop) -> list:
+    def process_crop(self, track_id: int, crop, frame_ts_ms: int) -> list:
         """
         Detecta uma pose no crop BGR da pessoa.
 
         1. Valida tamanho mínimo do crop.
         2. Converte BGR→RGB (MediaPipe exige RGB).
         3. Garante array C-contiguous.
-        4. Chama detect_for_video com timestamp monotônico do track.
+        4. Chama detect_for_video com o timestamp real do frame.
         5. Retorna lista de Landmark normalizados no espaço do crop (0..1).
         Retorna [] se falhar ou crop for muito pequeno.
         """
@@ -293,34 +300,31 @@ class MediaPipeDetector:
             rgb = cv2.cvtColor(crop, cv2.COLOR_BGR2RGB)
             if not rgb.flags["C_CONTIGUOUS"]:
                 rgb = rgb.copy()
-            return landmarker.detect(rgb)
+            return landmarker.detect(rgb, frame_ts_ms)
         except Exception as e:
             sys_logger.error(f"[MediaPipe] Erro ao processar crop track #{track_id}: {e}")
             return []
 
-    def process_for_track(self, track_id: int, crop, crop_box, frame_w: int, frame_h: int):
+    def process_for_track(self, track_id: int, crop, crop_box, frame_w: int, frame_h: int,
+                          frame_ts_ms: int = 0):
         """
         Processa o crop de uma pessoa e retorna os landmarks mapeados
         para o espaço do frame completo, com hold temporal anti-flickering.
 
         Parameters
         ----------
-        track_id  : identificador único da pessoa (usado para pool e hold)
-        crop      : imagem BGR recortada da pessoa (com padding)
-        crop_box  : [x1, y1, x2, y2] no frame original — região enviada ao MediaPipe
-        frame_w/h : dimensões do frame original
+        track_id    : identificador único da pessoa (usado para pool e hold)
+        crop        : imagem BGR recortada da pessoa (com padding)
+        crop_box    : [x1, y1, x2, y2] no frame original — região enviada ao MediaPipe
+        frame_w/h   : dimensões do frame original
+        frame_ts_ms : timestamp em ms do frame atual (derivado do clock de captura).
+                      Usado como timestamp para o RunningMode.VIDEO do MediaPipe.
 
         Returns
         -------
         list[Landmark] em coordenadas normalizadas do frame (0..1), ou None se falhar.
-
-        Nota sobre a conversão:
-          Os landmarks retornados pelo MediaPipe estão normalizados em relação ao
-          crop enviado. A conversão map_crop_landmarks_to_frame() reconstrói as
-          coordenadas absolutas usando crop_box, sem qualquer heurística.
-          Não há resize/letterbox antes do MediaPipe, então a relação é linear direta.
         """
-        crop_lms = self.process_crop(track_id, crop)
+        crop_lms = self.process_crop(track_id, crop, frame_ts_ms)
         if crop_lms:
             mapped = map_crop_landmarks_to_frame(crop_lms, crop_box, frame_w, frame_h)
         else:
@@ -356,7 +360,7 @@ class MediaPipeDetector:
         """
         if frame is None:
             return {"pose_landmarks": []}
-        lms = self.process_crop(track_id=0, crop=frame)
+        lms = self.process_crop(track_id=0, crop=frame, frame_ts_ms=0)
         return {"pose_landmarks": [lms] if lms else []}
 
     def close(self):

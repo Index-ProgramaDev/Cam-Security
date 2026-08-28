@@ -19,12 +19,17 @@ def compute_iou(boxA, boxB):
     iou = interArea / float(boxAArea + boxBArea - interArea)
     return iou
 
+# Quanto tempo (segundos) um face_box pode ser propagado sem nova detecção.
+# Mantém o box por 1 frame extra para suavizar flickering, mas remove rapidamente.
+FACE_BOX_TTL = 0.25
+
+
 class ObjectTracker:
     def __init__(self, id_manager, ttl_seconds=300.0, iou_threshold=0.15):
         self.id_manager = id_manager
         self.ttl_seconds = ttl_seconds
         self.iou_threshold = iou_threshold
-        # tracks: track_id -> {"box": [...], "last_seen": timestamp, "triggered": bool, "age": int}
+        # tracks: track_id -> {"box": [...], "last_seen": timestamp, "triggered": bool, "age": int, ...}
         self.tracks = {}
 
     def update(self, detected_boxes, face_reid_callback=None, frame=None):
@@ -70,13 +75,21 @@ class ObjectTracker:
             matched_box_indices.add(box_idx)
             box = detected_boxes[box_idx]["box"] if isinstance(detected_boxes[box_idx], dict) else detected_boxes[box_idx]
             prev = self.tracks[tid]
+
+            # Propaga face_box apenas se ainda estiver dentro do TTL de visibilidade.
+            # Evita que um rosto detectado há muito tempo continue sendo exibido.
+            prev_face_detected_at = prev.get("face_detected_at", 0.0)
+            face_still_fresh = (now - prev_face_detected_at) <= FACE_BOX_TTL
+            propagated_face_box = prev.get("face_box") if face_still_fresh else None
+
             updated_tracks[tid] = {
                 "box": box,
                 "last_seen": now,
                 "triggered": prev.get("triggered", False),
                 "age": prev.get("age", 0) + 1,
                 "identity": prev.get("identity"),
-                "face_box": prev.get("face_box"),
+                "face_box": propagated_face_box,
+                "face_detected_at": prev_face_detected_at if face_still_fresh else 0.0,
                 "face_status": prev.get("face_status"),
                 "face_confidence": prev.get("face_confidence"),
                 "last_face_check": prev.get("last_face_check", 0.0),
@@ -113,6 +126,7 @@ class ObjectTracker:
                 "age": prev.get("age", 0) + 1,
                 "identity": identity,
                 "face_box": None,
+                "face_detected_at": 0.0,
                 "face_status": "identificado" if identity is not None else "novo",
                 "face_confidence": prev.get("face_confidence"),
                 "last_face_check": 0.0,

@@ -22,6 +22,9 @@ class CameraCapture:
         self.running = False
         self.frame = None
         self.frame_seq = 0
+        # Timestamp (perf_counter) do momento em que o frame foi capturado.
+        # Usado pelo pipeline de inferência para calcular a idade do frame.
+        self.frame_captured_at: float = 0.0
         self.lock = threading.Lock()
         self.thread = None
 
@@ -124,6 +127,7 @@ class CameraCapture:
                 with self.lock:
                     self.frame = frame
                     self.frame_seq += 1
+                    self.frame_captured_at = time.perf_counter()
                 if self.is_video_source and self.frame_interval > 0:
                     next_frame_due += self.frame_interval
                     # Não acelera para “alcançar” o relógio: isso parece rewind/fast-forward.
@@ -144,8 +148,8 @@ class CameraCapture:
     def get_frame(self):
         with self.lock:
             if self.frame is None:
-                return None, 0
-            return self.frame.copy(), self.frame_seq
+                return None, 0, 0.0
+            return self.frame.copy(), self.frame_seq, self.frame_captured_at
 
     def stop(self):
         self.running = False

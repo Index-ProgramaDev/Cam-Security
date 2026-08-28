@@ -1,6 +1,6 @@
 # Camera settings
 # Para usar um vídeo em vez de webcam, deixe video_path apontando para um arquivo .mp4/.avi
-video_path: "./config/luta.mp4"
+video_path: "./config/video4.mp4"
 camera_id: 0
 # Resolução 640x480 garante crops grandes o suficiente para o MediaPipe Pose
 width: 640

@@ -1,24 +1,22 @@
 """
-Cam-Security — pipeline principal (v3.0)
+Cam-Security — pipeline principal (v3.1)
 
-Correções e melhorias em relação à v2.3:
-  1. Pipeline de pose corrigido:
-       YOLO → tracks → crop por pessoa → MediaPipe Pose por crop → skeleton no track
-     Antes, o MediaPipe rodava no frame inteiro e a associação era feita por índice,
-     misturando poses entre pessoas.
+Correções em relação à v3.0:
+  1. Timestamps reais do frame passados ao MediaPipe Pose (RunningMode.VIDEO).
+     Antes: incremento fixo de +33ms por chamada (independente do FPS real).
+     Agora: timestamp derivado do clock de captura → modelo usa a escala temporal correta.
 
-  2. Detecção facial otimizada:
-     - FaceDetector usa apenas Haar Cascade (sem FaceLandmarker de 468 landmarks).
-     - FaceCapture compartilha o mesmo FaceDetector (sem instância duplicada).
-     - Reconhecimento facial por track com throttle de FACE_CHECK_INTERVAL segundos
-       (antes rodava em todo frame para todo track).
+  2. Stale face corrigido:
+     - face_box é limpo no track quando a detecção facial falha (antes permanecia indefinidamente).
+     - face_detected_at controla o TTL de propagação no tracker (FACE_BOX_TTL = 0.25s).
+     - Apenas identity é preservada enquanto o track existir; face_box exige detecção recente.
 
-  3. Cada track mantém independentemente:
-       track_id, bbox, pose (landmarks), face_box, identity
+  3. Render thread alinhado ao frame inferido:
+     - O overlay agora carrega o frame exato que foi usado pela inferência.
+     - Elimina a divergência "inferência usou frame N, render mostra frame N+4".
 
-  4. Resolução aumentada para 640×480 (config_camera.yaml) para crops maiores.
-
-  5. Visualização melhorada: skeleton desenhado a partir dos landmarks do próprio track.
+  4. Métricas de latência agregadas a cada LOG_PERF_INTERVAL segundos:
+     YOLO, Tracking, Pose, Face, total, FPS de inferência, idade média do frame.
 """
 
 import cv2
@@ -51,6 +49,9 @@ from events.alerts import AlertManager
 
 # Mínimo de frames para aceitar eventos de colisão/soco
 MIN_TRACK_AGE_FOR_EVENTS = 10
+
+# Intervalo de log de performance (segundos)
+LOG_PERF_INTERVAL = 10.0
 
 
 # ---------------------------------------------------------------------------
@@ -88,13 +89,14 @@ def _freeze_tracks_snapshot(tracks):
     snap = {}
     for tid, info in tracks.items():
         snap[tid] = {
-            "box":            list(info.get("box") or []),
-            "age":            info.get("age", 0),
-            "identity":       info.get("identity"),
-            "face_status":    info.get("face_status"),
+            "box":             list(info.get("box") or []),
+            "age":             info.get("age", 0),
+            "identity":        info.get("identity"),
+            "face_status":     info.get("face_status"),
             "face_confidence": info.get("face_confidence"),
-            "face_box":       info.get("face_box"),
-            "pose":           _freeze_landmarks(info.get("pose")),
+            "face_box":        info.get("face_box"),
+            "face_detected_at": info.get("face_detected_at", 0.0),
+            "pose":            _freeze_landmarks(info.get("pose")),
         }
     return snap
 
@@ -147,9 +149,16 @@ def main():
     last_infer_seq = -1
     overlay_lock = threading.Lock()
     overlay = {
+        "frame":     None,   # frame exato que foi inferido (para o render thread)
         "tracks":    {},
         "alert_ids": [],
         "hud":       "Pessoas: 0 | Dist: LONGE | Colisao: NAO",
+    }
+
+    # Acumuladores de latência para log periódico
+    _perf = {
+        "yolo_ms": [], "track_ms": [], "pose_ms": [], "face_ms": [],
+        "total_ms": [], "frame_age_ms": [], "last_log": time.time(),
     }
 
     # --- Callback ReID para o tracker ---
@@ -166,11 +175,20 @@ def main():
         nonlocal last_infer_time, last_infer_seq
 
         while camera.running:
-            frame, seq = camera.get_frame()
+            frame, seq, captured_at = camera.get_frame()
             if frame is None or seq == last_infer_seq:
                 time.sleep(0.002)
                 continue
             last_infer_seq = seq
+
+            t_frame_start = time.perf_counter()
+
+            # Idade do frame: tempo desde a captura até agora (ms)
+            frame_age_ms = (t_frame_start - captured_at) * 1000.0
+
+            # Timestamp absoluto do frame em ms (para o MediaPipe RunningMode.VIDEO).
+            # Derivado de perf_counter para máxima resolução e monotonicidade.
+            frame_ts_ms = int(captured_at * 1000)
 
             now = time.time()
             delta_t = max(now - last_infer_time, 1e-3)
@@ -179,19 +197,23 @@ def main():
             try:
                 h, w = frame.shape[:2]
 
-                # ── 1. Detecção YOLO (uma vez por frame) ──────────────────
+                # ── 1. Detecção YOLO ──────────────────────────────────────
+                t0 = time.perf_counter()
                 detected_persons = person_detector.detect_persons(frame)
+                yolo_ms = (time.perf_counter() - t0) * 1000.0
 
                 # ── 2. Tracking ───────────────────────────────────────────
+                t0 = time.perf_counter()
                 tracks = object_tracker.update(
                     detected_persons,
                     face_reid_callback=try_reid,
                     frame=frame,
                 )
+                track_ms = (time.perf_counter() - t0) * 1000.0
 
                 # ── 3. Pose + Face por pessoa (crop individual) ───────────
                 active_ids = set(tracks.keys())
-                pose_detector.prune_pool(active_ids)   # fecha detectores VIDEO de tracks extintos
+                pose_detector.prune_pool(active_ids)
                 pose_detector.pose_hold.prune(active_ids)
                 face_capture.prune_cache(active_ids)
 
@@ -230,6 +252,9 @@ def main():
                             elif dist_label == "MEDIO" and min_dist_label != "PERTO":
                                 min_dist_label = "MEDIO"
 
+                pose_ms_total = 0.0
+                face_ms_total = 0.0
+
                 for track_id, info in tracks.items():
                     box = info["box"]
                     x1, y1, x2, y2 = map(int, box)
@@ -241,25 +266,41 @@ def main():
                     # ── 3b. Pose por crop (mapeada para o frame) ───────────
                     pose_lms = None
                     if crop.size > 0:
+                        t0 = time.perf_counter()
                         pose_lms = pose_detector.process_for_track(
-                            track_id, crop, crop_box, w, h
+                            track_id, crop, crop_box, w, h,
+                            frame_ts_ms=frame_ts_ms,
                         )
+                        pose_ms_total += (time.perf_counter() - t0) * 1000.0
 
                     # Armazena pose no track (acessível pelo overlay)
                     tracks[track_id]["pose"] = pose_lms
 
                     # ── 3c. Detecção facial com throttle ──────────────────
                     if crop.size > 0:
+                        t0 = time.perf_counter()
                         insights = face_capture.capture_face_insights(crop, track_id=track_id)
-                        if insights and insights["embedding"] is not None:
+                        face_ms_total += (time.perf_counter() - t0) * 1000.0
+
+                        if insights and insights.get("embedding") is not None:
                             face_storage.save_embedding(track_id, insights["embedding"])
-                            # Propaga box do rosto para o track (offset pelo crop_box)
                             fb = insights.get("box")
                             if fb:
                                 fx_abs = crop_box[0] + fb[0]
                                 fy_abs = crop_box[1] + fb[1]
                                 tracks[track_id]["face_box"] = [fx_abs, fy_abs, fb[2], fb[3]]
+                                tracks[track_id]["face_detected_at"] = now
                                 tracks[track_id]["face_status"] = "detectado"
+                        else:
+                            # Detecção falhou neste frame: limpa face_box imediatamente.
+                            # O tracker propaga por no máximo FACE_BOX_TTL (0.25s);
+                            # aqui garantimos que o campo não carregue um resultado stale
+                            # quando o FaceCapture retornou resultado atual (não de cache).
+                            # Nota: o cache do FaceCapture pode retornar None (throttle expirado
+                            # e rosto não encontrado) — esse é o caso que precisamos limpar.
+                            face_detected_at = tracks[track_id].get("face_detected_at", 0.0)
+                            if (now - face_detected_at) > 0.25:
+                                tracks[track_id]["face_box"] = None
 
                     # ── 3d. Análise de pose / eventos ─────────────────────
                     curr_centroid = calculate_center(box)
@@ -321,9 +362,39 @@ def main():
                                     description=f"Pose proibida: {pose_name}",
                                 )
 
+                total_ms = (time.perf_counter() - t_frame_start) * 1000.0
+
+                # Acumula métricas
+                _perf["yolo_ms"].append(yolo_ms)
+                _perf["track_ms"].append(track_ms)
+                _perf["pose_ms"].append(pose_ms_total)
+                _perf["face_ms"].append(face_ms_total)
+                _perf["total_ms"].append(total_ms)
+                _perf["frame_age_ms"].append(frame_age_ms)
+
+                # Log periódico de performance
+                if (now - _perf["last_log"]) >= LOG_PERF_INTERVAL and _perf["total_ms"]:
+                    n = len(_perf["total_ms"])
+                    avg = lambda lst: sum(lst) / len(lst) if lst else 0.0
+                    fps_inf = n / LOG_PERF_INTERVAL
+                    sys_logger.info(
+                        f"[Perf/{n}frames] "
+                        f"YOLO={avg(_perf['yolo_ms']):.0f}ms "
+                        f"Track={avg(_perf['track_ms']):.0f}ms "
+                        f"Pose={avg(_perf['pose_ms']):.0f}ms "
+                        f"Face={avg(_perf['face_ms']):.0f}ms "
+                        f"Total={avg(_perf['total_ms']):.0f}ms "
+                        f"FrameAge={avg(_perf['frame_age_ms']):.0f}ms "
+                        f"FPS_inf={fps_inf:.1f}"
+                    )
+                    for key in ("yolo_ms", "track_ms", "pose_ms", "face_ms", "total_ms", "frame_age_ms"):
+                        _perf[key].clear()
+                    _perf["last_log"] = now
+
                 # ── 4. Publica overlay para o thread de renderização ──────
                 with overlay_lock:
-                    overlay["tracks"] = _freeze_tracks_snapshot(tracks)
+                    overlay["frame"]     = frame          # frame exato usado na inferência
+                    overlay["tracks"]    = _freeze_tracks_snapshot(tracks)
                     overlay["alert_ids"] = list(alert_track_ids)
                     overlay["hud"] = (
                         f"Pessoas: {len(tracks)} | "
@@ -341,32 +412,27 @@ def main():
     # -----------------------------------------------------------------------
     infer_thread = threading.Thread(target=inference_loop, daemon=True)
     infer_thread.start()
-    last_shown_seq = -1
+    last_rendered_frame_id = id(None)  # id do objeto frame já exibido
 
     try:
         while camera.running:
-            if camera.peek_seq() == last_shown_seq:
-                if cv2.waitKey(1) == 27:
-                    break
-                continue
-
-            frame, seq = camera.get_frame()
-            if frame is None:
-                if cv2.waitKey(1) == 27:
-                    break
-                time.sleep(0.005)
-                continue
-
-            last_shown_seq = seq
-
             with overlay_lock:
-                tracks      = overlay["tracks"]
-                alert_ids   = overlay["alert_ids"]
-                hud_text    = overlay["hud"]
+                render_frame = overlay.get("frame")
+                tracks       = overlay["tracks"]
+                alert_ids    = overlay["alert_ids"]
+                hud_text     = overlay["hud"]
 
-            h_fr, w_fr = frame.shape[:2]
+            # Só renderiza quando a inferência produziu um novo resultado
+            if render_frame is None or id(render_frame) == last_rendered_frame_id:
+                if cv2.waitKey(1) == 27:
+                    break
+                time.sleep(0.002)
+                continue
+
+            last_rendered_frame_id = id(render_frame)
+
             annotated = person_detector.draw_annotations(
-                frame,
+                render_frame,
                 tracks=tracks,
                 alert_track_ids=alert_ids,
             )
