@@ -26,14 +26,20 @@ from events.event_logger import EventLogger
 from events.notification import NotificationDispatcher
 from events.alerts import AlertManager
 from evidence.evidence_manager import EvidenceManager
-from evidence.evidence_capture import StorageCleaner, PeriodicSnapshotter
 
-MIN_TRACK_AGE_FOR_EVENTS   = 10
-LOG_PERF_INTERVAL          = 10.0
-TEMP_FACE_CLEANUP_INTERVAL = 120.0
-STORAGE_CLEANUP_INTERVAL   = 300.0
-CAMERA_ID                  = "cam_0"
+MIN_TRACK_AGE_FOR_EVENTS  = 10    # frames mínimos antes de aceitar evento de colisão/soco
+LOG_PERF_INTERVAL         = 10.0  # segundos entre logs de performance
+TEMP_FACE_CLEANUP_INTERVAL = 120.0 # segundos entre limpezas de faces temporárias expiradas
+CAMERA_ID                 = "cam_0"
 
+# Intervalo mínimo entre tentativas de Re-ID para o mesmo track (segundos).
+# Após identidade confirmada, Re-ID só re-ocorre nesse intervalo via cache do FaceReID.
+REID_RETRY_INTERVAL = 5.0
+
+
+# ---------------------------------------------------------------------------
+# Helpers de snapshot thread-safe para o overlay de renderização
+# ---------------------------------------------------------------------------
 
 class _Pt:
     __slots__ = ("x", "y", "z", "visibility", "presence")
@@ -74,6 +80,10 @@ def _freeze_tracks(tracks):
     }
 
 
+# ---------------------------------------------------------------------------
+# Pipeline principal
+# ---------------------------------------------------------------------------
+
 def main():
     sys_logger.info("=== Iniciando Cam-Security ===")
 
@@ -98,9 +108,6 @@ def main():
     evidence_manager = EvidenceManager(fps=camera.fps)
     evidence_manager.register_camera(CAMERA_ID, fps=camera.fps)
 
-    storage_cleaner = StorageCleaner(check_interval=STORAGE_CLEANUP_INTERVAL)
-    snapshotter     = PeriodicSnapshotter()
-
     event_logger            = EventLogger()
     notification_dispatcher = NotificationDispatcher()
     alert_manager = AlertManager(
@@ -116,11 +123,14 @@ def main():
     prev_wrists:    dict = {}
     punch_counters: dict = {}
 
-    last_infer_time       = time.time()
-    last_infer_seq        = -1
-    _last_temp_cleanup    = time.time()
-    _last_storage_cleanup = time.time()
-    overlay_lock          = threading.Lock()
+    # Estado de Re-ID por track: track_id -> timestamp da última tentativa de Re-ID.
+    # Evita Re-ID em todos os frames para tracks que ainda não foram identificados.
+    _reid_last_attempt: dict = {}
+
+    last_infer_time     = time.time()
+    last_infer_seq      = -1
+    _last_temp_cleanup  = time.time()
+    overlay_lock        = threading.Lock()
     overlay = {
         "frame":     None,
         "tracks":    {},
@@ -142,8 +152,11 @@ def main():
             return face_reid.match_embedding(insights["embedding"])
         return None
 
+    # -----------------------------------------------------------------------
+    # Thread de inferência
+    # -----------------------------------------------------------------------
     def inference_loop():
-        nonlocal last_infer_time, last_infer_seq, _last_temp_cleanup, _last_storage_cleanup
+        nonlocal last_infer_time, last_infer_seq, _last_temp_cleanup
 
         while camera.running:
             frame, seq, captured_at = camera.get_frame()
@@ -160,42 +173,44 @@ def main():
             last_infer_time = now
 
             evidence_manager.push_frame(CAMERA_ID, frame, timestamp=now)
-            snapshotter.on_frame(frame, timestamp=now)
 
             if (now - _last_temp_cleanup) >= TEMP_FACE_CLEANUP_INTERVAL:
                 face_storage.expire_temp_faces()
                 face_reid.prune_cache(set())
                 _last_temp_cleanup = now
 
-            if (now - _last_storage_cleanup) >= STORAGE_CLEANUP_INTERVAL:
-                storage_cleaner.run_cleanup()
-                _last_storage_cleanup = now
-
             try:
                 h, w = frame.shape[:2]
 
+                # 1. YOLO
                 t0 = time.perf_counter()
                 detected_persons = person_detector.detect_persons(frame)
                 yolo_ms = (time.perf_counter() - t0) * 1000.0
 
+                # 2. Tracking
                 t0 = time.perf_counter()
                 tracks = object_tracker.update(
                     detected_persons, face_reid_callback=try_reid, frame=frame,
                 )
                 track_ms = (time.perf_counter() - t0) * 1000.0
 
+                # 3. Manutenção dos pools
                 active_ids = set(tracks.keys())
                 pose_detector.prune_pool(active_ids)
                 pose_detector.pose_hold.prune(active_ids)
                 face_capture.prune_cache(active_ids)
                 face_reid.prune_cache(active_ids)
+                # Limpa estado de Re-ID para tracks que não estão mais ativos
+                for tid in [t for t in _reid_last_attempt if t not in active_ids]:
+                    del _reid_last_attempt[tid]
 
-                alert_track_ids    = []
+                alert_track_ids   = []
                 collision_detected = False
-                min_dist_label     = "LONGE"
-                track_ids          = list(tracks.keys())
-                has_multiple       = len(track_ids) >= 2
+                min_dist_label    = "LONGE"
+                track_ids         = list(tracks.keys())
+                has_multiple      = len(track_ids) >= 2
 
+                # 3a. Colisão entre pares
                 if has_multiple:
                     for i in range(len(track_ids)):
                         for j in range(i + 1, len(track_ids)):
@@ -226,6 +241,7 @@ def main():
                     track_age = info.get("age", 0)
                     crop, crop_box = crop_person(frame, box, pad=True)
 
+                    # 3b. Pose por crop
                     pose_lms = None
                     if crop.size > 0:
                         t0 = time.perf_counter()
@@ -235,6 +251,7 @@ def main():
                         pose_ms_total += (time.perf_counter() - t0) * 1000.0
                     tracks[track_id]["pose"] = pose_lms
 
+                    # 3c. Detecção facial com throttle
                     if crop.size > 0:
                         t0 = time.perf_counter()
                         insights = face_capture.capture_face_insights(crop, track_id=track_id)
@@ -244,26 +261,43 @@ def main():
                             emb          = insights["embedding"]
                             clarity      = insights.get("insights", {}).get("clarity", 0.0)
                             quality_norm = min(1.0, clarity / 300.0)
-                            face_storage.save_embedding(track_id, emb, quality=quality_norm)
 
+                            # Atualiza face_box e visibilidade
                             fb = insights.get("box")
                             if fb:
                                 tracks[track_id]["face_box"]         = [crop_box[0] + fb[0], crop_box[1] + fb[1], fb[2], fb[3]]
                                 tracks[track_id]["face_detected_at"] = now
                                 tracks[track_id]["face_status"]      = "detectado"
 
-                            if face_storage.get_identity_for_track(track_id) is None:
-                                reid = face_reid.identify_track(track_id, emb)
-                                if reid.is_match():
-                                    tracks[track_id]["identity"]        = reid.person_id
-                                    tracks[track_id]["face_status"]     = reid.confidence.lower()
-                                    tracks[track_id]["face_confidence"] = reid.similarity
+                            # Identidade já confirmada: apenas propaga, não re-executa Re-ID
+                            known_identity = face_storage.get_identity_for_track(track_id)
+                            if known_identity is not None:
+                                tracks[track_id]["identity"] = known_identity
                             else:
-                                tracks[track_id]["identity"] = face_storage.get_identity_for_track(track_id)
+                                # Sem identidade: salva embedding e tenta Re-ID com controle de frequência
+                                face_storage.save_embedding(track_id, emb, quality=quality_norm)
+                                last_attempt = _reid_last_attempt.get(track_id, 0.0)
+                                if (now - last_attempt) >= REID_RETRY_INTERVAL:
+                                    _reid_last_attempt[track_id] = now
+                                    reid = face_reid.identify_track(track_id, emb)
+                                    if reid.is_match():
+                                        tracks[track_id]["identity"]        = reid.person_id
+                                        tracks[track_id]["face_status"]     = reid.confidence.lower()
+                                        tracks[track_id]["face_confidence"] = reid.similarity
+                                        sys_logger.info(
+                                            f"[Face] Track #{track_id} → '{reid.person_id}' "
+                                            f"sim={reid.similarity:.3f} {reid.confidence}"
+                                        )
                         else:
+                            # Rosto não visível agora: limpa face_box após TTL
                             if (now - tracks[track_id].get("face_detected_at", 0.0)) > 0.25:
                                 tracks[track_id]["face_box"] = None
+                            # Identidade conhecida permanece mesmo sem rosto visível
+                            known_identity = face_storage.get_identity_for_track(track_id)
+                            if known_identity is not None:
+                                tracks[track_id]["identity"] = known_identity
 
+                    # 3d. Análise de pose / eventos
                     curr_centroid = calculate_center(box)
                     body_vel      = calculate_velocity(curr_centroid, prev_centroids.get(track_id), delta_t)
                     prev_centroids[track_id] = curr_centroid
@@ -353,6 +387,9 @@ def main():
                 import traceback
                 traceback.print_exc()
 
+    # -----------------------------------------------------------------------
+    # Thread de renderização (thread principal)
+    # -----------------------------------------------------------------------
     infer_thread = threading.Thread(target=inference_loop, daemon=True)
     infer_thread.start()
     last_frame_id = id(None)

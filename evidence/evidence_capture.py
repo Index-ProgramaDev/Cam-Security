@@ -2,6 +2,7 @@ import os
 import time
 import subprocess
 import shutil
+import glob
 from dataclasses import dataclass
 from typing import List, Tuple, Optional
 
@@ -10,19 +11,18 @@ import numpy as np
 
 from utils.logger import sys_logger
 
-STORAGE_ROOT       = "storage"
-EVENTS_DIR         = os.path.join(STORAGE_ROOT, "events")
-SNAPSHOTS_DIR      = os.path.join(STORAGE_ROOT, "snapshots")
-PERIODIC_SNAP_DIR  = os.path.join(STORAGE_ROOT, "periodic_snapshots")
-TEMP_DIR           = os.path.join(STORAGE_ROOT, "temp")
-EVIDENCES_DIR      = os.path.join(STORAGE_ROOT, "evidences")
+EVENTS_DIR        = os.path.join("storage", "events")
+SNAPSHOTS_DIR     = os.path.join("storage", "snapshots")
+PERIODIC_SNAP_DIR = os.path.join("storage", "periodic_snapshots")
+TEMP_DIR          = os.path.join("storage", "temp")
+STORAGE_ROOT      = "storage"  # raiz dos diretórios de armazenamento
+FFMPEG_CRF        = 23
+FFMPEG_PRESET     = "fast"
 
-FFMPEG_CRF    = 23
-FFMPEG_PRESET = "fast"
+STORAGE_MAX_AGE_DAYS  = 7
+STORAGE_MAX_SIZE_MB   = 500
+CLEANUP_CHECK_INTERVAL = 300.0
 
-STORAGE_MAX_AGE_DAYS     = 7
-STORAGE_MAX_SIZE_MB      = 500
-CLEANUP_CHECK_INTERVAL   = 300.0
 PERIODIC_FRAME_THRESHOLD = 40
 PERIODIC_TIME_THRESHOLD  = 2.0
 
@@ -68,7 +68,7 @@ def _ffmpeg_available() -> bool:
 class EvidenceCapture:
     def __init__(self, fps: float = 30.0):
         self.fps = fps
-        for d in (EVENTS_DIR, SNAPSHOTS_DIR, TEMP_DIR, EVIDENCES_DIR):
+        for d in (EVENTS_DIR, SNAPSHOTS_DIR, TEMP_DIR):
             os.makedirs(d, exist_ok=True)
 
     def build_evidence(self, pre_frames, post_frames, event_id, triggered_at,
@@ -79,8 +79,7 @@ class EvidenceCapture:
                                 ok=False, error="Nenhum frame disponível", created_at=time.time())
 
         ds       = time.localtime(triggered_at)
-        event_dir = os.path.join(EVENTS_DIR, time.strftime("%Y", ds),
-                                 time.strftime("%m", ds), time.strftime("%d", ds))
+        event_dir = os.path.join(EVENTS_DIR, time.strftime("%Y", ds), time.strftime("%m", ds), time.strftime("%d", ds))
         os.makedirs(event_dir, exist_ok=True)
 
         output_path   = os.path.join(event_dir, f"event_{event_id}.mp4")
@@ -180,11 +179,11 @@ class StorageCleaner:
                  max_age_days: float = STORAGE_MAX_AGE_DAYS,
                  max_size_mb: float = STORAGE_MAX_SIZE_MB,
                  check_interval: float = CLEANUP_CHECK_INTERVAL):
-        self.max_age_days   = max_age_days
-        self.max_size_bytes = max_size_mb * 1024 * 1024
-        self.check_interval = check_interval
+        self.max_age_days     = max_age_days
+        self.max_size_bytes   = max_size_mb * 1024 * 1024
+        self.check_interval   = check_interval
         self._last_check: float = 0.0
-        self._managed_dirs = [EVENTS_DIR, SNAPSHOTS_DIR, PERIODIC_SNAP_DIR, TEMP_DIR, EVIDENCES_DIR]
+        self._managed_dirs = [EVENTS_DIR, SNAPSHOTS_DIR, PERIODIC_SNAP_DIR, TEMP_DIR]
 
     def run_if_due(self) -> bool:
         now = time.time()
@@ -197,7 +196,8 @@ class StorageCleaner:
     def run_cleanup(self):
         removed_count = 0
         removed_bytes = 0
-        cutoff_time   = time.time() - (self.max_age_days * 86400)
+
+        cutoff_time = time.time() - (self.max_age_days * 86400)
 
         all_files: List[Tuple[float, int, str]] = []
         for d in self._managed_dirs:
@@ -207,20 +207,25 @@ class StorageCleaner:
                 for fn in files:
                     fpath = os.path.join(root, fn)
                     try:
-                        all_files.append((os.path.getmtime(fpath), os.path.getsize(fpath), fpath))
+                        mtime = os.path.getmtime(fpath)
+                        size  = os.path.getsize(fpath)
+                        all_files.append((mtime, size, fpath))
                     except OSError:
                         pass
 
         all_files.sort(key=lambda x: x[0])
+
         current_size = sum(f[1] for f in all_files)
 
         for mtime, size, fpath in all_files:
-            if mtime < cutoff_time or current_size > self.max_size_bytes:
+            should_remove_age = mtime < cutoff_time
+            should_remove_size = current_size > self.max_size_bytes
+            if should_remove_age or should_remove_size:
                 try:
                     os.remove(fpath)
                     removed_count += 1
                     removed_bytes += size
-                    current_size  -= size
+                    current_size -= size
                 except OSError as e:
                     sys_logger.warning(f"[StorageCleaner] Falha ao remover {fpath}: {e}")
 
@@ -228,8 +233,13 @@ class StorageCleaner:
 
         if removed_count > 0:
             sys_logger.info(
-                f"[StorageCleaner] {removed_count} arquivo(s) removidos "
-                f"({removed_bytes // (1024*1024)}MB). Atual: ~{current_size // (1024*1024)}MB"
+                f"[StorageCleaner] Limpeza concluída: {removed_count} arquivo(s) removidos "
+                f"({removed_bytes // (1024*1024)}MB). "
+                f"Tamanho atual do storage: ~{current_size // (1024*1024)}MB"
+            )
+        else:
+            sys_logger.debug(
+                f"[StorageCleaner] Nada para remover. Tamanho atual: ~{current_size // (1024*1024)}MB"
             )
 
     def _cleanup_empty_dirs(self):
@@ -263,7 +273,12 @@ class PeriodicSnapshotter:
         self._frame_count += 1
         now = timestamp or time.time()
 
-        if self._frame_count < self.frame_threshold and (now - self._last_capture_ts) < self.time_threshold:
+        should_capture = (
+            self._frame_count >= self.frame_threshold
+            or (now - self._last_capture_ts) >= self.time_threshold
+        )
+
+        if not should_capture:
             return None
 
         return self._capture(frame, now)
@@ -276,23 +291,34 @@ class PeriodicSnapshotter:
     def _capture(self, frame, ts: float) -> Optional[str]:
         try:
             ds = time.localtime(ts)
-            subdir = os.path.join(PERIODIC_SNAP_DIR,
-                                  time.strftime("%Y", ds),
-                                  time.strftime("%m", ds),
-                                  time.strftime("%d", ds))
+            subdir = os.path.join(
+                PERIODIC_SNAP_DIR,
+                time.strftime("%Y", ds),
+                time.strftime("%m", ds),
+                time.strftime("%d", ds),
+            )
             os.makedirs(subdir, exist_ok=True)
 
             self._seq += 1
-            fpath = os.path.join(subdir, f"snap_{time.strftime('%H%M%S', ds)}_{self._seq:06d}.jpg")
+            fname = (
+                f"snap_{time.strftime('%H%M%S', ds)}_{self._seq:06d}.jpg"
+            )
+            fpath = os.path.join(subdir, fname)
+
             cv2.imwrite(fpath, frame, [cv2.IMWRITE_JPEG_QUALITY, 80])
 
-            self._frame_count     = 0
+            sys_logger.debug(
+                f"[PeriodicSnapshotter] Snapshot salvo: {fpath} "
+                f"(frames={self._frame_count}, dt={ts - self._last_capture_ts:.1f}s)"
+            )
+
+            self._frame_count    = 0
             self._last_capture_ts = ts
             return os.path.abspath(fpath)
         except Exception as e:
-            sys_logger.warning(f"[PeriodicSnapshotter] Falha: {e}")
+            sys_logger.warning(f"[PeriodicSnapshotter] Falha ao salvar snapshot: {e}")
             return None
 
     def reset(self):
-        self._frame_count     = 0
+        self._frame_count    = 0
         self._last_capture_ts = 0.0

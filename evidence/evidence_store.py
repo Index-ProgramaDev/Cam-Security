@@ -6,8 +6,6 @@ from typing import Optional
 from utils.logger import sys_logger
 
 DB_URL         = os.environ.get("CAM_DB_URL", "")
-EVIDENCES_DIR  = os.path.join("storage", "evidences")
-FALLBACK_FILE  = os.path.join(EVIDENCES_DIR, "evidences_fallback.jsonl")
 _db_available  = False
 _Session       = None
 _EvidenceModel = None
@@ -78,11 +76,11 @@ def save_evidence_meta(event_id: str, storage_path: str, mime_type: str = "video
 
 
 def _save_fallback(**kwargs):
-    os.makedirs(EVIDENCES_DIR, exist_ok=True)
+    os.makedirs("events", exist_ok=True)
     try:
-        with open(FALLBACK_FILE, "a", encoding="utf-8") as f:
+        with open("events/evidences_fallback.jsonl", "a", encoding="utf-8") as f:
             f.write(json.dumps({"timestamp": time.strftime("%Y-%m-%dT%H:%M:%S"), **kwargs},
                                ensure_ascii=False, default=str) + "\n")
-        sys_logger.info(f"[EvidenceStore] Metadata salva em fallback: event_id={kwargs.get('event_id')}")
+        sys_logger.info(f"[EvidenceStore] Metadata salva em fallback JSONL: event_id={kwargs.get('event_id')} path={kwargs.get('storage_path')}")
     except Exception as e:
         sys_logger.error(f"[EvidenceStore] Falha no fallback JSONL: {e}")

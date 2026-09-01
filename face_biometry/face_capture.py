@@ -1,9 +1,16 @@
+"""
+FaceCapture — captura e insights faciais por track com throttle.
+
+Cada track é verificado no máximo uma vez a cada FACE_CHECK_INTERVAL segundos.
+Entre verificações, retorna o último resultado em cache sem re-detectar.
+"""
+
 import time
 import cv2
 import numpy as np
 from utils.logger import sys_logger
 
-FACE_CHECK_INTERVAL = 0.5
+FACE_CHECK_INTERVAL = 0.5  # segundos entre detecções para o mesmo track
 
 
 class FaceCapture:
@@ -16,9 +23,15 @@ class FaceCapture:
             self.detector       = FaceDetector()
             self._owns_detector = True
 
+        # track_id -> (last_check_timestamp, last_result)
         self._cache: dict = {}
 
     def capture_face_insights(self, image, track_id: int = -1):
+        """
+        Detecta rosto em 'image' e retorna dict com: box, face_img, embedding, insights.
+        Retorna None se nenhum rosto for encontrado.
+        Respeita throttle por track_id quando track_id >= 0.
+        """
         if image is None or image.size == 0:
             return None
 

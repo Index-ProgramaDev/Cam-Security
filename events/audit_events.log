@@ -1,5 +1,0 @@
-{"timestamp": "2026-09-01 01:24:14", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #2", "evidence_path": ""}
-{"timestamp": "2026-09-01 01:31:17", "event_type": "FALLEN", "track_id": 3, "risk_score": 80, "description": "Pose proibida: FALLEN", "evidence_path": ""}
-{"timestamp": "2026-09-01 01:31:18", "event_type": "COLISAO", "track_id": 2, "risk_score": 75, "description": "Colisão entre #2 e #3", "evidence_path": ""}
-{"timestamp": "2026-09-01 01:38:09", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #2", "evidence_path": ""}
-{"timestamp": "2026-09-01 01:38:15", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #2", "evidence_path": ""}

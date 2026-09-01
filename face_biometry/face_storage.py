@@ -95,14 +95,17 @@ class FaceStorage:
             if self._track_identity_cache.get(track_id) == person_id:
                 return
             self._track_identity_cache[track_id] = person_id
-            sys_logger.info(f"[FaceStorage] Track #{track_id} → Person '{person_id}'")
             fid = self._track_face_map.get(track_id)
             if fid and fid in self._temp:
                 tmp = self._temp[fid]
                 if tmp.quality >= MIN_QUALITY_SCORE:
                     self._add_to_person(person_id, tmp.embedding, tmp.quality, track_id, face_id=fid)
                     del self._temp[fid]
-                    sys_logger.info(f"[FaceStorage] Face temporária {fid} promovida → '{person_id}'")
+                    sys_logger.info(f"[FaceStorage] Track #{track_id} → '{person_id}' (face {fid} promovida)")
+                else:
+                    sys_logger.info(f"[FaceStorage] Track #{track_id} → '{person_id}'")
+            else:
+                sys_logger.info(f"[FaceStorage] Track #{track_id} → '{person_id}'")
 
     def promote_temp_face(self, track_id: int, person_id: str) -> Optional[str]:
         with self._lock:
@@ -143,7 +146,7 @@ class FaceStorage:
             return
         with self._lock:
             self._add_to_person(person_id, embedding, quality)
-        sys_logger.info(f"[FaceStorage] Embedding registrado para '{person_id}'")
+        sys_logger.debug(f"[FaceStorage] Embedding registrado para '{person_id}'")
 
     def remove(self, track_id: int):
         with self._lock:
