@@ -2,26 +2,21 @@ import time
 import math
 from utils.logger import sys_logger
 
+# TTL de propagação do face_box sem nova detecção (suaviza flickering)
+FACE_BOX_TTL = 0.25
+
+
 def compute_iou(boxA, boxB):
-    """Calcula Intersection over Union (IoU) entre duas caixas [x1, y1, x2, y2]."""
     xA = max(boxA[0], boxB[0])
     yA = max(boxA[1], boxB[1])
     xB = min(boxA[2], boxB[2])
     yB = min(boxA[3], boxB[3])
-
-    interArea = max(0, xB - xA) * max(0, yB - yA)
-    if interArea == 0:
+    inter = max(0, xB - xA) * max(0, yB - yA)
+    if inter == 0:
         return 0.0
-
-    boxAArea = (boxA[2] - boxA[0]) * (boxA[3] - boxA[1])
-    boxBArea = (boxB[2] - boxB[0]) * (boxB[3] - boxB[1])
-
-    iou = interArea / float(boxAArea + boxBArea - interArea)
-    return iou
-
-# Quanto tempo (segundos) um face_box pode ser propagado sem nova detecção.
-# Mantém o box por 1 frame extra para suavizar flickering, mas remove rapidamente.
-FACE_BOX_TTL = 0.25
+    areaA = (boxA[2] - boxA[0]) * (boxA[3] - boxA[1])
+    areaB = (boxB[2] - boxB[0]) * (boxB[3] - boxB[1])
+    return inter / float(areaA + areaB - inter)
 
 
 class ObjectTracker:
@@ -29,128 +24,109 @@ class ObjectTracker:
         self.id_manager = id_manager
         self.ttl_seconds = ttl_seconds
         self.iou_threshold = iou_threshold
-        # tracks: track_id -> {"box": [...], "last_seen": timestamp, "triggered": bool, "age": int, ...}
         self.tracks = {}
 
     def update(self, detected_boxes, face_reid_callback=None, frame=None):
         now = time.time()
         updated_tracks = {}
-        unmatched_box_indices = list(range(len(detected_boxes)))
+        unmatched = list(range(len(detected_boxes)))
 
-        # Tentar IoU + Center Distance matching com candidate tracks recentemente vistos (< 2.0s)
         candidate_ids = [
             tid for tid, info in self.tracks.items()
             if (now - info["last_seen"]) <= 2.0
         ]
 
-        # Monta matriz de correspondência com pares (score, tid, box_idx)
+        # Matching por IoU + distância de centro (score ponderado)
         match_candidates = []
-        for box_idx in unmatched_box_indices:
+        for box_idx in unmatched:
             box = detected_boxes[box_idx]["box"] if isinstance(detected_boxes[box_idx], dict) else detected_boxes[box_idx]
-            cx1, cy1 = (box[0] + box[2]) / 2.0, (box[1] + box[3]) / 2.0
+            cx1 = (box[0] + box[2]) / 2.0
+            cy1 = (box[1] + box[3]) / 2.0
             h1 = abs(box[3] - box[1])
-
             for tid in candidate_ids:
                 prev_box = self.tracks[tid]["box"]
                 iou = compute_iou(box, prev_box)
-                cx2, cy2 = (prev_box[0] + prev_box[2]) / 2.0, (prev_box[1] + prev_box[3]) / 2.0
-                dist = math.sqrt((cx2 - cx1)**2 + (cy2 - cy1)**2)
-
-                # Se houver sobreposição IoU >= 0.15 OU distância do centro for pequena (< 40% da altura)
+                cx2 = (prev_box[0] + prev_box[2]) / 2.0
+                cy2 = (prev_box[1] + prev_box[3]) / 2.0
+                dist = math.sqrt((cx2 - cx1) ** 2 + (cy2 - cy1) ** 2)
                 if iou >= self.iou_threshold or (h1 > 0 and (dist / h1) < 0.40):
-                    # Score ponderado: prioriza IoU alto, com bônus de proximidade de centro
                     score = iou + max(0, 1.0 - (dist / (h1 + 1e-5)))
                     match_candidates.append((score, tid, box_idx))
 
-        # Atribuição gulosa pela maior pontuação
         match_candidates.sort(key=lambda x: x[0], reverse=True)
-        used_track_ids = set()
-        matched_box_indices = set()
+        used_tids = set()
+        matched_boxes = set()
 
-        for score, tid, box_idx in match_candidates:
-            if tid in used_track_ids or box_idx in matched_box_indices:
+        for _, tid, box_idx in match_candidates:
+            if tid in used_tids or box_idx in matched_boxes:
                 continue
+            used_tids.add(tid)
+            matched_boxes.add(box_idx)
 
-            used_track_ids.add(tid)
-            matched_box_indices.add(box_idx)
             box = detected_boxes[box_idx]["box"] if isinstance(detected_boxes[box_idx], dict) else detected_boxes[box_idx]
             prev = self.tracks[tid]
-
-            # Propaga face_box apenas se ainda estiver dentro do TTL de visibilidade.
-            # Evita que um rosto detectado há muito tempo continue sendo exibido.
-            prev_face_detected_at = prev.get("face_detected_at", 0.0)
-            face_still_fresh = (now - prev_face_detected_at) <= FACE_BOX_TTL
-            propagated_face_box = prev.get("face_box") if face_still_fresh else None
+            prev_face_at = prev.get("face_detected_at", 0.0)
+            face_fresh = (now - prev_face_at) <= FACE_BOX_TTL
 
             updated_tracks[tid] = {
-                "box": box,
-                "last_seen": now,
-                "triggered": prev.get("triggered", False),
-                "age": prev.get("age", 0) + 1,
-                "identity": prev.get("identity"),
-                "face_box": propagated_face_box,
-                "face_detected_at": prev_face_detected_at if face_still_fresh else 0.0,
-                "face_status": prev.get("face_status"),
-                "face_confidence": prev.get("face_confidence"),
-                "last_face_check": prev.get("last_face_check", 0.0),
+                "box":              box,
+                "last_seen":        now,
+                "triggered":        prev.get("triggered", False),
+                "age":              prev.get("age", 0) + 1,
+                "identity":         prev.get("identity"),
+                "face_box":         prev.get("face_box") if face_fresh else None,
+                "face_detected_at": prev_face_at if face_fresh else 0.0,
+                "face_status":      prev.get("face_status"),
+                "face_confidence":  prev.get("face_confidence"),
+                "last_face_check":  prev.get("last_face_check", 0.0),
             }
 
-        # Para caixas não associadas via IoU/Centro, tenta FaceReID contra a memória
-        unmatched_box_indices = [i for i in unmatched_box_indices if i not in matched_box_indices]
-
-        for box_idx in unmatched_box_indices:
+        # Boxes sem match: tenta Re-ID facial, senão atribui novo ID
+        unmatched = [i for i in unmatched if i not in matched_boxes]
+        for box_idx in unmatched:
             box = detected_boxes[box_idx]["box"] if isinstance(detected_boxes[box_idx], dict) else detected_boxes[box_idx]
             assigned_id = None
             reidentified = False
 
             if face_reid_callback and frame is not None:
                 x1, y1, x2, y2 = box
-                person_crop = frame[max(0, y1):min(frame.shape[0], y2), max(0, x1):min(frame.shape[1], x2)]
-                if person_crop.size > 0:
-                    matched_reid = face_reid_callback(person_crop)
-                    # Não reutilizar ID já visível neste frame (evita misturar pessoas).
-                    if matched_reid is not None and matched_reid not in updated_tracks:
-                        assigned_id = matched_reid
+                crop = frame[max(0, y1):min(frame.shape[0], y2), max(0, x1):min(frame.shape[1], x2)]
+                if crop.size > 0:
+                    matched = face_reid_callback(crop)
+                    if matched is not None and matched not in updated_tracks:
+                        assigned_id = matched
                         reidentified = True
-                        sys_logger.info(f"[Tracker] Pessoa reidentificada via FaceReID! ID #{assigned_id}")
+                        sys_logger.info(f"[Tracker] Reidentificado via FaceReID: ID #{assigned_id}")
 
             if assigned_id is None:
                 assigned_id = self.id_manager.get_next_id()
 
             prev = self.tracks.get(assigned_id, {})
-            identity = assigned_id if reidentified else prev.get("identity")
             updated_tracks[assigned_id] = {
-                "box": box,
-                "last_seen": now,
-                "triggered": False,
-                "age": prev.get("age", 0) + 1,
-                "identity": identity,
-                "face_box": None,
+                "box":              box,
+                "last_seen":        now,
+                "triggered":        False,
+                "age":              prev.get("age", 0) + 1,
+                "identity":         assigned_id if reidentified else prev.get("identity"),
+                "face_box":         None,
                 "face_detected_at": 0.0,
-                "face_status": "identificado" if identity is not None else "novo",
-                "face_confidence": prev.get("face_confidence"),
-                "last_face_check": 0.0,
+                "face_status":      "identificado" if reidentified else "novo",
+                "face_confidence":  prev.get("face_confidence"),
+                "last_face_check":  0.0,
             }
 
-        # Atualiza a memória do tracker
         self.tracks.update(updated_tracks)
 
-        # Expira tracks na memória após TTL de 5 min (300s)
-        expired_ids = [
-            tid for tid, tinfo in self.tracks.items()
-            if not tinfo.get("triggered", False) and (now - tinfo["last_seen"]) > self.ttl_seconds
-        ]
-        for tid in expired_ids:
-            sys_logger.info(f"[Tracker] Track #{tid} expirou após 5 minutos.")
+        # Expira tracks inativos (5 min)
+        for tid in [t for t, i in self.tracks.items()
+                    if not i.get("triggered", False) and (now - i["last_seen"]) > self.ttl_seconds]:
+            sys_logger.info(f"[Tracker] Track #{tid} expirou.")
             self.tracks.pop(tid, None)
 
-        # Retorna apenas tracks visíveis atualmente (< 1.0s de latência)
-        currently_visible_tracks = {
+        return {
             tid: info for tid, info in self.tracks.items()
             if (now - info["last_seen"]) <= 1.0
         }
-
-        return currently_visible_tracks
 
     def set_trigger(self, track_id: int):
         if track_id in self.tracks:

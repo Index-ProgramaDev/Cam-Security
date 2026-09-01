@@ -1,6 +1,7 @@
 import time
 from loguru import logger
 
+
 class SystemLogger:
     def __init__(self, log_file: str = "cam_security.log"):
         self.logger = logger
@@ -22,5 +23,6 @@ class SystemLogger:
         if message:
             self.logger.info(message)
         time.sleep(seconds)
+
 
 sys_logger = SystemLogger()

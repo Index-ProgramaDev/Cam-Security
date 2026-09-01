@@ -1,23 +1,48 @@
-
+# Python
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 *.so
 *.dll
-*.exe
 *.egg
 *.egg-info/
 dist/
 build/
-data/
+
+# Modelos (binários grandes)
+*.pt
+*.task
 holistic_landmarker.task
-yolov8n-pose.pt
-yolov8n.pt
+
+# Dados de vídeo e imagem
+*.mp4
+*.avi
+*.jpg
+*.jpeg
+*.png
+
+# Logs e eventos gerados em runtime
+*.log
+*.jsonl
+cam_security.log
+
+# Storage gerado em runtime
+storage/
+
+# Ambiente virtual
+.venv/
+venv/
+env/
+
+# IDEs
+.vscode/
+.idea/
+
+# Scripts de desenvolvimento descartados
 test_*.py
 debug_*.py
 check_*.py
-download_model.py
 simple_test.py
+download_model.py
 ui/index.html
-

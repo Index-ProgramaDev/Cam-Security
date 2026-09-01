@@ -1,26 +1,8 @@
-# Visão computacional
-opencv-python
-numpy
-
-# Detecção e IA
-ultralytics          # YOLOv8
-mediapipe
-
-# Reconhecimento facial
-face-recognition
-dlib
-
-# Banco de dados
-sqlalchemy
-psycopg2-binary     
-
-# Backend / API
-fastapi
-uvicorn
-
-# Utilidades
-pillow
-scipy
-
-# Logging
-loguru
+opencv-python>=4.8.0
+numpy>=1.24.0
+ultralytics>=8.0.0
+mediapipe>=0.10.0
+sqlalchemy>=2.0.0
+psycopg2-binary>=2.9.0
+loguru>=0.7.0
+PyYAML>=6.0
