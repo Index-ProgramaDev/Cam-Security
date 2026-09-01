@@ -1,7 +1,6 @@
-
-
 import cv2
 import numpy as np
+from pathlib import Path
 from utils.logger import sys_logger
 
 MIN_FACE_SIZE = 28
@@ -9,20 +8,38 @@ MIN_FACE_SIZE = 28
 
 class FaceDetector:
     def __init__(self):
-        self.cascade = cv2.CascadeClassifier(
-            cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
+        cascade_path = (
+            Path(__file__).resolve().parent
+            / "haarcascade_frontalface_default.xml"
         )
+
+        sys_logger.info(
+            f"[FaceDetector] Carregando Haar Cascade: {cascade_path}"
+        )
+
+        self.cascade = cv2.CascadeClassifier(str(cascade_path))
+
         if self.cascade.empty():
-            sys_logger.error("[FaceDetector] Haar Cascade não carregou.")
-        else:
-            sys_logger.info("[FaceDetector] Haar Cascade (frontal) inicializado — modo leve.")
+            raise RuntimeError(
+                f"[FaceDetector] Não foi possível carregar o Haar Cascade: "
+                f"{cascade_path}"
+            )
+
+        sys_logger.info(
+            "[FaceDetector] Haar Cascade (frontal) inicializado — modo leve."
+        )
 
     def detect_faces(self, frame):
-    
+
         if frame is None or frame.size == 0:
             return []
 
+        if self.cascade.empty():
+            sys_logger.error("[FaceDetector] Cascade está vazio.")
+            return []
+
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
         faces_hw = self.cascade.detectMultiScale(
             gray,
             scaleFactor=1.1,
@@ -33,7 +50,12 @@ class FaceDetector:
         if len(faces_hw) == 0:
             return []
 
-        faces_sorted = sorted(faces_hw, key=lambda f: f[2] * f[3], reverse=True)
+        faces_sorted = sorted(
+            faces_hw,
+            key=lambda f: f[2] * f[3],
+            reverse=True
+        )
+
         h_frame, w_frame = frame.shape[:2]
         results = []
 
@@ -42,12 +64,15 @@ class FaceDetector:
             y1 = max(0, fy)
             x2 = min(w_frame, fx + fw)
             y2 = min(h_frame, fy + fh)
+
             face_img = frame[y1:y2, x1:x2]
+
             if face_img.size == 0:
                 continue
+
             results.append({
-                "box":       [x1, y1, x2 - x1, y2 - y1],
-                "face_img":  face_img,
+                "box": [x1, y1, x2 - x1, y2 - y1],
+                "face_img": face_img,
                 "embedding": self.extract_feature_vector(face_img),
                 "landmarks": None,
             })
@@ -55,26 +80,48 @@ class FaceDetector:
         return results
 
     def extract_feature_vector(self, face_crop):
-      
+
         if face_crop is None or face_crop.size == 0:
             return np.zeros(128, dtype=np.float32)
 
         resized = cv2.resize(face_crop, (64, 64))
         gray = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)
+
         gx = cv2.Sobel(gray, cv2.CV_32F, 1, 0, ksize=3)
         gy = cv2.Sobel(gray, cv2.CV_32F, 0, 1, ksize=3)
-        mag, angle = cv2.cartToPolar(gx, gy, angleInDegrees=True)
+
+        mag, angle = cv2.cartToPolar(
+            gx,
+            gy,
+            angleInDegrees=True
+        )
 
         cells = []
+
         for i in range(4):
             for j in range(4):
-                cell_mag = mag[i * 16:(i + 1) * 16, j * 16:(j + 1) * 16]
-                cell_ang = angle[i * 16:(i + 1) * 16, j * 16:(j + 1) * 16]
-                hist, _ = np.histogram(cell_ang, bins=8, range=(0, 360), weights=cell_mag)
+                cell_mag = mag[
+                    i * 16:(i + 1) * 16,
+                    j * 16:(j + 1) * 16
+                ]
+
+                cell_ang = angle[
+                    i * 16:(i + 1) * 16,
+                    j * 16:(j + 1) * 16
+                ]
+
+                hist, _ = np.histogram(
+                    cell_ang,
+                    bins=8,
+                    range=(0, 360),
+                    weights=cell_mag
+                )
+
                 cells.extend(hist)
 
         vec = np.array(cells, dtype=np.float32)
         norm = np.linalg.norm(vec)
+
         return vec / norm if norm > 0 else vec
 
     def close(self):
