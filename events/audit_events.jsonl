@@ -1,0 +1,3 @@
+{"timestamp": "2026-09-06 21:35:50", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #2"}
+{"timestamp": "2026-09-06 21:35:56", "event_type": "ARM_RAISED", "track_id": 1, "risk_score": 45, "description": "Pose proibida: ARM_RAISED"}
+{"timestamp": "2026-09-06 21:36:04", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #3"}

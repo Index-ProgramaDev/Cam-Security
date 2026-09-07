@@ -3,6 +3,7 @@
 import cv2
 import numpy as np
 from utils.logger import sys_logger
+from face_biometry.face_config import EMBEDDING_DIM
 
 MIN_FACE_SIZE = 28
 
@@ -55,9 +56,12 @@ class FaceDetector:
         return results
 
     def extract_feature_vector(self, face_crop):
-      
+        """
+        HOG simplificado: grade 4×4 células × 8 bins = 128 dimensões.
+        Dimensão de saída sempre == EMBEDDING_DIM (128).
+        """
         if face_crop is None or face_crop.size == 0:
-            return np.zeros(128, dtype=np.float32)
+            return np.zeros(EMBEDDING_DIM, dtype=np.float32)
 
         resized = cv2.resize(face_crop, (64, 64))
         gray = cv2.cvtColor(resized, cv2.COLOR_BGR2GRAY)

@@ -28,6 +28,7 @@ class AlertManager:
     evidence_manager       : EvidenceManager | None — se fornecido, captura vídeo
     camera_id              : str — ID da câmera usada na captura de evidência
     face_storage           : FaceStorage | None — para recuperar face_id/person_id
+    face_snapshot          : FaceSnapshotBuffer | None — promove buffer facial no gatilho
     """
 
     def __init__(
@@ -38,6 +39,7 @@ class AlertManager:
         evidence_manager=None,
         camera_id: str = "cam_0",
         face_storage=None,
+        face_snapshot=None,
     ):
         self.event_logger = event_logger
         self.notification_dispatcher = notification_dispatcher
@@ -45,6 +47,7 @@ class AlertManager:
         self.evidence_manager = evidence_manager
         self.camera_id = camera_id
         self.face_storage = face_storage
+        self.face_snapshot = face_snapshot
 
         # (track_id, event_type) -> último timestamp de disparo
         self.last_alerts: dict = {}
@@ -125,6 +128,10 @@ class AlertManager:
                 face_id=face_id,
                 person_id=person_id,
             )
+
+        # Promove buffer facial temporário do track (fotos + embeddings)
+        if self.face_snapshot is not None:
+            self.face_snapshot.on_trigger(track_id=track_id, event_id=event_id)
 
         # Log completo com contexto
         sys_logger.info(

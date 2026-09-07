@@ -19,9 +19,11 @@ from detection.mediapipe_detector import MediaPipeDetector
 from detection.pose_estimation import PoseEstimator
 from tracking.id_manager import IDManager
 from tracking.object_tracker import ObjectTracker
+from tracking.track_registry import TrackRegistry
 from face_biometry.face_capture import FaceCapture
 from face_biometry.face_storage import FaceStorage
 from face_biometry.face_reid import FaceReID
+from face_biometry.face_snapshot import FaceSnapshotBuffer
 from events.event_logger import EventLogger
 from events.notification import NotificationDispatcher
 from events.alerts import AlertManager
@@ -31,10 +33,6 @@ MIN_TRACK_AGE_FOR_EVENTS  = 10    # frames mínimos antes de aceitar evento de c
 LOG_PERF_INTERVAL         = 10.0  # segundos entre logs de performance
 TEMP_FACE_CLEANUP_INTERVAL = 120.0 # segundos entre limpezas de faces temporárias expiradas
 CAMERA_ID                 = "cam_0"
-
-# Intervalo mínimo entre tentativas de Re-ID para o mesmo track (segundos).
-# Após identidade confirmada, Re-ID só re-ocorre nesse intervalo via cache do FaceReID.
-REID_RETRY_INTERVAL = 5.0
 
 
 # ---------------------------------------------------------------------------
@@ -96,6 +94,7 @@ def main():
 
     id_manager      = IDManager()
     object_tracker  = ObjectTracker(id_manager=id_manager, ttl_seconds=300.0)
+    track_registry  = TrackRegistry(id_manager=id_manager)
     person_detector = PersonDetector()
     pose_detector   = MediaPipeDetector()
     pose_estimator  = PoseEstimator(required_consecutive_frames=5)
@@ -104,6 +103,7 @@ def main():
     face_storage  = FaceStorage()
     face_capture  = FaceCapture(face_detector=face_detector)
     face_reid     = FaceReID(face_storage=face_storage)
+    face_snapshot = FaceSnapshotBuffer()
 
     evidence_manager = EvidenceManager(fps=camera.fps)
     evidence_manager.register_camera(CAMERA_ID, fps=camera.fps)
@@ -117,15 +117,12 @@ def main():
         evidence_manager=evidence_manager,
         camera_id=CAMERA_ID,
         face_storage=face_storage,
+        face_snapshot=face_snapshot,
     )
 
     prev_centroids: dict = {}
     prev_wrists:    dict = {}
     punch_counters: dict = {}
-
-    # Estado de Re-ID por track: track_id -> timestamp da última tentativa de Re-ID.
-    # Evita Re-ID em todos os frames para tracks que ainda não foram identificados.
-    _reid_last_attempt: dict = {}
 
     last_infer_time     = time.time()
     last_infer_seq      = -1
@@ -149,7 +146,13 @@ def main():
     def try_reid(person_crop):
         insights = face_capture.capture_face_insights(person_crop, track_id=-1)
         if insights and insights["embedding"] is not None:
-            return face_reid.match_embedding(insights["embedding"])
+            emb = insights["embedding"]
+            # 1. Tenta recuperar track_id original do registry (reentrada entre sessões)
+            recovered = track_registry.find_by_embedding(emb)
+            if recovered is not None:
+                return recovered
+            # 2. Fallback: match pelo storage em memória (mesma sessão)
+            return face_reid.match_embedding(emb)
         return None
 
     # -----------------------------------------------------------------------
@@ -200,9 +203,10 @@ def main():
                 pose_detector.pose_hold.prune(active_ids)
                 face_capture.prune_cache(active_ids)
                 face_reid.prune_cache(active_ids)
-                # Limpa estado de Re-ID para tracks que não estão mais ativos
-                for tid in [t for t in _reid_last_attempt if t not in active_ids]:
-                    del _reid_last_attempt[tid]
+                face_snapshot.prune_inactive(active_ids, now=now)
+                face_snapshot.run_cleanup_if_due(now=now)
+                track_registry.expire_old(now=now)
+                track_registry.save()
 
                 alert_track_ids   = []
                 collision_detected = False
@@ -222,12 +226,15 @@ def main():
                             _, dist_label = calculate_relative_distance(infoA["box"], infoB["box"])
                             if detect_collision(infoA["box"], infoB["box"]):
                                 collision_detected = True
-                                alert_manager.trigger_alert(
+                                fired = alert_manager.trigger_alert(
                                     "COLISAO", idA,
                                     risk_score=calculate_risk_score("COLISAO", dist_label, 0.0, True),
                                     description=f"Colisão entre #{idA} e #{idB}",
                                     triggered_at=now,
                                 )
+                                if fired:
+                                    track_registry.set_triggered(idA)
+                                    track_registry.set_triggered(idB)
                             if dist_label == "PERTO":
                                 min_dist_label = "PERTO"
                             elif dist_label == "MEDIO" and min_dist_label != "PERTO":
@@ -269,25 +276,40 @@ def main():
                                 tracks[track_id]["face_detected_at"] = now
                                 tracks[track_id]["face_status"]      = "detectado"
 
+                            # Buffer facial: foto + embedding com throttle/limite por track.
+                            # Só alimenta o registry quando o embedding foi realmente aceito.
+                            emb_accepted = face_snapshot.on_face_detected(
+                                track_id=track_id,
+                                face_img=insights.get("face_img"),
+                                embedding=emb,
+                                now=now,
+                            )
+                            if emb_accepted:
+                                track_registry.add_embedding(
+                                    track_id=track_id,
+                                    embedding=emb,
+                                    person_id=face_storage.get_identity_for_track(track_id),
+                                    now=now,
+                                )
+
                             # Identidade já confirmada: apenas propaga, não re-executa Re-ID
                             known_identity = face_storage.get_identity_for_track(track_id)
                             if known_identity is not None:
                                 tracks[track_id]["identity"] = known_identity
                             else:
-                                # Sem identidade: salva embedding e tenta Re-ID com controle de frequência
+                                # Sem identidade: salva embedding e tenta Re-ID.
+                                # identify_track tem cache interno de 30s — não buscará a cada frame.
                                 face_storage.save_embedding(track_id, emb, quality=quality_norm)
-                                last_attempt = _reid_last_attempt.get(track_id, 0.0)
-                                if (now - last_attempt) >= REID_RETRY_INTERVAL:
-                                    _reid_last_attempt[track_id] = now
-                                    reid = face_reid.identify_track(track_id, emb)
-                                    if reid.is_match():
-                                        tracks[track_id]["identity"]        = reid.person_id
-                                        tracks[track_id]["face_status"]     = reid.confidence.lower()
-                                        tracks[track_id]["face_confidence"] = reid.similarity
-                                        sys_logger.info(
-                                            f"[Face] Track #{track_id} → '{reid.person_id}' "
-                                            f"sim={reid.similarity:.3f} {reid.confidence}"
-                                        )
+                                reid = face_reid.identify_track(track_id, emb)
+                                if reid.is_match():
+                                    tracks[track_id]["identity"]        = reid.person_id
+                                    tracks[track_id]["face_status"]     = reid.confidence.lower()
+                                    tracks[track_id]["face_confidence"] = reid.similarity
+                                    track_registry.set_person(track_id, reid.person_id)
+                                    sys_logger.info(
+                                        f"[Face] Track #{track_id} → '{reid.person_id}' "
+                                        f"sim={reid.similarity:.3f} {reid.confidence}"
+                                    )
                         else:
                             # Rosto não visível agora: limpa face_box após TTL
                             if (now - tracks[track_id].get("face_detected_at", 0.0)) > 0.25:
@@ -323,7 +345,7 @@ def main():
                             if cnt >= 3:
                                 alert_track_ids.append(track_id)
                                 object_tracker.set_trigger(track_id)
-                                alert_manager.trigger_alert(
+                                fired = alert_manager.trigger_alert(
                                     "SOCO", track_id,
                                     risk_score=calculate_risk_score(
                                         "SOCO", min_dist_label,
@@ -332,13 +354,15 @@ def main():
                                     description="Ataque/Soco rápido detectado!",
                                     triggered_at=now,
                                 )
+                                if fired:
+                                    track_registry.set_triggered(track_id)
                         else:
                             punch_counters[track_id] = 0
                             is_forbidden, pose_name = pose_estimator.evaluate(pose_lms, track_id=track_id)
                             if is_forbidden:
                                 alert_track_ids.append(track_id)
                                 object_tracker.set_trigger(track_id)
-                                alert_manager.trigger_alert(
+                                fired = alert_manager.trigger_alert(
                                     pose_name, track_id,
                                     risk_score=calculate_risk_score(
                                         pose_name, min_dist_label, body_vel, collision_detected,
@@ -346,6 +370,8 @@ def main():
                                     description=f"Pose proibida: {pose_name}",
                                     triggered_at=now,
                                 )
+                                if fired:
+                                    track_registry.set_triggered(track_id)
 
                 total_ms = (time.perf_counter() - t_start) * 1000.0
 
@@ -430,6 +456,7 @@ def main():
     finally:
         camera.running = False
         infer_thread.join(timeout=2.0)
+        track_registry.save(force=True)
         pose_detector.close()
         face_detector.close()
         face_capture.close()

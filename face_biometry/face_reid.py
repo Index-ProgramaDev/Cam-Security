@@ -3,6 +3,7 @@ import numpy as np
 from dataclasses import dataclass, field
 from typing import Optional, List, Tuple
 from utils.logger import sys_logger
+from face_biometry.face_config import EMBEDDING_DIM
 
 MATCH_THRESHOLD           = 0.70
 HIGH_CONFIDENCE_THRESHOLD = 0.82
@@ -43,8 +44,14 @@ class FaceReID:
         q_norm = np.linalg.norm(query_embedding)
         if q_norm < 1e-8:
             return no_match
-        if embedding_dim is not None and len(query_embedding) != embedding_dim:
-            sys_logger.warning(f"[FaceReID] Dimensão incompatível: query={len(query_embedding)}, esperado={embedding_dim}")
+
+        # Usa EMBEDDING_DIM como contrato padrão quando não passado explicitamente
+        expected_dim = embedding_dim if embedding_dim is not None else EMBEDDING_DIM
+        if len(query_embedding) != expected_dim:
+            sys_logger.warning(
+                f"[FaceReID] Embedding rejeitado: dimensão={len(query_embedding)}, "
+                f"esperado={expected_dim}"
+            )
             return no_match
 
         q_unit  = query_embedding / q_norm
