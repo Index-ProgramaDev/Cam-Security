@@ -68,7 +68,7 @@ class PersonDetector:
 
         if self.yolo_model:
             try:
-                results = self.yolo_model(frame, verbose=False, conf=0.50)[0]
+                results = self.yolo_model(frame, imgsz=512, verbose=False, conf=0.50)[0]
                 for det in results.boxes:
                     if int(det.cls[0]) == 0:
                         x1, y1, x2, y2 = det.xyxy[0].cpu().numpy().astype(int)

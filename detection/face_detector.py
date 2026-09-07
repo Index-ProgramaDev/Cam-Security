@@ -9,65 +9,51 @@ MIN_FACE_SIZE = 28
 
 class FaceDetector:
     def __init__(self):
-        cascade_path = (
+        model_path = (
             Path(__file__).resolve().parent
-            / "haarcascade_frontalface_default.xml"
+            / "face_detection_yunet_2023mar.onnx"
         )
-
-        sys_logger.info(
-            f"[FaceDetector] Carregando Haar Cascade: {cascade_path}"
+        sys_logger.info(f"[FaceDetector] Carregando YuNet: {model_path}")
+        
+        # A inicialização inicial tem um input_size genérico, é ajustado dinamicamente no detect_faces
+        self.yunet = cv2.FaceDetectorYN.create(
+            model=str(model_path),
+            config="",
+            input_size=(320, 320),
+            score_threshold=0.6,
+            nms_threshold=0.3,
+            top_k=5000
         )
-
-        self.cascade = cv2.CascadeClassifier(str(cascade_path))
-
-        if self.cascade.empty():
-            raise RuntimeError(
-                f"[FaceDetector] Não foi possível carregar o Haar Cascade: "
-                f"{cascade_path}"
-            )
-
-        sys_logger.info(
-            "[FaceDetector] Haar Cascade (frontal) inicializado — modo leve."
-        )
+        import threading
+        self._lock = threading.Lock()
+        
+        sys_logger.info("[FaceDetector] YuNet inicializado com sucesso.")
 
     def detect_faces(self, frame):
-
         if frame is None or frame.size == 0:
             return []
 
-        if self.cascade.empty():
-            sys_logger.error("[FaceDetector] Cascade está vazio.")
-            return []
-
-        gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
-        faces_hw = self.cascade.detectMultiScale(
-            gray,
-            scaleFactor=1.1,
-            minNeighbors=4,
-            minSize=(MIN_FACE_SIZE, MIN_FACE_SIZE),
-        )
-
-        if len(faces_hw) == 0:
-            return []
-
-        faces_sorted = sorted(
-            faces_hw,
-            key=lambda f: f[2] * f[3],
-            reverse=True
-        )
-
         h_frame, w_frame = frame.shape[:2]
-        results = []
+        
+        with self._lock:
+            self.yunet.setInputSize((w_frame, h_frame))
+            _, faces = self.yunet.detect(frame)
 
-        for (fx, fy, fw, fh) in faces_sorted:
-            x1 = max(0, fx)
-            y1 = max(0, fy)
-            x2 = min(w_frame, fx + fw)
-            y2 = min(h_frame, fy + fh)
+        if faces is None:
+            return []
+
+        results = []
+        for face in faces:
+            box = face[0:4].astype(int)
+            x1 = max(0, box[0])
+            y1 = max(0, box[1])
+            fw = max(1, box[2])
+            fh = max(1, box[3])
+            
+            x2 = min(w_frame, x1 + fw)
+            y2 = min(h_frame, y1 + fh)
 
             face_img = frame[y1:y2, x1:x2]
-
             if face_img.size == 0:
                 continue
 
@@ -75,9 +61,10 @@ class FaceDetector:
                 "box": [x1, y1, x2 - x1, y2 - y1],
                 "face_img": face_img,
                 "embedding": self.extract_feature_vector(face_img),
-                "landmarks": None,
+                "landmarks": face[4:14].reshape((5, 2)),
             })
-
+            
+        results.sort(key=lambda x: x["box"][2] * x["box"][3], reverse=True)
         return results
 
     def extract_feature_vector(self, face_crop):

@@ -1,6 +1,7 @@
 import cv2
 import time
 import threading
+import concurrent.futures
 
 from utils.logger import sys_logger
 from utils.math_utils import (
@@ -242,27 +243,47 @@ def main():
 
                 pose_ms_total = 0.0
                 face_ms_total = 0.0
+                
+                track_crops = {}
+                for track_id, info in tracks.items():
+                    crop, crop_box = crop_person(frame, info["box"], pad=True)
+                    track_crops[track_id] = (crop, crop_box)
+
+                def process_heavy(tid, crp, c_box):
+                    t_pose = time.perf_counter()
+                    p_lms = pose_detector.process_for_track(tid, crp, c_box, w, h, frame_ts_ms=frame_ts_ms) if crp.size > 0 else None
+                    t_pose = (time.perf_counter() - t_pose) * 1000.0
+                    
+                    t_face = time.perf_counter()
+                    f_ins = face_capture.capture_face_insights(crp, track_id=tid) if crp.size > 0 else None
+                    t_face = (time.perf_counter() - t_face) * 1000.0
+                    
+                    return tid, p_lms, t_pose, f_ins, t_face
+
+                heavy_results = {}
+                if track_crops:
+                    with concurrent.futures.ThreadPoolExecutor(max_workers=min(4, len(track_crops))) as executor:
+                        futures = [executor.submit(process_heavy, tid, crp[0], crp[1]) for tid, crp in track_crops.items()]
+                        for f in concurrent.futures.as_completed(futures):
+                            res = f.result()
+                            heavy_results[res[0]] = res
 
                 for track_id, info in tracks.items():
+                    crop, crop_box = track_crops[track_id]
                     box       = info["box"]
                     track_age = info.get("age", 0)
-                    crop, crop_box = crop_person(frame, box, pad=True)
+                    
+                    if track_id in heavy_results:
+                        _, pose_lms, p_ms, insights, f_ms = heavy_results[track_id]
+                        pose_ms_total += p_ms
+                        face_ms_total += f_ms
+                    else:
+                        pose_lms, insights = None, None
 
-                    # 3b. Pose por crop
-                    pose_lms = None
-                    if crop.size > 0:
-                        t0 = time.perf_counter()
-                        pose_lms = pose_detector.process_for_track(
-                            track_id, crop, crop_box, w, h, frame_ts_ms=frame_ts_ms,
-                        )
-                        pose_ms_total += (time.perf_counter() - t0) * 1000.0
                     tracks[track_id]["pose"] = pose_lms
 
                     # 3c. Detecção facial com throttle
                     if crop.size > 0:
-                        t0 = time.perf_counter()
-                        insights = face_capture.capture_face_insights(crop, track_id=track_id)
-                        face_ms_total += (time.perf_counter() - t0) * 1000.0
 
                         if insights and insights.get("embedding") is not None:
                             emb          = insights["embedding"]

@@ -1,3 +1,10 @@
 {"timestamp": "2026-09-06 21:35:50", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #2"}
 {"timestamp": "2026-09-06 21:35:56", "event_type": "ARM_RAISED", "track_id": 1, "risk_score": 45, "description": "Pose proibida: ARM_RAISED"}
 {"timestamp": "2026-09-06 21:36:04", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #3"}
+{"timestamp": "2026-09-06 22:12:05", "event_type": "COLISAO", "track_id": 4, "risk_score": 75, "description": "Colisão entre #4 e #6"}
+{"timestamp": "2026-09-06 22:35:08", "event_type": "ARM_RAISED", "track_id": 8, "risk_score": 45, "description": "Pose proibida: ARM_RAISED"}
+{"timestamp": "2026-09-06 22:35:11", "event_type": "SOCO", "track_id": 8, "risk_score": 100, "description": "Ataque/Soco rápido detectado!"}
+{"timestamp": "2026-09-06 22:35:16", "event_type": "SOCO", "track_id": 9, "risk_score": 100, "description": "Ataque/Soco rápido detectado!"}
+{"timestamp": "2026-09-06 22:35:16", "event_type": "ARM_RAISED", "track_id": 7, "risk_score": 45, "description": "Pose proibida: ARM_RAISED"}
+{"timestamp": "2026-09-06 22:35:22", "event_type": "SOCO", "track_id": 7, "risk_score": 100, "description": "Ataque/Soco rápido detectado!"}
+{"timestamp": "2026-09-06 22:35:24", "event_type": "COLISAO", "track_id": 7, "risk_score": 75, "description": "Colisão entre #7 e #9"}

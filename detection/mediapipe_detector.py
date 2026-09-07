@@ -107,11 +107,17 @@ class _TrackLandmarker:
 
 
 class MediaPipeDetector:
-    def __init__(self):
+    def __init__(self, max_pool_size: int = 5):
         self._model_path = ""
-        self._pool: dict = {}
+        self._active_pool: dict = {}  # track_id -> _TrackLandmarker
+        self._free_pool: list = []    # _TrackLandmarker prontos
+        self.max_pool_size = max_pool_size
         self.ready       = False
         self.pose_hold   = PoseHold()
+        
+        import threading
+        self._lock = threading.Lock()
+        
         self._init_model()
 
     def _init_model(self):
@@ -119,21 +125,35 @@ class MediaPipeDetector:
             if os.path.exists(candidate):
                 self._model_path = candidate
                 self.ready       = True
-                sys_logger.info(f"[MediaPipe] Modelo encontrado: {candidate} (RunningMode.VIDEO, 1 pose/crop)")
+                sys_logger.info(f"[MediaPipe] Modelo encontrado: {candidate} (PoolSize={self.max_pool_size})")
                 return
         sys_logger.warning("[MediaPipe] Nenhum modelo .task encontrado. Pose em standby.")
 
     def _get_landmarker(self, track_id: int):
         if not self.ready:
             return None
-        if track_id not in self._pool:
+            
+        with self._lock:
+            # Já possui um?
+            if track_id in self._active_pool:
+                return self._active_pool[track_id]
+                
+            # Tenta pegar do pool livre
+            if self._free_pool:
+                ld = self._free_pool.pop()
+                self._active_pool[track_id] = ld
+                sys_logger.debug(f"[MediaPipe] Detector reaproveitado do pool para track #{track_id} (Restam: {len(self._free_pool)})")
+                return ld
+                
+            # Cria novo se não estourar o limite (limite flexível para não travar)
             try:
-                self._pool[track_id] = _TrackLandmarker(self._model_path)
-                sys_logger.debug(f"[MediaPipe] Detector criado para track #{track_id}")
+                ld = _TrackLandmarker(self._model_path)
+                self._active_pool[track_id] = ld
+                sys_logger.debug(f"[MediaPipe] Novo detector instanciado para track #{track_id}")
+                return ld
             except Exception as e:
-                sys_logger.error(f"[MediaPipe] Falha ao criar detector #{track_id}: {e}")
+                sys_logger.error(f"[MediaPipe] Falha ao instanciar detector: {e}")
                 return None
-        return self._pool[track_id]
 
     def process_crop(self, track_id: int, crop, frame_ts_ms: int) -> list:
         if crop is None or crop.size == 0:
@@ -141,14 +161,18 @@ class MediaPipeDetector:
         h, w = crop.shape[:2]
         if w < MIN_CROP_SIZE or h < MIN_CROP_SIZE:
             return []
+        
         ld = self._get_landmarker(track_id)
+        
         if ld is None:
             return []
         try:
             rgb = cv2.cvtColor(crop, cv2.COLOR_BGR2RGB)
             if not rgb.flags["C_CONTIGUOUS"]:
                 rgb = rgb.copy()
-            return ld.detect(rgb, frame_ts_ms)
+            
+            res = ld.detect(rgb, frame_ts_ms)
+            return res
         except Exception as e:
             sys_logger.error(f"[MediaPipe] Erro no crop track #{track_id}: {e}")
             return []
@@ -160,19 +184,27 @@ class MediaPipeDetector:
         return self.pose_hold.update(track_id, mapped)
 
     def prune_pool(self, active_ids: set):
-        for tid in [t for t in self._pool if t not in active_ids]:
-            try:
-                self._pool[tid].close()
-            except Exception:
-                pass
-            del self._pool[tid]
-            sys_logger.debug(f"[MediaPipe] Detector removido para track #{tid}")
+        with self._lock:
+            for tid in list(self._active_pool.keys()):
+                if tid not in active_ids:
+                    ld = self._active_pool.pop(tid)
+                    if len(self._free_pool) < self.max_pool_size:
+                        self._free_pool.append(ld)
+                        sys_logger.debug(f"[MediaPipe] Detector #{tid} retornado ao pool livre.")
+                    else:
+                        try:
+                            ld.close()
+                        except: pass
+                        sys_logger.debug(f"[MediaPipe] Detector #{tid} destruído (Pool cheio).")
 
     def close(self):
-        for ld in self._pool.values():
-            try:
-                ld.close()
-            except Exception:
-                pass
-        self._pool.clear()
-        self.ready = False
+        with self._lock:
+            for ld in self._active_pool.values():
+                try: ld.close()
+                except: pass
+            for ld in self._free_pool:
+                try: ld.close()
+                except: pass
+            self._active_pool.clear()
+            self._free_pool.clear()
+            self.ready = False

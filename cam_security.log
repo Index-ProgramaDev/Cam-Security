@@ -547,3 +547,1255 @@
 2026-09-06 21:36:05.765 | INFO     | utils.logger:info:11 - [EvidenceCapture] Gerando vídeo: 147 frames @ 7.3fps ≈ 20.2s → storage\events\2026\09\06\event_d4012b1e-493.mp4
 2026-09-06 21:36:05.767 | INFO     | utils.logger:info:11 - Câmera encerrada.
 2026-09-06 21:36:05.780 | INFO     | utils.logger:info:11 - === Cam-Security Finalizado ===
+2026-09-06 22:05:03.067 | INFO     | utils.logger:info:11 - Iniciando Profiling do Pose...
+2026-09-06 22:05:04.775 | INFO     | utils.logger:info:11 - YOLOv8n inicializado com sucesso.
+2026-09-06 22:05:04.776 | INFO     | utils.logger:info:11 - [MediaPipe] Modelo encontrado: pose_landmarker_lite.task (RunningMode.VIDEO, 1 pose/crop)
+2026-09-06 22:05:07.179 | INFO     | utils.logger:info:11 - Profiling concluído.
+2026-09-06 22:11:39.757 | INFO     | utils.logger:info:11 - === Iniciando Cam-Security ===
+2026-09-06 22:11:39.759 | INFO     | utils.logger:info:11 - Inicializando vídeo (config/daniel.mp4)...
+2026-09-06 22:11:39.770 | INFO     | utils.logger:info:11 - Playback do vídeo em 29.97 FPS.
+2026-09-06 22:11:39.771 | INFO     | utils.logger:info:11 - Fonte de vídeo inicializada com sucesso.
+2026-09-06 22:11:39.774 | INFO     | utils.logger:info:11 - [TrackRegistry] Carregado: 3 track(s) ativos, 0 expirado(s) descartados.
+2026-09-06 22:11:41.598 | INFO     | utils.logger:info:11 - YOLOv8n inicializado com sucesso.
+2026-09-06 22:11:41.599 | INFO     | utils.logger:info:11 - [MediaPipe] Modelo encontrado: pose_landmarker_lite.task (PoolSize=5)
+2026-09-06 22:11:41.600 | INFO     | utils.logger:info:11 - [FaceDetector] Carregando YuNet: C:\Users\Usuario\VSprojects\Cam-security\Cam-Security\detection\face_detection_yunet_2023mar.onnx
+2026-09-06 22:11:41.628 | INFO     | utils.logger:info:11 - [FaceDetector] YuNet inicializado com sucesso.
+2026-09-06 22:11:41.630 | INFO     | utils.logger:info:11 - [EvidenceManager] Buffer registrado para câmera 'cam_0'
+2026-09-06 22:11:51.690 | INFO     | utils.logger:info:11 - [Perf/248frames] YOLO=40ms Track=0ms Pose=0ms Face=0ms Total=40ms FrameAge=10ms FPS_inf=24.8
+2026-09-06 22:11:56.282 | DEBUG    | utils.logger:debug:20 - [IDManager] Novo ID atribuído: #4
+2026-09-06 22:11:56.417 | DEBUG    | utils.logger:debug:20 - [MediaPipe] Novo detector instanciado para track #4
+2026-09-06 22:11:56.476 | DEBUG    | utils.logger:debug:20 - [MediaPipe|diag] ts=34624922ms landmarks=33 lm0=(0.434,0.350) lm11=(0.682,0.491) lm12=(0.303,0.487) lm23=(0.607,0.764)
+2026-09-06 22:11:56.490 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=132 nitidez=389
+2026-09-06 22:11:56.490 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Buffer criado para track #4
+2026-09-06 22:11:56.491 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding capturado (1/8)
+2026-09-06 22:11:56.491 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #4 → face_0001_1788743516.jpg
+2026-09-06 22:11:56.493 | DEBUG    | utils.logger:debug:20 - [FaceStorage] Face temporária criada: 2a1acfd3 (track #4)
+2026-09-06 22:11:56.567 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:11:56.631 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:11:56.697 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:11:56.763 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:11:56.828 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:11:56.895 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:11:56.963 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:11:57.040 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=92 nitidez=1526
+2026-09-06 22:11:57.041 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:11:57.113 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:11:57.181 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:11:57.244 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:11:57.296 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:11:57.350 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:11:57.406 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:11:57.460 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:11:57.514 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:11:57.582 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=85 nitidez=2127
+2026-09-06 22:11:57.583 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:11:57.639 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:11:57.690 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:11:57.753 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:11:57.815 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:11:57.871 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:11:57.924 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:11:57.981 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:11:58.037 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:11:58.102 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=105 nitidez=2093
+2026-09-06 22:11:58.102 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:11:58.158 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:11:58.212 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:11:58.264 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:11:58.318 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:11:58.320 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #4 → face_0002_1788743518.jpg
+2026-09-06 22:11:58.375 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:11:58.430 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:11:58.484 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:11:58.536 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:11:58.590 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:11:58.649 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=96 nitidez=1946
+2026-09-06 22:11:58.650 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:11:58.702 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:11:58.755 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:11:58.809 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:11:58.862 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:11:58.913 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:11:58.967 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:11:59.020 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:11:59.073 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:11:59.128 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:11:59.194 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=99 nitidez=2207
+2026-09-06 22:11:59.195 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:11:59.249 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (3.0s < 3.0s)
+2026-09-06 22:11:59.302 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding capturado (2/8)
+2026-09-06 22:11:59.356 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:11:59.409 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:11:59.461 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:11:59.514 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:11:59.568 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:11:59.621 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:11:59.675 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:11:59.741 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=105 nitidez=2422
+2026-09-06 22:11:59.741 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:11:59.795 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:11:59.849 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:11:59.902 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:11:59.953 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:12:00.006 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:12:00.063 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:12:00.119 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:12:00.172 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:12:00.226 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:12:00.293 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=107 nitidez=2592
+2026-09-06 22:12:00.294 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:12:00.352 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:12:00.353 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #4 → face_0003_1788743520.jpg
+2026-09-06 22:12:00.410 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:12:00.461 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:12:00.501 | DEBUG    | utils.logger:debug:20 - [IDManager] Novo ID atribuído: #5
+2026-09-06 22:12:00.523 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:12:00.588 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:12:00.644 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:12:00.707 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:12:00.764 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:12:00.832 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=102 nitidez=1272
+2026-09-06 22:12:00.832 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:12:00.870 | DEBUG    | utils.logger:debug:20 - [IDManager] Novo ID atribuído: #6
+2026-09-06 22:12:00.890 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:12:00.948 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:12:01.126 | DEBUG    | utils.logger:debug:20 - [MediaPipe] Novo detector instanciado para track #6
+2026-09-06 22:12:01.178 | DEBUG    | utils.logger:debug:20 - [MediaPipe|diag] ts=34629633ms landmarks=33 lm0=(0.071,0.276) lm11=(0.506,0.406) lm12=(-0.140,0.369) lm23=(0.314,0.692)
+2026-09-06 22:12:01.179 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:12:01.239 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:12:01.294 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:12:01.364 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=99 nitidez=1736
+2026-09-06 22:12:01.365 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:12:01.432 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=6 brilho=81 nitidez=147
+2026-09-06 22:12:01.433 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:12:01.434 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Buffer criado para track #6
+2026-09-06 22:12:01.434 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding capturado (1/8)
+2026-09-06 22:12:01.435 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #6 → face_0001_1788743521.jpg
+2026-09-06 22:12:01.435 | DEBUG    | utils.logger:debug:20 - [FaceStorage] Face temporária criada: eb8402d1 (track #6)
+2026-09-06 22:12:01.491 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:12:01.491 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:12:01.549 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:12:01.550 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:12:01.607 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:12:01.608 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:12:01.665 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:12:01.666 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:12:01.723 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:12:01.724 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:12:01.724 | INFO     | utils.logger:info:11 - [Perf/214frames] YOLO=36ms Track=0ms Pose=11ms Face=1ms Total=46ms FrameAge=14ms FPS_inf=21.4
+2026-09-06 22:12:01.786 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:12:01.786 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:12:01.847 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:12:01.848 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:12:02.030 | DEBUG    | utils.logger:debug:20 - [MediaPipe] Novo detector instanciado para track #5
+2026-09-06 22:12:02.054 | DEBUG    | utils.logger:debug:20 - [MediaPipe|diag] ts=34630537ms landmarks=33 lm0=(0.513,0.187) lm11=(0.631,0.318) lm12=(0.417,0.312) lm23=(0.560,0.609)
+2026-09-06 22:12:02.068 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=6 brilho=87 nitidez=399
+2026-09-06 22:12:02.092 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=105 nitidez=1867
+2026-09-06 22:12:02.092 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:12:02.093 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:12:02.185 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:12:02.186 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:12:02.249 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:12:02.250 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:12:02.325 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=5 brilho=79 nitidez=185
+2026-09-06 22:12:02.326 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding capturado (3/8)
+2026-09-06 22:12:02.327 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Buffer criado para track #5
+2026-09-06 22:12:02.327 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding capturado (1/8)
+2026-09-06 22:12:02.328 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #5 → face_0001_1788743522.jpg
+2026-09-06 22:12:02.328 | DEBUG    | utils.logger:debug:20 - [FaceStorage] Face temporária criada: f6b1ffef (track #5)
+2026-09-06 22:12:02.329 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:12:02.397 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:12:02.398 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #4 → face_0004_1788743522.jpg
+2026-09-06 22:12:02.398 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:12:02.399 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:12:02.463 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:12:02.465 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:12:02.466 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:12:02.531 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:12:02.532 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:12:02.532 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:12:02.607 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=6 brilho=76 nitidez=227
+2026-09-06 22:12:02.620 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=115 nitidez=969
+2026-09-06 22:12:02.620 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:12:02.621 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:12:02.621 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:12:02.690 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:12:02.691 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:12:02.691 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:12:02.757 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:12:02.758 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:12:02.758 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:12:02.858 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=5 brilho=71 nitidez=250
+2026-09-06 22:12:02.861 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:12:02.861 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:12:02.862 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:12:02.950 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:12:02.951 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:12:02.951 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:12:03.024 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:12:03.025 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:12:03.025 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:12:03.091 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:12:03.092 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:12:03.092 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:12:03.174 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=114 nitidez=759
+2026-09-06 22:12:03.183 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=6 brilho=78 nitidez=342
+2026-09-06 22:12:03.184 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:12:03.184 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:12:03.185 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:12:03.249 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:12:03.250 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:12:03.250 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:12:03.312 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:12:03.313 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:12:03.313 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:12:03.389 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=5 brilho=76 nitidez=345
+2026-09-06 22:12:03.390 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:12:03.390 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:12:03.391 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:12:03.457 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:12:03.458 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:12:03.458 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:12:03.460 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #6 → face_0002_1788743523.jpg
+2026-09-06 22:12:03.523 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:12:03.524 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:12:03.524 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:12:03.589 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:12:03.590 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:12:03.590 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:12:03.657 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:12:03.657 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:12:03.658 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:12:03.740 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=124 nitidez=1898
+2026-09-06 22:12:03.746 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=6 brilho=61 nitidez=333
+2026-09-06 22:12:03.746 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:12:03.747 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:12:03.747 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:12:03.811 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:12:03.812 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:12:03.812 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:12:03.872 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:12:03.872 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:12:03.873 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:12:03.944 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=5 brilho=90 nitidez=607
+2026-09-06 22:12:03.945 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:12:03.945 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:12:03.945 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:12:04.006 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:12:04.007 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:12:04.007 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:12:04.068 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:12:04.069 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:12:04.069 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:12:04.128 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:12:04.129 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:12:04.129 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:12:04.187 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:12:04.188 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:12:04.188 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:12:04.271 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=125 nitidez=711
+2026-09-06 22:12:04.278 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=6 brilho=80 nitidez=306
+2026-09-06 22:12:04.279 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:12:04.279 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:12:04.279 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:12:04.346 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:12:04.347 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:12:04.348 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #5 → face_0002_1788743524.jpg
+2026-09-06 22:12:04.348 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:12:04.410 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:12:04.411 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #4 → face_0005_1788743524.jpg
+2026-09-06 22:12:04.411 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:12:04.412 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (3.0s < 3.0s)
+2026-09-06 22:12:04.483 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=5 brilho=80 nitidez=736
+2026-09-06 22:12:04.484 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:12:04.484 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:12:04.484 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding capturado (2/8)
+2026-09-06 22:12:04.545 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:12:04.546 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:12:04.546 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:12:04.607 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:12:04.608 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:12:04.608 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:12:04.667 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:12:04.669 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:12:04.670 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:12:04.728 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:12:04.728 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:12:04.729 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:12:04.801 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=125 nitidez=2023
+2026-09-06 22:12:04.808 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=6 brilho=70 nitidez=601
+2026-09-06 22:12:04.808 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:12:04.809 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:12:04.809 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:12:04.869 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:12:04.870 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:12:04.870 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:12:04.927 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:12:04.928 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:12:04.928 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:12:04.997 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=5 brilho=90 nitidez=509
+2026-09-06 22:12:04.998 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:12:04.998 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:12:04.998 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:12:05.033 | INFO     | utils.logger:info:11 - [AUDITORIA] Evento 'COLISAO' registrado para Track #4 (Risco: 75)
+2026-09-06 22:12:05.034 | INFO     | utils.logger:info:11 - [NOTIFICAÇÃO] Alerta despachado: Track #4
+2026-09-06 22:12:05.034 | INFO     | utils.logger:info:11 - [VideoBuffer:cam_0] Gatilho! event=15e90cf8-b0a pre_frames=70 coletando +15.0s...
+2026-09-06 22:12:05.042 | INFO     | utils.logger:info:11 - [FaceStorage] Track #4 promovido → storage\face_tracks\events\15e90cf8-b0a\track_4 (3 embeddings, 5 foto(s))
+2026-09-06 22:12:05.042 | INFO     | utils.logger:info:11 - [ALERTA] COLISAO | track=#4 risk=75 face=2a1acfd3 person=None event_id=15e90cf8-b0a
+2026-09-06 22:12:05.490 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=106 nitidez=1463
+2026-09-06 22:12:05.495 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:12:05.495 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:12:05.569 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=5 brilho=91 nitidez=1038
+2026-09-06 22:12:05.570 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding capturado (4/8)
+2026-09-06 22:12:05.570 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding capturado (2/8)
+2026-09-06 22:12:05.630 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:12:05.631 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:12:05.692 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:12:05.693 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:12:05.753 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:12:05.754 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:12:05.813 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:12:05.813 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:12:05.875 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:12:05.876 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:12:05.937 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:12:05.938 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:12:06.007 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=122 nitidez=1190
+2026-09-06 22:12:06.014 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=6 brilho=79 nitidez=443
+2026-09-06 22:12:06.015 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:12:06.015 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:12:06.016 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:12:06.017 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #6 → face_0003_1788743525.jpg
+2026-09-06 22:12:06.088 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=5 brilho=89 nitidez=904
+2026-09-06 22:12:06.088 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:12:06.089 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:12:06.089 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:12:06.149 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:12:06.150 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:12:06.150 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:12:06.209 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:12:06.210 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:12:06.210 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:12:06.270 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:12:06.271 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:12:06.272 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:12:06.331 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:12:06.332 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:12:06.332 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:12:06.391 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:12:06.392 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:12:06.393 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #5 → face_0003_1788743526.jpg
+2026-09-06 22:12:06.393 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:12:06.452 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:12:06.455 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #4 → face_0006_1788743526.jpg
+2026-09-06 22:12:06.455 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:12:06.455 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:12:06.525 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=4 brilho=120 nitidez=1481
+2026-09-06 22:12:06.531 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=6 brilho=75 nitidez=310
+2026-09-06 22:12:06.532 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:12:06.532 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:12:06.533 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:12:06.614 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=5 brilho=92 nitidez=486
+2026-09-06 22:12:06.615 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:12:06.615 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:12:06.616 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:12:06.678 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:12:06.679 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:12:06.679 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:12:06.744 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:12:06.746 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:12:06.746 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:12:06.806 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:12:06.807 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:12:06.807 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:12:06.868 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #4 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:12:06.869 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #5 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:12:06.869 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #6 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:12:06.906 | INFO     | utils.logger:info:11 - Câmera encerrada.
+2026-09-06 22:12:06.919 | INFO     | utils.logger:info:11 - === Cam-Security Finalizado ===
+2026-09-06 22:34:46.006 | INFO     | utils.logger:info:11 - === Iniciando Cam-Security ===
+2026-09-06 22:34:46.007 | INFO     | utils.logger:info:11 - Inicializando vídeo (config/daniel.mp4)...
+2026-09-06 22:34:46.017 | INFO     | utils.logger:info:11 - Playback do vídeo em 29.97 FPS.
+2026-09-06 22:34:46.019 | INFO     | utils.logger:info:11 - Fonte de vídeo inicializada com sucesso.
+2026-09-06 22:34:46.020 | INFO     | utils.logger:info:11 - [TrackRegistry] Carregado: 5 track(s) ativos, 1 expirado(s) descartados.
+2026-09-06 22:34:47.723 | INFO     | utils.logger:info:11 - YOLOv8n inicializado com sucesso.
+2026-09-06 22:34:47.723 | INFO     | utils.logger:info:11 - [MediaPipe] Modelo encontrado: pose_landmarker_lite.task (PoolSize=5)
+2026-09-06 22:34:47.724 | INFO     | utils.logger:info:11 - [FaceDetector] Carregando YuNet: C:\Users\Usuario\VSprojects\Cam-security\Cam-Security\detection\face_detection_yunet_2023mar.onnx
+2026-09-06 22:34:47.731 | INFO     | utils.logger:info:11 - [FaceDetector] YuNet inicializado com sucesso.
+2026-09-06 22:34:47.732 | INFO     | utils.logger:info:11 - [EvidenceManager] Buffer registrado para câmera 'cam_0'
+2026-09-06 22:34:57.785 | INFO     | utils.logger:info:11 - [Perf/257frames] YOLO=37ms Track=0ms Pose=0ms Face=0ms Total=37ms FrameAge=5ms FPS_inf=25.7
+2026-09-06 22:35:02.506 | DEBUG    | utils.logger:debug:20 - [IDManager] Novo ID atribuído: #7
+2026-09-06 22:35:02.659 | DEBUG    | utils.logger:debug:20 - [MediaPipe] Novo detector instanciado para track #7
+2026-09-06 22:35:02.711 | DEBUG    | utils.logger:debug:20 - [MediaPipe|diag] ts=36011169ms landmarks=33 lm0=(0.485,0.405) lm11=(0.660,0.481) lm12=(0.345,0.469) lm23=(0.588,0.698)
+2026-09-06 22:35:03.241 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=84 nitidez=1609
+2026-09-06 22:35:03.242 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Buffer criado para track #7
+2026-09-06 22:35:03.243 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding capturado (1/8)
+2026-09-06 22:35:03.244 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #7 → face_0001_1788744903.jpg
+2026-09-06 22:35:03.244 | DEBUG    | utils.logger:debug:20 - [FaceStorage] Face temporária criada: 354167e5 (track #7)
+2026-09-06 22:35:03.307 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:03.360 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:03.423 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:03.493 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:03.548 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:03.606 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:03.661 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:03.716 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:03.785 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=94 nitidez=1781
+2026-09-06 22:35:03.785 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:03.843 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:03.896 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:03.951 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:04.003 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:04.057 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:04.110 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:04.167 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:04.221 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:04.289 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=89 nitidez=2212
+2026-09-06 22:35:04.289 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:04.345 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:04.399 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:04.455 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:04.519 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:04.578 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:04.633 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:04.686 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:04.743 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:04.811 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=98 nitidez=1877
+2026-09-06 22:35:04.812 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:04.869 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:04.921 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:04.976 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:05.031 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:05.087 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:05.141 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:05.194 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:05.250 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:05.251 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #7 → face_0002_1788744905.jpg
+2026-09-06 22:35:05.320 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=103 nitidez=2620
+2026-09-06 22:35:05.321 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:05.376 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:05.429 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:05.486 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:05.540 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:05.596 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:05.647 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:05.702 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:05.759 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:05.823 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=103 nitidez=2617
+2026-09-06 22:35:05.824 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:05.879 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:05.934 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:05.987 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:06.041 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:06.097 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:06.152 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:06.206 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (3.0s < 3.0s)
+2026-09-06 22:35:06.261 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding capturado (2/8)
+2026-09-06 22:35:06.329 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=101 nitidez=2439
+2026-09-06 22:35:06.330 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:06.385 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:06.440 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:06.490 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:06.544 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:06.598 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:06.651 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:06.708 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:06.769 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:06.806 | DEBUG    | utils.logger:debug:20 - [IDManager] Novo ID atribuído: #8
+2026-09-06 22:35:06.838 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=110 nitidez=2181
+2026-09-06 22:35:06.838 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:06.893 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:06.951 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:07.002 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:07.057 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:07.112 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:07.151 | DEBUG    | utils.logger:debug:20 - [IDManager] Novo ID atribuído: #9
+2026-09-06 22:35:07.172 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:07.225 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:07.401 | DEBUG    | utils.logger:debug:20 - [MediaPipe] Novo detector instanciado para track #9
+2026-09-06 22:35:07.416 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=108 nitidez=1273
+2026-09-06 22:35:07.453 | DEBUG    | utils.logger:debug:20 - [MediaPipe|diag] ts=36015907ms landmarks=33 lm0=(0.031,0.277) lm11=(0.470,0.402) lm12=(-0.074,0.368) lm23=(0.278,0.649)
+2026-09-06 22:35:07.454 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:07.455 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #7 → face_0003_1788744907.jpg
+2026-09-06 22:35:07.515 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:07.571 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:07.628 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:07.693 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=81 nitidez=154
+2026-09-06 22:35:07.694 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:07.695 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Buffer criado para track #9
+2026-09-06 22:35:07.695 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding capturado (1/8)
+2026-09-06 22:35:07.697 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #9 → face_0001_1788744907.jpg
+2026-09-06 22:35:07.697 | DEBUG    | utils.logger:debug:20 - [FaceStorage] Face temporária criada: a010a6ba (track #9)
+2026-09-06 22:35:07.758 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:07.759 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:07.817 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:07.817 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:07.818 | INFO     | utils.logger:info:11 - [Perf/227frames] YOLO=33ms Track=0ms Pose=10ms Face=1ms Total=43ms FrameAge=9ms FPS_inf=22.7
+2026-09-06 22:35:07.878 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:07.878 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:07.957 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=104 nitidez=1598
+2026-09-06 22:35:07.958 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:07.958 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:08.015 | DEBUG    | utils.logger:debug:20 - [MediaPipe|diag] ts=36016645ms landmarks=33 lm0=(0.508,0.175) lm11=(0.613,0.324) lm12=(0.405,0.308) lm23=(0.542,0.612)
+2026-09-06 22:35:08.015 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:08.015 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:08.076 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:08.076 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:08.133 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:08.134 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:08.316 | DEBUG    | utils.logger:debug:20 - [MediaPipe] Novo detector instanciado para track #8
+2026-09-06 22:35:08.352 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=86 nitidez=362
+2026-09-06 22:35:08.375 | DEBUG    | utils.logger:debug:20 - [MediaPipe|diag] ts=36016813ms landmarks=33 lm0=(0.617,0.722) lm11=(0.470,0.663) lm12=(0.905,0.696) lm23=(0.690,0.492)
+2026-09-06 22:35:08.375 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:08.376 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:08.459 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=108 nitidez=1379
+2026-09-06 22:35:08.460 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:08.460 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:08.523 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:08.523 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:08.591 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=81 nitidez=187
+2026-09-06 22:35:08.592 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:08.593 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Buffer criado para track #8
+2026-09-06 22:35:08.593 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding capturado (1/8)
+2026-09-06 22:35:08.594 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #8 → face_0001_1788744908.jpg
+2026-09-06 22:35:08.594 | DEBUG    | utils.logger:debug:20 - [FaceStorage] Face temporária criada: 96454a2f (track #8)
+2026-09-06 22:35:08.595 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:08.657 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:08.657 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:08.658 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:08.720 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:08.721 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:08.721 | INFO     | utils.logger:info:11 - [Tracker] Gatilho mantido para Track #8.
+2026-09-06 22:35:08.722 | INFO     | utils.logger:info:11 - [AUDITORIA] Evento 'ARM_RAISED' registrado para Track #8 (Risco: 45)
+2026-09-06 22:35:08.722 | INFO     | utils.logger:info:11 - [NOTIFICAÇÃO] Alerta despachado: Track #8
+2026-09-06 22:35:08.723 | INFO     | utils.logger:info:11 - [VideoBuffer:cam_0] Gatilho! event=551108d2-080 pre_frames=79 coletando +15.0s...
+2026-09-06 22:35:08.726 | INFO     | utils.logger:info:11 - [FaceStorage] Track #8 promovido → storage\face_tracks\events\551108d2-080\track_8 (1 embeddings, 1 foto(s))
+2026-09-06 22:35:08.726 | INFO     | utils.logger:info:11 - [ALERTA] ARM_RAISED | track=#8 risk=45 face=96454a2f person=None event_id=551108d2-080
+2026-09-06 22:35:09.137 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:09.203 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=78 nitidez=221
+2026-09-06 22:35:09.215 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=114 nitidez=1460
+2026-09-06 22:35:09.225 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=74 nitidez=220
+2026-09-06 22:35:09.225 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:09.226 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:09.226 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:09.287 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding capturado (3/8)
+2026-09-06 22:35:09.289 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #7 → face_0004_1788744909.jpg
+2026-09-06 22:35:09.290 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:09.290 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:09.351 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:09.351 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:09.352 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:09.415 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:09.415 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:09.416 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:09.476 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:09.477 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:09.477 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:09.540 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:09.540 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:09.541 | INFO     | utils.logger:info:11 - [Tracker] Gatilho mantido para Track #8.
+2026-09-06 22:35:09.541 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:09.605 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:09.605 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:09.606 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:09.674 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:09.674 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:09.675 | INFO     | utils.logger:info:11 - [Tracker] Gatilho mantido para Track #8.
+2026-09-06 22:35:09.675 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:09.747 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=75 nitidez=299
+2026-09-06 22:35:09.760 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=115 nitidez=945
+2026-09-06 22:35:09.768 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=78 nitidez=305
+2026-09-06 22:35:09.769 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:09.769 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:09.770 | INFO     | utils.logger:info:11 - [Tracker] Gatilho mantido para Track #8.
+2026-09-06 22:35:09.770 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:09.771 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #9 → face_0002_1788744909.jpg
+2026-09-06 22:35:09.835 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:09.836 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:09.836 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:09.901 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:09.901 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:09.902 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:09.963 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:09.964 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:09.964 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:10.028 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:10.031 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:10.033 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:10.125 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:10.126 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:10.127 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:10.191 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:10.191 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:10.192 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:10.260 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=64 nitidez=276
+2026-09-06 22:35:10.277 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=120 nitidez=1489
+2026-09-06 22:35:10.289 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=90 nitidez=607
+2026-09-06 22:35:10.290 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:10.290 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:10.291 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:10.353 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:10.353 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:10.353 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:10.414 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:10.415 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:10.415 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:10.477 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:10.477 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:10.478 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:10.541 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:10.541 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:10.542 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:10.603 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:10.603 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:10.604 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #8 → face_0002_1788744910.jpg
+2026-09-06 22:35:10.605 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:10.666 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:10.667 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:10.667 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (3.0s < 3.0s)
+2026-09-06 22:35:10.730 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:10.730 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:10.730 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding capturado (2/8)
+2026-09-06 22:35:10.804 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=116 nitidez=1165
+2026-09-06 22:35:10.810 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=79 nitidez=312
+2026-09-06 22:35:10.821 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=80 nitidez=736
+2026-09-06 22:35:10.822 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:10.822 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:10.823 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:10.886 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:10.886 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:10.887 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:10.948 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:10.949 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:10.950 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:11.010 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:11.011 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:11.011 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:11.073 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:11.073 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:11.074 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:11.135 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:11.136 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:11.136 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:11.197 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:11.198 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:11.198 | INFO     | utils.logger:info:11 - [Tracker] Gatilho mantido para Track #8.
+2026-09-06 22:35:11.199 | INFO     | utils.logger:info:11 - [AUDITORIA] Evento 'SOCO' registrado para Track #8 (Risco: 100)
+2026-09-06 22:35:11.199 | INFO     | utils.logger:info:11 - [NOTIFICAÇÃO] Alerta despachado: Track #8
+2026-09-06 22:35:11.199 | WARNING  | utils.logger:warning:14 - [VideoBuffer:cam_0] Captura já ativa para event 551108d2-080 — ignorando a8bef44c-e16
+2026-09-06 22:35:11.203 | INFO     | utils.logger:info:11 - [FaceStorage] Track #8 promovido → storage\face_tracks\events\a8bef44c-e16\track_8 (1 embeddings, 2 foto(s))
+2026-09-06 22:35:11.203 | INFO     | utils.logger:info:11 - [ALERTA] SOCO | track=#8 risk=100 face=96454a2f person=None event_id=a8bef44c-e16
+2026-09-06 22:35:11.611 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:11.685 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=114 nitidez=1936
+2026-09-06 22:35:11.705 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=92 nitidez=1103
+2026-09-06 22:35:11.706 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:11.707 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #7 → face_0005_1788744911.jpg
+2026-09-06 22:35:11.707 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding capturado (2/8)
+2026-09-06 22:35:11.768 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:11.769 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:11.831 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:11.831 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:11.892 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:11.893 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:11.954 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:11.955 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:12.014 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:12.014 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:12.075 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:12.076 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:12.138 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:12.139 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:12.208 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=125 nitidez=1379
+2026-09-06 22:35:12.219 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=82 nitidez=362
+2026-09-06 22:35:12.230 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=90 nitidez=1243
+2026-09-06 22:35:12.231 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:12.231 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:12.232 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:12.233 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #9 → face_0003_1788744912.jpg
+2026-09-06 22:35:12.296 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding capturado (4/8)
+2026-09-06 22:35:12.296 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:12.297 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:12.358 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:12.358 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:12.359 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:12.422 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:12.422 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:12.423 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:12.486 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:12.487 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:12.488 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:12.549 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:12.549 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:12.550 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:12.613 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:12.613 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:12.614 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #8 → face_0003_1788744912.jpg
+2026-09-06 22:35:12.615 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:12.677 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:12.677 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:12.678 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:12.750 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=118 nitidez=1498
+2026-09-06 22:35:12.759 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=82 nitidez=385
+2026-09-06 22:35:12.771 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=90 nitidez=717
+2026-09-06 22:35:12.772 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:12.772 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:12.773 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:12.833 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:12.834 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:12.834 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:12.896 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:12.897 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:12.897 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:12.959 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:12.959 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:12.960 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:13.021 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:13.023 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:13.023 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:13.085 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:13.085 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:13.085 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:13.147 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:13.148 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:13.148 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:13.210 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:13.210 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:13.211 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:13.277 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=124 nitidez=1190
+2026-09-06 22:35:13.289 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=73 nitidez=225
+2026-09-06 22:35:13.299 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=84 nitidez=472
+2026-09-06 22:35:13.300 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:13.300 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:13.301 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:13.371 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:13.372 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:13.372 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:13.432 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:13.433 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:13.434 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:13.494 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:13.495 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:13.495 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:13.558 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:13.558 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:13.559 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:13.619 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:13.619 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:13.620 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:13.683 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:13.684 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #7 → face_0006_1788744913.jpg
+2026-09-06 22:35:13.685 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:13.685 | INFO     | utils.logger:info:11 - [Tracker] Gatilho mantido para Track #8.
+2026-09-06 22:35:13.685 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (3.0s < 3.0s)
+2026-09-06 22:35:13.748 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:13.749 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:13.749 | INFO     | utils.logger:info:11 - [Tracker] Gatilho mantido para Track #8.
+2026-09-06 22:35:13.749 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding capturado (3/8)
+2026-09-06 22:35:13.824 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=112 nitidez=1594
+2026-09-06 22:35:13.831 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=81 nitidez=365
+2026-09-06 22:35:13.843 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=87 nitidez=671
+2026-09-06 22:35:13.844 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:13.844 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:13.844 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:13.908 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:13.908 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:13.909 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:13.970 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:13.971 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:13.971 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:14.034 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:14.035 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:14.035 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:14.096 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:14.097 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:14.098 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:14.159 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:14.160 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:14.160 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:14.222 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:14.223 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:14.223 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:14.224 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #9 → face_0004_1788744914.jpg
+2026-09-06 22:35:14.286 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:14.287 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:14.287 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:14.357 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=88 nitidez=1773
+2026-09-06 22:35:14.365 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=80 nitidez=259
+2026-09-06 22:35:14.373 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=83 nitidez=540
+2026-09-06 22:35:14.374 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:14.374 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:14.375 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:14.439 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:14.439 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:14.440 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:14.498 | DEBUG    | utils.logger:debug:20 - [MediaPipe|diag] ts=36023131ms landmarks=33 lm0=(0.537,0.300) lm11=(0.731,0.368) lm12=(0.401,0.365) lm23=(0.653,0.554)
+2026-09-06 22:35:14.501 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:14.502 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:14.502 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:14.564 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:14.565 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:14.565 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:14.626 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:14.627 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (3.0s < 3.0s)
+2026-09-06 22:35:14.628 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #8 → face_0004_1788744914.jpg
+2026-09-06 22:35:14.628 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:14.689 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:14.689 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding capturado (3/8)
+2026-09-06 22:35:14.691 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:14.753 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:14.754 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:14.754 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:14.816 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:14.817 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:14.817 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:14.891 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=126 nitidez=1775
+2026-09-06 22:35:14.899 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=81 nitidez=343
+2026-09-06 22:35:14.906 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=98 nitidez=876
+2026-09-06 22:35:14.907 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:14.907 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:14.908 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:14.973 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:14.974 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:14.974 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:15.034 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:15.035 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:15.035 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:15.092 | DEBUG    | utils.logger:debug:20 - [MediaPipe|diag] ts=36023732ms landmarks=33 lm0=(0.570,0.235) lm11=(0.707,0.312) lm12=(0.325,0.297) lm23=(0.634,0.535)
+2026-09-06 22:35:15.094 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:15.094 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:15.095 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:15.158 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:15.159 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:15.159 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:15.221 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:15.222 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:15.222 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:15.284 | DEBUG    | utils.logger:debug:20 - [MediaPipe|diag] ts=36023898ms landmarks=33 lm0=(0.589,0.644) lm11=(0.488,0.621) lm12=(0.627,0.604) lm23=(0.435,0.446)
+2026-09-06 22:35:15.285 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (3.0s < 3.0s)
+2026-09-06 22:35:15.286 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:15.286 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:15.348 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding capturado (5/8)
+2026-09-06 22:35:15.348 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:15.349 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:15.416 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=80 nitidez=383
+2026-09-06 22:35:15.422 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=90 nitidez=685
+2026-09-06 22:35:15.432 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=108 nitidez=1169
+2026-09-06 22:35:15.433 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:15.433 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:15.434 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:15.496 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:15.497 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:15.497 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:15.559 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:15.559 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:15.560 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:15.625 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:15.626 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:15.628 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:15.713 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:15.720 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #7 → face_0007_1788744915.jpg
+2026-09-06 22:35:15.722 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:15.722 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:15.789 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:15.791 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:15.791 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:15.863 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:15.864 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:15.864 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:15.943 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=89 nitidez=422
+2026-09-06 22:35:15.958 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=116 nitidez=1354
+2026-09-06 22:35:15.969 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=89 nitidez=766
+2026-09-06 22:35:15.970 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:15.970 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:15.971 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:16.032 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:16.033 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:16.033 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:16.095 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:16.096 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:16.096 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:16.097 | INFO     | utils.logger:info:11 - [Tracker] Gatilho mantido para Track #9.
+2026-09-06 22:35:16.097 | INFO     | utils.logger:info:11 - [AUDITORIA] Evento 'SOCO' registrado para Track #9 (Risco: 100)
+2026-09-06 22:35:16.098 | INFO     | utils.logger:info:11 - [NOTIFICAÇÃO] Alerta despachado: Track #9
+2026-09-06 22:35:16.099 | WARNING  | utils.logger:warning:14 - [VideoBuffer:cam_0] Captura já ativa para event 551108d2-080 — ignorando 6c60c636-c48
+2026-09-06 22:35:16.104 | INFO     | utils.logger:info:11 - [FaceStorage] Track #9 promovido → storage\face_tracks\events\6c60c636-c48\track_9 (3 embeddings, 4 foto(s))
+2026-09-06 22:35:16.104 | INFO     | utils.logger:info:11 - [ALERTA] SOCO | track=#9 risk=100 face=a010a6ba person=None event_id=6c60c636-c48
+2026-09-06 22:35:16.942 | INFO     | utils.logger:info:11 - [Tracker] Gatilho mantido para Track #7.
+2026-09-06 22:35:16.943 | INFO     | utils.logger:info:11 - [AUDITORIA] Evento 'ARM_RAISED' registrado para Track #7 (Risco: 45)
+2026-09-06 22:35:16.943 | INFO     | utils.logger:info:11 - [NOTIFICAÇÃO] Alerta despachado: Track #7
+2026-09-06 22:35:16.943 | WARNING  | utils.logger:warning:14 - [VideoBuffer:cam_0] Captura já ativa para event 551108d2-080 — ignorando 6eb004f8-135
+2026-09-06 22:35:16.953 | INFO     | utils.logger:info:11 - [FaceStorage] Track #7 promovido → storage\face_tracks\events\6eb004f8-135\track_7 (5 embeddings, 7 foto(s))
+2026-09-06 22:35:16.954 | INFO     | utils.logger:info:11 - [ALERTA] ARM_RAISED | track=#7 risk=45 face=354167e5 person=None event_id=6eb004f8-135
+2026-09-06 22:35:17.429 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=112 nitidez=2117
+2026-09-06 22:35:17.443 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=104 nitidez=1176
+2026-09-06 22:35:17.444 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:17.444 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:17.445 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #8 → face_0005_1788744917.jpg
+2026-09-06 22:35:17.503 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:17.504 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:17.559 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:17.559 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:17.620 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:17.621 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:17.683 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:17.683 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (3.0s < 3.0s)
+2026-09-06 22:35:17.749 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:17.750 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #7 → face_0008_1788744917.jpg
+2026-09-06 22:35:17.750 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding capturado (4/8)
+2026-09-06 22:35:17.814 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:17.815 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:17.878 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:17.878 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:17.879 | INFO     | utils.logger:info:11 - [Perf/122frames] YOLO=36ms Track=0ms Pose=71ms Face=8ms Total=82ms FrameAge=16ms FPS_inf=12.2
+2026-09-06 22:35:17.949 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=122 nitidez=1569
+2026-09-06 22:35:17.955 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=63 nitidez=266
+2026-09-06 22:35:17.961 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:17.962 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding capturado (4/8)
+2026-09-06 22:35:17.963 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #9 → face_0005_1788744917.jpg
+2026-09-06 22:35:18.025 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:18.026 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:18.086 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:18.087 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:18.150 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:18.151 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:18.214 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:18.214 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:18.275 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:18.276 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:18.337 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (3.0s < 3.0s)
+2026-09-06 22:35:18.337 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:18.400 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding capturado (6/8)
+2026-09-06 22:35:18.401 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:18.475 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=80 nitidez=710
+2026-09-06 22:35:18.483 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=82 nitidez=364
+2026-09-06 22:35:18.484 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:18.484 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:18.548 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:18.548 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:18.609 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:18.609 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:18.671 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:18.671 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:18.732 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:18.733 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:18.795 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:18.796 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:18.858 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:18.858 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:18.922 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:18.923 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:18.992 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=117 nitidez=1387
+2026-09-06 22:35:18.998 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=86 nitidez=446
+2026-09-06 22:35:19.006 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=77 nitidez=347
+2026-09-06 22:35:19.006 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:19.007 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:19.007 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:19.071 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:19.071 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:19.071 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:19.133 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:19.133 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:19.134 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:19.195 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:19.196 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:19.196 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:19.257 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:19.258 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:19.258 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:19.322 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:19.322 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:19.322 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:19.387 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:19.388 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:19.389 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:19.454 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:19.454 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:19.455 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #8 → face_0006_1788744919.jpg
+2026-09-06 22:35:19.456 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:19.531 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=108 nitidez=2934
+2026-09-06 22:35:19.537 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=101 nitidez=1435
+2026-09-06 22:35:19.545 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=87 nitidez=756
+2026-09-06 22:35:19.546 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:19.546 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:19.547 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:19.609 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:19.610 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:19.610 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:19.668 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:19.669 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:19.669 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:19.729 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:19.730 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:19.730 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:19.791 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:19.793 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #7 → face_0009_1788744919.jpg
+2026-09-06 22:35:19.793 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:19.793 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:19.855 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:19.855 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:19.855 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:19.918 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:19.919 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:19.919 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:19.983 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:19.984 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:19.984 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:19.985 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #9 → face_0006_1788744919.jpg
+2026-09-06 22:35:20.053 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=104 nitidez=934
+2026-09-06 22:35:20.066 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=93 nitidez=433
+2026-09-06 22:35:20.066 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:20.067 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:20.129 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:20.129 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:20.192 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:20.193 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:20.254 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:20.255 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:20.316 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:20.317 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:20.379 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:20.379 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:20.441 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:20.442 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:20.503 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:20.503 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:20.572 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=99 nitidez=591
+2026-09-06 22:35:20.579 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=115 nitidez=1195
+2026-09-06 22:35:20.587 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=102 nitidez=376
+2026-09-06 22:35:20.588 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:20.588 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:20.590 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:20.650 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:20.652 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:20.652 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:20.715 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:20.716 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (3.0s < 3.0s)
+2026-09-06 22:35:20.716 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:20.779 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:20.780 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding capturado (5/8)
+2026-09-06 22:35:20.780 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:20.840 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:20.841 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:20.841 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:20.906 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:20.906 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:20.907 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (3.0s < 3.0s)
+2026-09-06 22:35:20.973 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:20.973 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:20.974 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding capturado (5/8)
+2026-09-06 22:35:21.050 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:21.051 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:21.052 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:21.149 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=90 nitidez=796
+2026-09-06 22:35:21.162 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=103 nitidez=2514
+2026-09-06 22:35:21.168 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=91 nitidez=766
+2026-09-06 22:35:21.169 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:21.170 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:21.170 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:21.241 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:21.242 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:21.243 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:21.309 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:21.310 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:21.310 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:21.375 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (3.0s < 3.0s)
+2026-09-06 22:35:21.376 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:21.376 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:21.442 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding capturado (7/8)
+2026-09-06 22:35:21.442 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:21.443 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:21.509 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:21.510 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:21.511 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #8 → face_0007_1788744921.jpg
+2026-09-06 22:35:21.511 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:21.578 | DEBUG    | utils.logger:debug:20 - [MediaPipe|diag] ts=36030205ms landmarks=33 lm0=(0.418,0.247) lm11=(0.538,0.318) lm12=(0.206,0.321) lm23=(0.556,0.503)
+2026-09-06 22:35:21.580 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:21.580 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:21.581 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:21.656 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=88 nitidez=509
+2026-09-06 22:35:21.669 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=110 nitidez=2369
+2026-09-06 22:35:21.680 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=85 nitidez=521
+2026-09-06 22:35:21.680 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:21.681 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:21.681 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:21.748 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:21.749 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:21.749 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:21.828 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:21.828 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #7 → face_0010_1788744921.jpg
+2026-09-06 22:35:21.829 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:21.829 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:21.890 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:21.891 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:21.891 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:21.953 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:21.955 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:21.955 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:22.016 | DEBUG    | utils.logger:debug:20 - [MediaPipe|diag] ts=36030639ms landmarks=33 lm0=(0.545,0.205) lm11=(0.742,0.289) lm12=(0.437,0.284) lm23=(0.624,0.542)
+2026-09-06 22:35:22.018 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:22.018 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:22.019 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.0s < 3.0s)
+2026-09-06 22:35:22.020 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #9 → face_0007_1788744921.jpg
+2026-09-06 22:35:22.081 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:22.082 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:22.082 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:22.143 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:22.144 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:22.144 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:22.207 | DEBUG    | utils.logger:debug:20 - [MediaPipe|diag] ts=36030839ms landmarks=33 lm0=(0.474,0.272) lm11=(0.623,0.328) lm12=(0.281,0.337) lm23=(0.641,0.530)
+2026-09-06 22:35:22.214 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=105 nitidez=2588
+2026-09-06 22:35:22.222 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=90 nitidez=482
+2026-09-06 22:35:22.232 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=89 nitidez=690
+2026-09-06 22:35:22.233 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.8s < 3.0s)
+2026-09-06 22:35:22.233 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:22.238 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:22.329 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (0.9s < 3.0s)
+2026-09-06 22:35:22.335 | INFO     | utils.logger:info:11 - [Tracker] Gatilho mantido para Track #7.
+2026-09-06 22:35:22.339 | INFO     | utils.logger:info:11 - [AUDITORIA] Evento 'SOCO' registrado para Track #7 (Risco: 100)
+2026-09-06 22:35:22.340 | INFO     | utils.logger:info:11 - [NOTIFICAÇÃO] Alerta despachado: Track #7
+2026-09-06 22:35:22.340 | WARNING  | utils.logger:warning:14 - [VideoBuffer:cam_0] Captura já ativa para event 551108d2-080 — ignorando 8866b38c-87a
+2026-09-06 22:35:22.353 | INFO     | utils.logger:info:11 - [FaceStorage] Track #7 promovido → storage\face_tracks\events\8866b38c-87a\track_7 (7 embeddings, 10 foto(s))
+2026-09-06 22:35:22.353 | INFO     | utils.logger:info:11 - [ALERTA] SOCO | track=#7 risk=100 face=354167e5 person=None event_id=8866b38c-87a
+2026-09-06 22:35:22.758 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:22.759 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:22.837 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=106 nitidez=1304
+2026-09-06 22:35:22.845 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=98 nitidez=623
+2026-09-06 22:35:22.857 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=88 nitidez=650
+2026-09-06 22:35:22.858 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:22.858 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:22.859 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:22.919 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:22.920 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:22.920 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:22.980 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:22.981 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:22.981 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:23.042 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:23.043 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:23.043 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:23.102 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:23.102 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:23.103 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:23.164 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:23.165 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:23.165 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:23.226 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:23.227 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:23.227 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:23.289 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:23.290 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:23.290 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:23.358 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=89 nitidez=788
+2026-09-06 22:35:23.371 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=119 nitidez=1683
+2026-09-06 22:35:23.380 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=92 nitidez=655
+2026-09-06 22:35:23.381 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:23.382 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:23.382 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:23.452 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:23.452 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:23.453 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:23.514 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:23.516 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:23.517 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #8 → face_0008_1788744923.jpg
+2026-09-06 22:35:23.517 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:23.579 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:23.580 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:23.580 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:23.641 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.2s < 3.0s)
+2026-09-06 22:35:23.642 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:23.642 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:23.706 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:23.706 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:23.707 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:23.770 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.3s < 3.0s)
+2026-09-06 22:35:23.771 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (3.0s < 3.0s)
+2026-09-06 22:35:23.771 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:23.833 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.4s < 3.0s)
+2026-09-06 22:35:23.834 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #7 → face_0011_1788744923.jpg
+2026-09-06 22:35:23.835 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding capturado (6/8)
+2026-09-06 22:35:23.835 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:23.870 | INFO     | utils.logger:info:11 - [EvidenceManager] Frames prontos para event 551108d2-080: pre=79 post=192
+2026-09-06 22:35:23.908 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=87 nitidez=668
+2026-09-06 22:35:23.923 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=122 nitidez=1952
+2026-09-06 22:35:23.935 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=91 nitidez=466
+2026-09-06 22:35:23.936 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.5s < 3.0s)
+2026-09-06 22:35:23.936 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:23.936 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:24.006 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:24.007 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:24.007 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding capturado (6/8)
+2026-09-06 22:35:24.075 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.6s < 3.0s)
+2026-09-06 22:35:24.076 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:24.076 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:24.077 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #9 → face_0008_1788744924.jpg
+2026-09-06 22:35:24.145 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.7s < 3.0s)
+2026-09-06 22:35:24.146 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:24.146 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.1s < 3.0s)
+2026-09-06 22:35:24.213 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:24.214 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:24.214 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.2s < 3.0s)
+2026-09-06 22:35:24.280 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.8s < 3.0s)
+2026-09-06 22:35:24.281 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:24.281 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:24.349 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding ignorado — intervalo não atingido (2.9s < 3.0s)
+2026-09-06 22:35:24.350 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:24.350 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.3s < 3.0s)
+2026-09-06 22:35:24.403 | INFO     | utils.logger:info:11 - [EvidenceCapture] Gerando vídeo: 271 frames @ 13.5fps ≈ 20.1s → storage\events\2026\09\06\event_551108d2-080.mp4
+2026-09-06 22:35:24.442 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=85 nitidez=265
+2026-09-06 22:35:24.451 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=125 nitidez=1359
+2026-09-06 22:35:24.452 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:24.452 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.4s < 3.0s)
+2026-09-06 22:35:24.518 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:24.519 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.5s < 3.0s)
+2026-09-06 22:35:24.560 | INFO     | utils.logger:info:11 - [AUDITORIA] Evento 'COLISAO' registrado para Track #7 (Risco: 75)
+2026-09-06 22:35:24.561 | INFO     | utils.logger:info:11 - [NOTIFICAÇÃO] Alerta despachado: Track #7
+2026-09-06 22:35:24.562 | INFO     | utils.logger:info:11 - [VideoBuffer:cam_0] Gatilho! event=fbda81d6-fc3 pre_frames=65 coletando +15.0s...
+2026-09-06 22:35:24.577 | INFO     | utils.logger:info:11 - [FaceStorage] Track #7 promovido → storage\face_tracks\events\fbda81d6-fc3\track_7 (7 embeddings, 11 foto(s))
+2026-09-06 22:35:24.577 | INFO     | utils.logger:info:11 - [ALERTA] COLISAO | track=#7 risk=75 face=354167e5 person=None event_id=fbda81d6-fc3
+2026-09-06 22:35:25.037 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=98 nitidez=206
+2026-09-06 22:35:25.057 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=121 nitidez=658
+2026-09-06 22:35:25.074 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=94 nitidez=593
+2026-09-06 22:35:25.075 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 embedding capturado (8/8)
+2026-09-06 22:35:25.075 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (0.7s < 3.0s)
+2026-09-06 22:35:25.076 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (0.6s < 3.0s)
+2026-09-06 22:35:25.164 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 limite atingido (8/8)
+2026-09-06 22:35:25.166 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:25.167 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.1s < 3.0s)
+2026-09-06 22:35:25.254 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 limite atingido (8/8)
+2026-09-06 22:35:25.255 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:25.256 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.2s < 3.0s)
+2026-09-06 22:35:25.343 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 limite atingido (8/8)
+2026-09-06 22:35:25.344 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:25.345 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.3s < 3.0s)
+2026-09-06 22:35:25.430 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 limite atingido (8/8)
+2026-09-06 22:35:25.431 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:25.431 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.4s < 3.0s)
+2026-09-06 22:35:25.516 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 limite atingido (8/8)
+2026-09-06 22:35:25.517 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:25.517 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.5s < 3.0s)
+2026-09-06 22:35:25.569 | INFO     | utils.logger:info:11 - [EvidenceCapture] Vídeo gerado: storage\events\2026\09\06\event_551108d2-080.mp4 (2294KB, 20059ms)
+2026-09-06 22:35:25.606 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=7 brilho=131 nitidez=848
+2026-09-06 22:35:25.616 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=8 brilho=89 nitidez=677
+2026-09-06 22:35:25.627 | DEBUG    | utils.logger:debug:20 - [FaceCapture] track=9 brilho=87 nitidez=302
+2026-09-06 22:35:25.628 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 limite atingido (8/8)
+2026-09-06 22:35:25.629 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:25.630 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #8 → face_0009_1788744925.jpg
+2026-09-06 22:35:25.630 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.6s < 3.0s)
+2026-09-06 22:35:25.642 | INFO     | utils.logger:info:11 - [EvidenceStore] Metadata salva em fallback JSONL: event_id=551108d2-080 path=C:\Users\Usuario\VSprojects\Cam-security\Cam-Security\storage\events\2026\09\06\event_551108d2-080.mp4
+2026-09-06 22:35:25.643 | INFO     | utils.logger:info:11 - [EvidenceManager] Evidência registrada: evidence_id=8cc9f7dd-de78-4d2d-ba80-4973df4af435 event=551108d2-080 track=8 face=96454a2f person=None → C:\Users\Usuario\VSprojects\Cam-security\Cam-Security\storage\events\2026\09\06\event_551108d2-080.mp4
+2026-09-06 22:35:25.644 | INFO     | utils.logger:info:11 - [EvidenceStore] Metadata salva em fallback JSONL: event_id=551108d2-080 path=C:\Users\Usuario\VSprojects\Cam-security\Cam-Security\storage\snapshots\event_551108d2-080_trigger.jpg
+2026-09-06 22:35:25.704 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 limite atingido (8/8)
+2026-09-06 22:35:25.705 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:25.705 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.7s < 3.0s)
+2026-09-06 22:35:25.768 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 limite atingido (8/8)
+2026-09-06 22:35:25.769 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:25.769 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:25.832 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 limite atingido (8/8)
+2026-09-06 22:35:25.832 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.0s < 3.0s)
+2026-09-06 22:35:25.833 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.8s < 3.0s)
+2026-09-06 22:35:25.896 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #7 limite atingido (8/8)
+2026-09-06 22:35:25.896 | DEBUG    | utils.logger:debug:20 - [FaceSnapshot] Track #7 → face_0012_1788744925.jpg
+2026-09-06 22:35:25.897 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #8 embedding ignorado — intervalo não atingido (2.1s < 3.0s)
+2026-09-06 22:35:25.897 | DEBUG    | utils.logger:debug:20 - [FaceEmbedding] Track #9 embedding ignorado — intervalo não atingido (1.9s < 3.0s)
+2026-09-06 22:35:25.937 | INFO     | utils.logger:info:11 - Câmera encerrada.
+2026-09-06 22:35:25.950 | INFO     | utils.logger:info:11 - === Cam-Security Finalizado ===
