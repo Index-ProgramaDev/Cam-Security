@@ -107,7 +107,7 @@ class PersonDetector:
                 continue
 
             x1, y1, x2, y2 = map(int, box)
-            is_alert = track_id in alert_track_ids
+            is_alert = info.get("triggered", False) or (track_id in alert_track_ids)
             color    = (0, 0, 255) if is_alert else (0, 255, 0)
 
             cv2.rectangle(canvas, (x1, y1), (x2, y2), color, 2)

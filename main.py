@@ -74,6 +74,7 @@ def _freeze_tracks(tracks):
             "face_box":         info.get("face_box"),
             "face_detected_at": info.get("face_detected_at", 0.0),
             "pose":             _freeze_landmarks(info.get("pose")),
+            "triggered":        info.get("triggered", False),
         }
         for tid, info in tracks.items()
     }
