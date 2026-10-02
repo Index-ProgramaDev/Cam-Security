@@ -18,6 +18,7 @@ from detection.person_detector import PersonDetector, crop_person
 from detection.face_detector import FaceDetector
 from detection.mediapipe_detector import MediaPipeDetector
 from detection.pose_estimation import PoseEstimator
+from detection.behavior.behavior_engine import BehaviorEngine
 from tracking.id_manager import IDManager
 from tracking.object_tracker import ObjectTracker
 from tracking.track_registry import TrackRegistry
@@ -100,6 +101,7 @@ def main():
     person_detector = PersonDetector()
     pose_detector   = MediaPipeDetector()
     pose_estimator  = PoseEstimator(required_consecutive_frames=5)
+    behavior_engine = BehaviorEngine()
 
     face_detector = FaceDetector()
     face_storage  = FaceStorage()
@@ -216,31 +218,40 @@ def main():
                 track_ids         = list(tracks.keys())
                 has_multiple      = len(track_ids) >= 2
 
-                # 3a. Colisão entre pares
+                # 3a. Análise Comportamental (BehaviorEngine)
+                behavior_events = behavior_engine.process_frame(tracks, now)
+                for event in behavior_events:
+                    evt_type = event["type"]
+                    tid = event["track_id"]
+                    conf = event["confidence"]
+                    rel_ids = event.get("related_ids", [])
+                    
+                    if evt_type == "COLISAO":
+                        collision_detected = True
+                        
+                    desc = f"{evt_type} detectado! [Conf: {conf:.2f}]"
+                    if rel_ids:
+                        desc += f" (Envolve: {rel_ids})"
+                        
+                    fired = alert_manager.trigger_alert(
+                        evt_type, tid,
+                        risk_score=conf * 10.0,
+                        description=desc,
+                        triggered_at=now,
+                    )
+                    if fired:
+                        track_registry.set_triggered(tid)
+                        for rid in rel_ids:
+                            track_registry.set_triggered(rid)
+                        object_tracker.set_trigger(tid)
+                        alert_track_ids.append(tid)
+                        alert_track_ids.extend(rel_ids)
+                        sys_logger.info(f"[BEHAVIOR] {evt_type} | ID={tid} | confidence={conf:.2f}")
+
+                # Calculamos dist_label aproximado para o HUD
                 if has_multiple:
-                    for i in range(len(track_ids)):
-                        for j in range(i + 1, len(track_ids)):
-                            idA, idB   = track_ids[i], track_ids[j]
-                            infoA, infoB = tracks[idA], tracks[idB]
-                            if (infoA.get("age", 0) < MIN_TRACK_AGE_FOR_EVENTS
-                                    or infoB.get("age", 0) < MIN_TRACK_AGE_FOR_EVENTS):
-                                continue
-                            _, dist_label = calculate_relative_distance(infoA["box"], infoB["box"])
-                            if detect_collision(infoA["box"], infoB["box"]):
-                                collision_detected = True
-                                fired = alert_manager.trigger_alert(
-                                    "COLISAO", idA,
-                                    risk_score=calculate_risk_score("COLISAO", dist_label, 0.0, True),
-                                    description=f"Colisão entre #{idA} e #{idB}",
-                                    triggered_at=now,
-                                )
-                                if fired:
-                                    track_registry.set_triggered(idA)
-                                    track_registry.set_triggered(idB)
-                            if dist_label == "PERTO":
-                                min_dist_label = "PERTO"
-                            elif dist_label == "MEDIO" and min_dist_label != "PERTO":
-                                min_dist_label = "MEDIO"
+                    _, dist_label = calculate_relative_distance(tracks[track_ids[0]]["box"], tracks[track_ids[1]]["box"])
+                    min_dist_label = dist_label
 
                 pose_ms_total = 0.0
                 face_ms_total = 0.0
@@ -341,59 +352,20 @@ def main():
                             if known_identity is not None:
                                 tracks[track_id]["identity"] = known_identity
 
-                    # 3d. Análise de pose / eventos
-                    curr_centroid = calculate_center(box)
-                    body_vel      = calculate_velocity(curr_centroid, prev_centroids.get(track_id), delta_t)
-                    prev_centroids[track_id] = curr_centroid
-
+                    # 3d. Análise de poses proibidas estáticas (o behavior_engine cuida dos eventos dinâmicos)
                     if pose_lms and len(pose_lms) >= 17:
-                        r_shoulder, r_elbow, r_wrist = pose_lms[12], pose_lms[14], pose_lms[16]
-                        l_shoulder, l_elbow, l_wrist = pose_lms[11], pose_lms[13], pose_lms[15]
-
-                        curr_wrist = (r_wrist.x * w, r_wrist.y * h)
-                        wrist_vel  = calculate_velocity(curr_wrist, prev_wrists.get(track_id), delta_t)
-                        prev_wrists[track_id] = curr_wrist
-
-                        max_angle = max(
-                            calculate_arm_angle(r_shoulder, r_elbow, r_wrist),
-                            calculate_arm_angle(l_shoulder, l_elbow, l_wrist),
-                        )
-                        is_near   = (min_dist_label == "PERTO") or collision_detected
-                        can_punch = has_multiple and (track_age >= MIN_TRACK_AGE_FOR_EVENTS)
-
-                        if detect_punch(wrist_vel, max_angle, can_punch, is_near):
-                            cnt = punch_counters.get(track_id, 0) + 1
-                            punch_counters[track_id] = cnt
-                            if cnt >= 3:
-                                alert_track_ids.append(track_id)
-                                object_tracker.set_trigger(track_id)
-                                fired = alert_manager.trigger_alert(
-                                    "SOCO", track_id,
-                                    risk_score=calculate_risk_score(
-                                        "SOCO", min_dist_label,
-                                        max(body_vel, wrist_vel), collision_detected,
-                                    ),
-                                    description="Ataque/Soco rápido detectado!",
-                                    triggered_at=now,
-                                )
-                                if fired:
-                                    track_registry.set_triggered(track_id)
-                        else:
-                            punch_counters[track_id] = 0
-                            is_forbidden, pose_name = pose_estimator.evaluate(pose_lms, track_id=track_id)
-                            if is_forbidden:
-                                alert_track_ids.append(track_id)
-                                object_tracker.set_trigger(track_id)
-                                fired = alert_manager.trigger_alert(
-                                    pose_name, track_id,
-                                    risk_score=calculate_risk_score(
-                                        pose_name, min_dist_label, body_vel, collision_detected,
-                                    ),
-                                    description=f"Pose proibida: {pose_name}",
-                                    triggered_at=now,
-                                )
-                                if fired:
-                                    track_registry.set_triggered(track_id)
+                        is_forbidden, pose_name = pose_estimator.evaluate(pose_lms, track_id=track_id)
+                        if is_forbidden:
+                            alert_track_ids.append(track_id)
+                            object_tracker.set_trigger(track_id)
+                            fired = alert_manager.trigger_alert(
+                                pose_name, track_id,
+                                risk_score=9.0,
+                                description=f"Pose proibida: {pose_name}",
+                                triggered_at=now,
+                            )
+                            if fired:
+                                track_registry.set_triggered(track_id)
 
                 total_ms = (time.perf_counter() - t_start) * 1000.0
 

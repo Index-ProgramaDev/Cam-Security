@@ -1,4 +1,5 @@
-video_path: "config/mercado.mp4"
+
+video_path: "config/boxe.mp4"
 camera_id: 0
 width: 640
 height: 480

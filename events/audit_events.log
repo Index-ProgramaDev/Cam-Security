@@ -149,3 +149,38 @@
 {"timestamp": "2026-09-29 10:52:31", "event_type": "ARM_RAISED", "track_id": 114, "risk_score": 65, "description": "Pose proibida: ARM_RAISED", "evidence_path": ""}
 {"timestamp": "2026-09-29 10:52:32", "event_type": "COLISAO", "track_id": 114, "risk_score": 75, "description": "Colisão entre #114 e #117", "evidence_path": ""}
 {"timestamp": "2026-09-29 10:52:35", "event_type": "FALLEN", "track_id": 114, "risk_score": 95, "description": "Pose proibida: FALLEN", "evidence_path": ""}
+{"timestamp": "2026-09-29 10:56:47", "event_type": "COLISAO", "track_id": 3, "risk_score": 75, "description": "Colisão entre #3 e #4", "evidence_path": ""}
+{"timestamp": "2026-09-29 10:56:47", "event_type": "COLISAO", "track_id": 1, "risk_score": 75, "description": "Colisão entre #1 e #2", "evidence_path": ""}
+{"timestamp": "2026-09-29 10:56:49", "event_type": "HANDS_UP", "track_id": 6, "risk_score": 85, "description": "Pose proibida: HANDS_UP", "evidence_path": ""}
+{"timestamp": "2026-09-29 10:56:50", "event_type": "COLISAO", "track_id": 3, "risk_score": 75, "description": "Colisão entre #3 e #6", "evidence_path": ""}
+{"timestamp": "2026-09-29 10:56:50", "event_type": "COLISAO", "track_id": 4, "risk_score": 75, "description": "Colisão entre #4 e #6", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:03:25", "event_type": "COLISAO", "track_id": 4, "risk_score": 75, "description": "Colisão entre #4 e #5", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:03:25", "event_type": "COLISAO", "track_id": 3, "risk_score": 75, "description": "Colisão entre #3 e #2", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:03:28", "event_type": "COLISAO", "track_id": 5, "risk_score": 75, "description": "Colisão entre #5 e #7", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:03:28", "event_type": "COLISAO", "track_id": 4, "risk_score": 75, "description": "Colisão entre #4 e #7", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:03:29", "event_type": "COLISAO", "track_id": 3, "risk_score": 75, "description": "Colisão entre #3 e #2", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:30:56", "event_type": "MOVIMENTO_BRUSCO", "track_id": 8, "risk_score": 10.0, "description": "MOVIMENTO_BRUSCO detectado! [Conf: 1.00]", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:30:57", "event_type": "MOVIMENTO_BRUSCO", "track_id": 9, "risk_score": 7.364488683679627, "description": "MOVIMENTO_BRUSCO detectado! [Conf: 0.74]", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:30:57", "event_type": "MOVIMENTO_BRUSCO", "track_id": 10, "risk_score": 10.0, "description": "MOVIMENTO_BRUSCO detectado! [Conf: 1.00]", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:30:58", "event_type": "MOVIMENTO_BRUSCO", "track_id": 12, "risk_score": 10.0, "description": "MOVIMENTO_BRUSCO detectado! [Conf: 1.00]", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:30:59", "event_type": "MOVIMENTO_BRUSCO", "track_id": 2, "risk_score": 10.0, "description": "MOVIMENTO_BRUSCO detectado! [Conf: 1.00]", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:31:00", "event_type": "ARM_RAISED", "track_id": 10, "risk_score": 9.0, "description": "Pose proibida: ARM_RAISED", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:31:01", "event_type": "MOVIMENTO_BRUSCO", "track_id": 8, "risk_score": 10.0, "description": "MOVIMENTO_BRUSCO detectado! [Conf: 1.00]", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:31:02", "event_type": "MOVIMENTO_BRUSCO", "track_id": 13, "risk_score": 10.0, "description": "MOVIMENTO_BRUSCO detectado! [Conf: 1.00]", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:35:39", "event_type": "MOVIMENTO_BRUSCO", "track_id": 14, "risk_score": 8.598986569985353, "description": "MOVIMENTO_BRUSCO detectado! [Conf: 0.86]", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:35:40", "event_type": "MOVIMENTO_BRUSCO", "track_id": 2, "risk_score": 6.876635586398288, "description": "MOVIMENTO_BRUSCO detectado! [Conf: 0.69]", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:35:40", "event_type": "MOVIMENTO_BRUSCO", "track_id": 3, "risk_score": 9.29794063264757, "description": "MOVIMENTO_BRUSCO detectado! [Conf: 0.93]", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:35:41", "event_type": "MOVIMENTO_BRUSCO", "track_id": 12, "risk_score": 10.0, "description": "MOVIMENTO_BRUSCO detectado! [Conf: 1.00]", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:35:41", "event_type": "FALLEN", "track_id": 13, "risk_score": 9.0, "description": "Pose proibida: FALLEN", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:35:42", "event_type": "MOVIMENTO_BRUSCO", "track_id": 15, "risk_score": 9.109840138405515, "description": "MOVIMENTO_BRUSCO detectado! [Conf: 0.91]", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:39:23", "event_type": "FALLEN", "track_id": 17, "risk_score": 9.0, "description": "Pose proibida: FALLEN", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:39:27", "event_type": "FALLEN", "track_id": 17, "risk_score": 9.0, "description": "Pose proibida: FALLEN", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:39:31", "event_type": "FALLEN", "track_id": 17, "risk_score": 9.0, "description": "Pose proibida: FALLEN", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:56:09", "event_type": "ARM_RAISED", "track_id": 38, "risk_score": 9.0, "description": "Pose proibida: ARM_RAISED", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:57:47", "event_type": "ARM_RAISED", "track_id": 46, "risk_score": 9.0, "description": "Pose proibida: ARM_RAISED", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:58:14", "event_type": "ARM_RAISED", "track_id": 46, "risk_score": 9.0, "description": "Pose proibida: ARM_RAISED", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:58:30", "event_type": "ARM_RAISED", "track_id": 46, "risk_score": 9.0, "description": "Pose proibida: ARM_RAISED", "evidence_path": ""}
+{"timestamp": "2026-09-29 11:59:16", "event_type": "ARM_RAISED", "track_id": 65, "risk_score": 9.0, "description": "Pose proibida: ARM_RAISED", "evidence_path": ""}
+{"timestamp": "2026-09-29 12:01:32", "event_type": "ARM_RAISED", "track_id": 71, "risk_score": 9.0, "description": "Pose proibida: ARM_RAISED", "evidence_path": ""}
+{"timestamp": "2026-09-29 12:01:33", "event_type": "ARM_RAISED", "track_id": 89, "risk_score": 9.0, "description": "Pose proibida: ARM_RAISED", "evidence_path": ""}
+{"timestamp": "2026-09-29 12:32:30", "event_type": "COLISAO", "track_id": 123, "risk_score": 8.013070913301597, "description": "COLISAO detectado! [Conf: 0.80] (Envolve: [127])", "evidence_path": ""}

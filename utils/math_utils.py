@@ -76,7 +76,7 @@ def detect_punch(wrist_velocity, arm_angle, has_multiple_people, is_near_or_coll
 def calculate_risk_score(event_type: str, dist_label: str = "LONGE",
                          velocity: float = 0.0, has_collision: bool = False) -> int:
     """Risk score 0-100 baseado em tipo de evento, distância, velocidade e colisão."""
-    base = {"SOCO": 90, "FALLEN": 80, "HANDS_UP": 50, "ARM_RAISED": 30, "COLISAO": 40}
+    base = {"SOCO": 90, "FALLEN": 80, "HANDS_UP": 50, "COLISAO": 40}
     score = base.get(event_type, 20)
     if has_collision:
         score += 20

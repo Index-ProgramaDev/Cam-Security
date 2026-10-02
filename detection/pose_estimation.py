@@ -11,9 +11,7 @@ class PoseEstimator:
         self.required_consecutive_frames = required_consecutive_frames
         self.frame_counters = {}  # (track_id, pose_name) -> int
         self.forbidden_poses = {
-            "ARM_RAISED": self._check_arm_raised,
             "HANDS_UP":   self._check_hands_up,
-            "FALLEN":     self._check_fallen,
         }
 
     def evaluate(self, landmarks, track_id: int = 1):
@@ -55,11 +53,4 @@ class PoseEstimator:
         l_shoulder, l_wrist = landmarks[11], landmarks[15]
         return (r_wrist.y < r_shoulder.y - 0.10) and (l_wrist.y < l_shoulder.y - 0.10)
 
-    def _check_fallen(self, landmarks):
-        if len(landmarks) < 25:
-            return False
-        nose = landmarks[0]
-        l_hip, r_hip = landmarks[23], landmarks[24]
-        avg_hip_y = (l_hip.y + r_hip.y) / 2.0
-        # Corpo horizontal (nariz próximo do quadril em Y) e quadril baixo (chão)
-        return abs(nose.y - avg_hip_y) < 0.10 and avg_hip_y > 0.70
+
